@@ -14,15 +14,15 @@
 
 # 二、VSCode插件
 
-![image-20210201141534534](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201141534534.png)
+![image-20210201141534534](VscodeSTM32环境部署.assets/image-20210201141534534.png)
 
-![image-20210201141555979](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201141555979.png)
+![image-20210201141555979](VscodeSTM32环境部署.assets/image-20210201141555979.png)
 
 # 三、配置Git为VS Code内置终端
 
-![image-20210201141903902](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201141903902.png)
+![image-20210201141903902](VscodeSTM32环境部署.assets/image-20210201141903902.png)
 
-![image-20210201142258583](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201142258583.png)
+![image-20210201142258583](VscodeSTM32环境部署.assets/image-20210201142258583.png)
 
 ```json
 /* 终端在Windows上使用的shell的路径 */
@@ -84,11 +84,11 @@
 
 出现未定义字符的报错
 
-![image-20210201160006594](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201160006594.png)
+![image-20210201160006594](VscodeSTM32环境部署.assets/image-20210201160006594.png)
 
 # 五、用STM32Cube创建工程
 
-![image-20210201160419223](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201160419223.png)
+![image-20210201160419223](VscodeSTM32环境部署.assets/image-20210201160419223.png)
 
 # 六、编译程序
 
@@ -98,19 +98,19 @@
 
 在系统环境变量里要有一下路径
 
-![image-20210201161922490](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201161922490.png)
+![image-20210201161922490](VscodeSTM32环境部署.assets/image-20210201161922490.png)
 
 
 
 编译成功的结果
 
-![image-20210201162304524](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201162304524.png)
+![image-20210201162304524](VscodeSTM32环境部署.assets/image-20210201162304524.png)
 
 # 七、下载调试
 
 需要在环境变量中添加
 
-![image-20210201164031918](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201164031918.png)
+![image-20210201164031918](VscodeSTM32环境部署.assets/image-20210201164031918.png)
 
 在当前工程下创建一个名为openocd.cfg的文件
 
@@ -134,7 +134,7 @@ source [find target/stm32f4x.cfg]
 
 在终端输入openocd
 
-![image-20210201170706478](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201170706478.png)
+![image-20210201170706478](VscodeSTM32环境部署.assets/image-20210201170706478.png)
 
 新开一个终端输入
 
@@ -144,7 +144,7 @@ arm-none-eabi-gdb build/STM32F4_PWM_HAL.elf
 
 
 
-![image-20210201171031423](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201171031423.png)
+![image-20210201171031423](VscodeSTM32环境部署.assets/image-20210201171031423.png)
 
 输入
 
@@ -154,7 +154,7 @@ arm-none-eabi-gdb build/STM32F4_PWM_HAL.elf
 
 连接上openocd(openocd留给gdb的TCP/IP端口是3333)
 
-![image-20210201172428550](C:\Users\Kero\AppData\Roaming\Typora\typora-user-images\image-20210201172428550.png)
+![image-20210201172428550](VscodeSTM32环境部署.assets/image-20210201172428550.png)
 
 连接上openocd返回的信息里有？？之类的也是正常的
 

@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "main.h": "c"
-    }
+        "main.h": "c",
+        "tim.h": "c"
+    },
+    "clang.cflags": [
+        "-I${workspaceRoot}/Inc"
+    ]
 }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
   27:Src/main.c    **** /* USER CODE BEGIN Includes */
   28:Src/main.c    **** 
   29:Src/main.c    **** /* USER CODE END Includes */
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 2
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 2
 
 
   30:Src/main.c    **** 
@@ -103,52 +103,55 @@ ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
   69:Src/main.c    ****   /* USER CODE BEGIN 1 */
   70:Src/main.c    **** 
   71:Src/main.c    ****   /* USER CODE END 1 */
-  72:Src/main.c    ****   
-  73:Src/main.c    **** 
-  74:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
-  75:Src/main.c    **** 
-  76:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  77:Src/main.c    ****   HAL_Init();
-  78:Src/main.c    **** 
-  79:Src/main.c    ****   /* USER CODE BEGIN Init */
-  80:Src/main.c    **** 
-  81:Src/main.c    ****   /* USER CODE END Init */
-  82:Src/main.c    **** 
-  83:Src/main.c    ****   /* Configure the system clock */
-  84:Src/main.c    ****   SystemClock_Config();
-  85:Src/main.c    **** 
-  86:Src/main.c    ****   /* USER CODE BEGIN SysInit */
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 3
+  72:Src/main.c    **** 
+  73:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
+  74:Src/main.c    **** 
+  75:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  76:Src/main.c    ****   HAL_Init();
+  77:Src/main.c    **** 
+  78:Src/main.c    ****   /* USER CODE BEGIN Init */
+  79:Src/main.c    **** 
+  80:Src/main.c    ****   /* USER CODE END Init */
+  81:Src/main.c    **** 
+  82:Src/main.c    ****   /* Configure the system clock */
+  83:Src/main.c    ****   SystemClock_Config();
+  84:Src/main.c    **** 
+  85:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+  86:Src/main.c    **** 
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 3
 
 
-  87:Src/main.c    **** 
-  88:Src/main.c    ****   /* USER CODE END SysInit */
-  89:Src/main.c    **** 
-  90:Src/main.c    ****   /* Initialize all configured peripherals */
-  91:Src/main.c    ****   MX_GPIO_Init();
-  92:Src/main.c    ****   MX_TIM3_Init();
-  93:Src/main.c    ****   /* USER CODE BEGIN 2 */
-  94:Src/main.c    **** 
-  95:Src/main.c    ****   /* USER CODE END 2 */
-  96:Src/main.c    **** 
-  97:Src/main.c    ****   /* Infinite loop */
-  98:Src/main.c    ****   /* USER CODE BEGIN WHILE */
-  99:Src/main.c    ****   while (1)
- 100:Src/main.c    ****   {
- 101:Src/main.c    ****     /* USER CODE END WHILE */
- 102:Src/main.c    **** 
- 103:Src/main.c    ****     /* USER CODE BEGIN 3 */
- 104:Src/main.c    ****   }
- 105:Src/main.c    ****   /* USER CODE END 3 */
- 106:Src/main.c    **** }
- 107:Src/main.c    **** 
- 108:Src/main.c    **** /**
- 109:Src/main.c    ****   * @brief System Clock Configuration
- 110:Src/main.c    ****   * @retval None
- 111:Src/main.c    ****   */
- 112:Src/main.c    **** void SystemClock_Config(void)
- 113:Src/main.c    **** {
-  30              		.loc 1 113 0
+  87:Src/main.c    ****   /* USER CODE END SysInit */
+  88:Src/main.c    **** 
+  89:Src/main.c    ****   /* Initialize all configured peripherals */
+  90:Src/main.c    ****   MX_GPIO_Init();
+  91:Src/main.c    ****   MX_TIM3_Init();
+  92:Src/main.c    ****   /* USER CODE BEGIN 2 */
+  93:Src/main.c    ****   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  94:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 250);
+  95:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_2, 300);
+  96:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, 300);
+  97:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_4, 300);
+  98:Src/main.c    ****   /* USER CODE END 2 */
+  99:Src/main.c    **** 
+ 100:Src/main.c    ****   /* Infinite loop */
+ 101:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 102:Src/main.c    ****   while (1)
+ 103:Src/main.c    ****   {
+ 104:Src/main.c    ****     /* USER CODE END WHILE */
+ 105:Src/main.c    **** 
+ 106:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 107:Src/main.c    ****   }
+ 108:Src/main.c    ****   /* USER CODE END 3 */
+ 109:Src/main.c    **** }
+ 110:Src/main.c    **** 
+ 111:Src/main.c    **** /**
+ 112:Src/main.c    ****   * @brief System Clock Configuration
+ 113:Src/main.c    ****   * @retval None
+ 114:Src/main.c    ****   */
+ 115:Src/main.c    **** void SystemClock_Config(void)
+ 116:Src/main.c    **** {
+  30              		.loc 1 116 0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 80
   33              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -161,30 +164,30 @@ ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
   40 0002 95B0     		sub	sp, sp, #84
   41              	.LCFI1:
   42              		.cfi_def_cfa_offset 96
- 114:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  43              		.loc 1 114 0
+ 117:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  43              		.loc 1 117 0
   44 0004 3022     		movs	r2, #48
   45 0006 0021     		movs	r1, #0
   46 0008 08A8     		add	r0, sp, #32
   47 000a FFF7FEFF 		bl	memset
   48              	.LVL0:
- 115:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  49              		.loc 1 115 0
+ 118:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  49              		.loc 1 118 0
   50 000e 0024     		movs	r4, #0
   51 0010 0394     		str	r4, [sp, #12]
   52 0012 0494     		str	r4, [sp, #16]
   53 0014 0594     		str	r4, [sp, #20]
   54 0016 0694     		str	r4, [sp, #24]
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 4
+
+
   55 0018 0794     		str	r4, [sp, #28]
   56              	.LBB2:
- 116:Src/main.c    **** 
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 4
-
-
- 117:Src/main.c    ****   /** Configure the main internal regulator output voltage 
- 118:Src/main.c    ****   */
- 119:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
-  57              		.loc 1 119 0
+ 119:Src/main.c    **** 
+ 120:Src/main.c    ****   /** Configure the main internal regulator output voltage 
+ 121:Src/main.c    ****   */
+ 122:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
+  57              		.loc 1 122 0
   58 001a 0194     		str	r4, [sp, #4]
   59 001c 1B4B     		ldr	r3, .L3
   60 001e 1A6C     		ldr	r2, [r3, #64]
@@ -196,8 +199,8 @@ ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
   66 002e 019B     		ldr	r3, [sp, #4]
   67              	.LBE2:
   68              	.LBB3:
- 120:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-  69              		.loc 1 120 0
+ 123:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  69              		.loc 1 123 0
   70 0030 0294     		str	r4, [sp, #8]
   71 0032 174B     		ldr	r3, .L3+4
   72 0034 1A68     		ldr	r2, [r3]
@@ -208,82 +211,81 @@ ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
   77 0042 0293     		str	r3, [sp, #8]
   78 0044 029B     		ldr	r3, [sp, #8]
   79              	.LBE3:
- 121:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
- 122:Src/main.c    ****   */
- 123:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  80              		.loc 1 123 0
+ 124:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 125:Src/main.c    ****   */
+ 126:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  80              		.loc 1 126 0
   81 0046 0123     		movs	r3, #1
   82 0048 0893     		str	r3, [sp, #32]
- 124:Src/main.c    ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  83              		.loc 1 124 0
+ 127:Src/main.c    ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  83              		.loc 1 127 0
   84 004a 4FF48033 		mov	r3, #65536
   85 004e 0993     		str	r3, [sp, #36]
- 125:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  86              		.loc 1 125 0
+ 128:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  86              		.loc 1 128 0
   87 0050 0225     		movs	r5, #2
   88 0052 0E95     		str	r5, [sp, #56]
- 126:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  89              		.loc 1 126 0
+ 129:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  89              		.loc 1 129 0
   90 0054 4FF48003 		mov	r3, #4194304
   91 0058 0F93     		str	r3, [sp, #60]
- 127:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 4;
-  92              		.loc 1 127 0
+ 130:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 4;
+  92              		.loc 1 130 0
   93 005a 0423     		movs	r3, #4
   94 005c 1093     		str	r3, [sp, #64]
- 128:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 168;
-  95              		.loc 1 128 0
+ 131:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 168;
+  95              		.loc 1 131 0
   96 005e A822     		movs	r2, #168
   97 0060 1192     		str	r2, [sp, #68]
- 129:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  98              		.loc 1 129 0
+ 132:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 5
+
+
+  98              		.loc 1 132 0
   99 0062 1295     		str	r5, [sp, #72]
- 130:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 5
-
-
- 100              		.loc 1 130 0
+ 133:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 100              		.loc 1 133 0
  101 0064 1393     		str	r3, [sp, #76]
- 131:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 102              		.loc 1 131 0
+ 134:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 102              		.loc 1 134 0
  103 0066 08A8     		add	r0, sp, #32
  104 0068 FFF7FEFF 		bl	HAL_RCC_OscConfig
  105              	.LVL1:
- 132:Src/main.c    ****   {
- 133:Src/main.c    ****     Error_Handler();
- 134:Src/main.c    ****   }
- 135:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
- 136:Src/main.c    ****   */
- 137:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 106              		.loc 1 137 0
+ 135:Src/main.c    ****   {
+ 136:Src/main.c    ****     Error_Handler();
+ 137:Src/main.c    ****   }
+ 138:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 139:Src/main.c    ****   */
+ 140:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | R
+ 106              		.loc 1 140 0
  107 006c 0F23     		movs	r3, #15
  108 006e 0393     		str	r3, [sp, #12]
- 138:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 139:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 109              		.loc 1 139 0
+ 141:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 109              		.loc 1 141 0
  110 0070 0495     		str	r5, [sp, #16]
- 140:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 111              		.loc 1 140 0
+ 142:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 111              		.loc 1 142 0
  112 0072 0594     		str	r4, [sp, #20]
- 141:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
- 113              		.loc 1 141 0
+ 143:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+ 113              		.loc 1 143 0
  114 0074 4FF4A053 		mov	r3, #5120
  115 0078 0693     		str	r3, [sp, #24]
- 142:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
- 116              		.loc 1 142 0
+ 144:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+ 116              		.loc 1 144 0
  117 007a 4FF48053 		mov	r3, #4096
  118 007e 0793     		str	r3, [sp, #28]
- 143:Src/main.c    **** 
- 144:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
- 119              		.loc 1 144 0
+ 145:Src/main.c    **** 
+ 146:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+ 119              		.loc 1 146 0
  120 0080 0521     		movs	r1, #5
  121 0082 03A8     		add	r0, sp, #12
  122 0084 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  123              	.LVL2:
- 145:Src/main.c    ****   {
- 146:Src/main.c    ****     Error_Handler();
- 147:Src/main.c    ****   }
- 148:Src/main.c    **** }
- 124              		.loc 1 148 0
+ 147:Src/main.c    ****   {
+ 148:Src/main.c    ****     Error_Handler();
+ 149:Src/main.c    ****   }
+ 150:Src/main.c    **** }
+ 124              		.loc 1 150 0
  125 0088 15B0     		add	sp, sp, #84
  126              	.LCFI2:
  127              		.cfi_def_cfa_offset 12
@@ -296,11 +298,11 @@ ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
  134 0090 00700040 		.word	1073770496
  135              		.cfi_endproc
  136              	.LFE131:
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 6
+
+
  138              		.section	.text.main,"ax",%progbits
  139              		.align	2
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 6
-
-
  140              		.global	main
  141              		.thumb
  142              		.thumb_func
@@ -317,79 +319,108 @@ ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 1
  153              		.cfi_def_cfa_offset 8
  154              		.cfi_offset 3, -8
  155              		.cfi_offset 14, -4
-  77:Src/main.c    **** 
- 156              		.loc 1 77 0
+  76:Src/main.c    **** 
+ 156              		.loc 1 76 0
  157 0002 FFF7FEFF 		bl	HAL_Init
  158              	.LVL3:
-  84:Src/main.c    **** 
- 159              		.loc 1 84 0
+  83:Src/main.c    **** 
+ 159              		.loc 1 83 0
  160 0006 FFF7FEFF 		bl	SystemClock_Config
  161              	.LVL4:
-  91:Src/main.c    ****   MX_TIM3_Init();
- 162              		.loc 1 91 0
+  90:Src/main.c    ****   MX_TIM3_Init();
+ 162              		.loc 1 90 0
  163 000a FFF7FEFF 		bl	MX_GPIO_Init
  164              	.LVL5:
-  92:Src/main.c    ****   /* USER CODE BEGIN 2 */
- 165              		.loc 1 92 0
+  91:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 165              		.loc 1 91 0
  166 000e FFF7FEFF 		bl	MX_TIM3_Init
  167              	.LVL6:
- 168              	.L6:
- 169 0012 FEE7     		b	.L6
- 170              		.cfi_endproc
- 171              	.LFE130:
- 173              		.section	.text.Error_Handler,"ax",%progbits
- 174              		.align	2
- 175              		.global	Error_Handler
- 176              		.thumb
- 177              		.thumb_func
- 179              	Error_Handler:
- 180              	.LFB132:
- 149:Src/main.c    **** 
- 150:Src/main.c    **** /* USER CODE BEGIN 4 */
+  93:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 250);
+ 168              		.loc 1 93 0
+ 169 0012 074C     		ldr	r4, .L8
+ 170 0014 0021     		movs	r1, #0
+ 171 0016 2046     		mov	r0, r4
+ 172 0018 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 173              	.LVL7:
+  94:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_2, 300);
+ 174              		.loc 1 94 0
+ 175 001c 2368     		ldr	r3, [r4]
+ 176 001e FA22     		movs	r2, #250
+ 177 0020 5A63     		str	r2, [r3, #52]
+  95:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, 300);
+ 178              		.loc 1 95 0
+ 179 0022 4FF49672 		mov	r2, #300
+ 180 0026 9A63     		str	r2, [r3, #56]
+  96:Src/main.c    ****   __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_4, 300);
+ 181              		.loc 1 96 0
+ 182 0028 DA63     		str	r2, [r3, #60]
+  97:Src/main.c    ****   /* USER CODE END 2 */
+ 183              		.loc 1 97 0
+ 184 002a 1A64     		str	r2, [r3, #64]
+ 185              	.L6:
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 7
+
+
+ 186 002c FEE7     		b	.L6
+ 187              	.L9:
+ 188 002e 00BF     		.align	2
+ 189              	.L8:
+ 190 0030 00000000 		.word	htim3
+ 191              		.cfi_endproc
+ 192              	.LFE130:
+ 194              		.section	.text.Error_Handler,"ax",%progbits
+ 195              		.align	2
+ 196              		.global	Error_Handler
+ 197              		.thumb
+ 198              		.thumb_func
+ 200              	Error_Handler:
+ 201              	.LFB132:
  151:Src/main.c    **** 
- 152:Src/main.c    **** /* USER CODE END 4 */
+ 152:Src/main.c    **** /* USER CODE BEGIN 4 */
  153:Src/main.c    **** 
- 154:Src/main.c    **** /**
- 155:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
- 156:Src/main.c    ****   * @retval None
- 157:Src/main.c    ****   */
- 158:Src/main.c    **** void Error_Handler(void)
- 159:Src/main.c    **** {
- 181              		.loc 1 159 0
- 182              		.cfi_startproc
- 183              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 7
-
-
- 184              		@ frame_needed = 0, uses_anonymous_args = 0
- 185              		@ link register save eliminated.
- 186 0000 7047     		bx	lr
- 187              		.cfi_endproc
- 188              	.LFE132:
- 190 0002 00BF     		.text
- 191              	.Letext0:
- 192              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
- 193              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
- 194              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
- 195              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 196              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 197              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 198              		.file 8 "Inc/gpio.h"
- 199              		.file 9 "Inc/tim.h"
- 200              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 201              		.file 11 "Drivers/CMSIS/Include/core_cm4.h"
-ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s 			page 8
+ 154:Src/main.c    **** /* USER CODE END 4 */
+ 155:Src/main.c    **** 
+ 156:Src/main.c    **** /**
+ 157:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 158:Src/main.c    ****   * @retval None
+ 159:Src/main.c    ****   */
+ 160:Src/main.c    **** void Error_Handler(void)
+ 161:Src/main.c    **** {
+ 202              		.loc 1 161 0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206              		@ link register save eliminated.
+ 207 0000 7047     		bx	lr
+ 208              		.cfi_endproc
+ 209              	.LFE132:
+ 211 0002 00BF     		.text
+ 212              	.Letext0:
+ 213              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 214              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 215              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 216              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 217              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 218              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 219              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 220              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 221              		.file 10 "Drivers/CMSIS/Include/core_cm4.h"
+ 222              		.file 11 "Inc/tim.h"
+ 223              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 224              		.file 13 "Inc/gpio.h"
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s:22     .text.SystemClock_Config:00000000 $t
-C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s:27     .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s:133    .text.SystemClock_Config:0000008c $d
-C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s:139    .text.main:00000000 $t
-C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s:144    .text.main:00000000 main
-C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s:174    .text.Error_Handler:00000000 $t
-C:\Users\Kero\AppData\Local\Temp\ccUvFtcM.s:179    .text.Error_Handler:00000000 Error_Handler
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:22     .text.SystemClock_Config:00000000 $t
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:27     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:133    .text.SystemClock_Config:0000008c $d
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:139    .text.main:00000000 $t
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:144    .text.main:00000000 main
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:190    .text.main:00000030 $d
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:195    .text.Error_Handler:00000000 $t
+C:\Users\Kero\AppData\Local\Temp\ccxAtBRV.s:200    .text.Error_Handler:00000000 Error_Handler
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
@@ -399,3 +430,5 @@ HAL_RCC_ClockConfig
 HAL_Init
 MX_GPIO_Init
 MX_TIM3_Init
+HAL_TIM_PWM_Start
+htim3

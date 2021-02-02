@@ -29,7 +29,7 @@
                 "USE_STDPERIPH_DRIVER",
                 "STM32F40_41xxx"
             ],
-            "compilerPath": "C:\\Program Files\\LLVM\\bin\\clang.exe",
+            "compilerPath": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
