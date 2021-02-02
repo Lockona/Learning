@@ -1,0 +1,157 @@
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccOK7ja9.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.eabi_attribute 28, 1
+   5              		.fpu fpv4-sp-d16
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.thumb
+  16              		.syntax unified
+  17              		.file	"gpio.c"
+  18              		.text
+  19              	.Ltext0:
+  20              		.cfi_sections	.debug_frame
+  21              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  22              		.align	2
+  23              		.global	MX_GPIO_Init
+  24              		.thumb
+  25              		.thumb_func
+  27              	MX_GPIO_Init:
+  28              	.LFB130:
+  29              		.file 1 "Src/gpio.c"
+   1:Src/gpio.c    **** /**
+   2:Src/gpio.c    ****   ******************************************************************************
+   3:Src/gpio.c    ****   * File Name          : gpio.c
+   4:Src/gpio.c    ****   * Description        : This file provides code for the configuration
+   5:Src/gpio.c    ****   *                      of all used GPIO pins.
+   6:Src/gpio.c    ****   ******************************************************************************
+   7:Src/gpio.c    ****   * @attention
+   8:Src/gpio.c    ****   *
+   9:Src/gpio.c    ****   * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  10:Src/gpio.c    ****   * All rights reserved.</center></h2>
+  11:Src/gpio.c    ****   *
+  12:Src/gpio.c    ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Src/gpio.c    ****   * the "License"; You may not use this file except in compliance with the
+  14:Src/gpio.c    ****   * License. You may obtain a copy of the License at:
+  15:Src/gpio.c    ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Src/gpio.c    ****   *
+  17:Src/gpio.c    ****   ******************************************************************************
+  18:Src/gpio.c    ****   */
+  19:Src/gpio.c    **** 
+  20:Src/gpio.c    **** /* Includes ------------------------------------------------------------------*/
+  21:Src/gpio.c    **** #include "gpio.h"
+  22:Src/gpio.c    **** /* USER CODE BEGIN 0 */
+  23:Src/gpio.c    **** 
+  24:Src/gpio.c    **** /* USER CODE END 0 */
+  25:Src/gpio.c    **** 
+  26:Src/gpio.c    **** /*----------------------------------------------------------------------------*/
+  27:Src/gpio.c    **** /* Configure GPIO                                                             */
+  28:Src/gpio.c    **** /*----------------------------------------------------------------------------*/
+  29:Src/gpio.c    **** /* USER CODE BEGIN 1 */
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccOK7ja9.s 			page 2
+
+
+  30:Src/gpio.c    **** 
+  31:Src/gpio.c    **** /* USER CODE END 1 */
+  32:Src/gpio.c    **** 
+  33:Src/gpio.c    **** /** Configure pins as 
+  34:Src/gpio.c    ****         * Analog 
+  35:Src/gpio.c    ****         * Input 
+  36:Src/gpio.c    ****         * Output
+  37:Src/gpio.c    ****         * EVENT_OUT
+  38:Src/gpio.c    ****         * EXTI
+  39:Src/gpio.c    **** */
+  40:Src/gpio.c    **** void MX_GPIO_Init(void)
+  41:Src/gpio.c    **** {
+  30              		.loc 1 41 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 16
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35 0000 84B0     		sub	sp, sp, #16
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 16
+  38              	.LBB2:
+  42:Src/gpio.c    **** 
+  43:Src/gpio.c    ****   /* GPIO Ports Clock Enable */
+  44:Src/gpio.c    ****   __HAL_RCC_GPIOH_CLK_ENABLE();
+  39              		.loc 1 44 0
+  40 0002 0022     		movs	r2, #0
+  41 0004 0192     		str	r2, [sp, #4]
+  42 0006 104B     		ldr	r3, .L3
+  43 0008 196B     		ldr	r1, [r3, #48]
+  44 000a 41F08001 		orr	r1, r1, #128
+  45 000e 1963     		str	r1, [r3, #48]
+  46 0010 196B     		ldr	r1, [r3, #48]
+  47 0012 01F08001 		and	r1, r1, #128
+  48 0016 0191     		str	r1, [sp, #4]
+  49 0018 0199     		ldr	r1, [sp, #4]
+  50              	.LBE2:
+  51              	.LBB3:
+  45:Src/gpio.c    ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  52              		.loc 1 45 0
+  53 001a 0292     		str	r2, [sp, #8]
+  54 001c 196B     		ldr	r1, [r3, #48]
+  55 001e 41F00101 		orr	r1, r1, #1
+  56 0022 1963     		str	r1, [r3, #48]
+  57 0024 196B     		ldr	r1, [r3, #48]
+  58 0026 01F00101 		and	r1, r1, #1
+  59 002a 0291     		str	r1, [sp, #8]
+  60 002c 0299     		ldr	r1, [sp, #8]
+  61              	.LBE3:
+  62              	.LBB4:
+  46:Src/gpio.c    ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  63              		.loc 1 46 0
+  64 002e 0392     		str	r2, [sp, #12]
+  65 0030 1A6B     		ldr	r2, [r3, #48]
+  66 0032 42F00202 		orr	r2, r2, #2
+  67 0036 1A63     		str	r2, [r3, #48]
+  68 0038 1B6B     		ldr	r3, [r3, #48]
+  69 003a 03F00203 		and	r3, r3, #2
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccOK7ja9.s 			page 3
+
+
+  70 003e 0393     		str	r3, [sp, #12]
+  71 0040 039B     		ldr	r3, [sp, #12]
+  72              	.LBE4:
+  47:Src/gpio.c    **** 
+  48:Src/gpio.c    **** }
+  73              		.loc 1 48 0
+  74 0042 04B0     		add	sp, sp, #16
+  75              	.LCFI1:
+  76              		.cfi_def_cfa_offset 0
+  77              		@ sp needed
+  78 0044 7047     		bx	lr
+  79              	.L4:
+  80 0046 00BF     		.align	2
+  81              	.L3:
+  82 0048 00380240 		.word	1073887232
+  83              		.cfi_endproc
+  84              	.LFE130:
+  86              		.text
+  87              	.Letext0:
+  88              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+  89              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+  90              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+  91              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccOK7ja9.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gpio.c
+C:\Users\Kero\AppData\Local\Temp\ccOK7ja9.s:22     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Kero\AppData\Local\Temp\ccOK7ja9.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Kero\AppData\Local\Temp\ccOK7ja9.s:82     .text.MX_GPIO_Init:00000048 $d
+                     .debug_frame:00000010 $d
+
+NO UNDEFINED SYMBOLS
