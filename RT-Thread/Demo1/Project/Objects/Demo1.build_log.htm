@@ -1,0 +1,80 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.33.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: z z, z, LIC=EPPLD-8G8VI-PHM89-45PDX-41UV3-HGPM8
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.33.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.15
+Assembler:       Armasm.exe V6.15
+Linker/Locator:  ArmLink.exe V6.15
+Library Manager: ArmAr.exe V6.15
+Hex Converter:   FromElf.exe V6.15
+CPU DLL:         SARMCM3.DLL V5.33.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.9.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+D:\STM32\Learning\RT-Thread\Demo1\Project\Demo1.uvprojx
+Project File Date:  02/02/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+compiling system_ARMCM4.c...
+../User/main.c(3): warning: no previous extern declaration for non-static variable 'flag1' [-Wmissing-variable-declarations]
+uint32_t flag1 =0;
+         ^
+../User/main.c(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t flag1 =0;
+^
+../User/main.c(4): warning: no previous extern declaration for non-static variable 'flag2' [-Wmissing-variable-declarations]
+uint32_t flag2 =0;
+         ^
+../User/main.c(4): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t flag2 =0;
+^
+../User/main.c(6): warning: no previous prototype for function 'delay' [-Wmissing-prototypes]
+void delay(uint32_t count)
+     ^
+../User/main.c(6): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void delay(uint32_t count)
+^
+static 
+3 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=308 RO-data=992 RW-data=4 ZI-data=1036  
+".\Objects\Demo1.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+   * Component: Startup Version: 1.2.2
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: ARM::Device:Startup:1.2.2
+      Source file:   Device\ARM\ARMCM4\Source\ARM\startup_ARMCM4.s
+      Source file:   Device\ARM\ARMCM4\Source\system_ARMCM4.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>

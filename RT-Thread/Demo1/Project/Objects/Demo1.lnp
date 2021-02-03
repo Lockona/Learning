@@ -1,0 +1,8 @@
+--cpu=Cortex-M4 --fpu=SoftVFP
+".\objects\main.o"
+".\objects\startup_armcm4.o"
+".\objects\system_armcm4.o"
+--strict --scatter ".\Objects\Demo1.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Demo1.map" -o .\Objects\Demo1.axf

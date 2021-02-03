@@ -20,7 +20,7 @@
             "setupCommands": [ // 进入GDB以后，自动执行的一些配置 
                 {
                     "description": "选择调试文件(.elf)到gdb",
-                    "text": "file D:/STM32/Learning/STM32F4_PWM_HAL/build/STM32F4_PWM_HAL.elf",
+                    "text": "file D:/STM32/Learning/STM_HAL/STM32F4_PWM_HAL/build/STM32F4_PWM_HAL.elf",
                     "ignoreFailures": false
                 },
                 {
