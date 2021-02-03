@@ -10,8 +10,8 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6150000::V6.15::ARMCLANG</pCCUsed>
-      <uAC6>1</uAC6>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>ARMCM4</Device>
@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -388,13 +388,42 @@
               <FileType>1</FileType>
               <FilePath>..\User\main.c</FilePath>
             </File>
+            <File>
+              <FileName>rtconfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\rtconfig.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>rtt/ports</GroupName>
+          <Files>
+            <File>
+              <FileName>cpuport.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+            </File>
+            <File>
+              <FileName>context_rvds.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\rtthread\3.0.3\libcpu\arm\cortex-m4\context_rvds.s</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>rtt/source</GroupName>
+          <Files>
+            <File>
+              <FileName>scheduler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\scheduler.c</FilePath>
+            </File>
+            <File>
+              <FileName>thread.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\thread.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>doc</GroupName>

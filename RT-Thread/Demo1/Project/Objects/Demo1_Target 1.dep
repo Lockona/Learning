@@ -1,26 +1,45 @@
 Dependencies for Project 'Demo1', Target 'Target 1': (DO NOT MODIFY !)
-CompilerVersion: 6150000::V6.15::ARMCLANG
-F (..\User\main.c)(0x60195F05)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../User -I ../rtthread/3.0.3/include-I./RTE/_Target_1-IC:/Users/Kero/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kero/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM4/Include-D__UVISION_VERSION="533" -D_RTE_ -DARMCM4 -D_RTE_-o ./objects/main.o -MD)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (..\User\main.c)(0x601AB2AC)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\rtthread\3.0.3\include-I.\RTE\_Target_1-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="533" -D_RTE_ -DARMCM4 -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5EFFD9C9)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5EFFD9C9)
+I (..\User\rtconfig.h)(0x60195E91)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5EFFD9C9)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include\ARMCM4.h)(0x5E8306CE)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8ED122)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F36D0A8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8ED122)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E8306C2)
-I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8ED122)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE12742)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F268738)
+I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8ED122)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8ED122)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include\system_ARMCM4.h)(0x5E8ED12C)
+F (..\User\rtconfig.h)(0x60195E91)()
+F (..\rtthread\3.0.3\libcpu\arm\cortex-m4\cpuport.c)(0x5EFFD9C9)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\rtthread\3.0.3\include-I.\RTE\_Target_1-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="533" -D_RTE_ -DARMCM4 -D_RTE_-o .\objects\cpuport.o --omf_browse .\objects\cpuport.crf --depend .\objects\cpuport.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5EFFD9C9)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5EFFD9C9)
+I (..\User\rtconfig.h)(0x60195E91)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5EFFD9C9)
+F (..\rtthread\3.0.3\libcpu\arm\cortex-m4\context_rvds.s)(0x5EFFD9C9)(--cpu Cortex-M4 --li -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 533" --pd "_RTE_ SETA 1" --pd "ARMCM4 SETA 1" --pd "_RTE_ SETA 1"--list .\listings\context_rvds.lst --xref -o .\objects\context_rvds.o --depend .\objects\context_rvds.d)
+F (..\rtthread\3.0.3\src\scheduler.c)(0x5EFFD9C9)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\rtthread\3.0.3\include-I.\RTE\_Target_1-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="533" -D_RTE_ -DARMCM4 -D_RTE_-o .\objects\scheduler.o --omf_browse .\objects\scheduler.crf --depend .\objects\scheduler.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5EFFD9C9)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5EFFD9C9)
+I (..\User\rtconfig.h)(0x60195E91)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5EFFD9C9)
+I (..\rtthread\3.0.3\include\rthw.h)(0x5EFFD9C9)
+F (..\rtthread\3.0.3\src\thread.c)(0x5EFFD9C9)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\rtthread\3.0.3\include-I.\RTE\_Target_1-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="533" -D_RTE_ -DARMCM4 -D_RTE_-o .\objects\thread.o --omf_browse .\objects\thread.crf --depend .\objects\thread.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5EFFD9C9)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5EFFD9C9)
+I (..\User\rtconfig.h)(0x60195E91)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5EFFD9C9)
+I (..\rtthread\3.0.3\include\rthw.h)(0x5EFFD9C9)
 F (..\Doc\readme.txt)(0x60194B62)()
-F (RTE\Device\ARMCM4\startup_ARMCM4.s)(0x5E8ED12C)(--target=armv7em-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -masm=auto -c-mlittle-endian -gdwarf-3-I./RTE/_Target_1-IC:/Users/Kero/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kero/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM4/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 533" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"ARMCM4 SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_armcm4.o)
-F (RTE\Device\ARMCM4\system_ARMCM4.c)(0x5E8ED12C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-mlittle-endian -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../User -I ../rtthread/3.0.3/include-I./RTE/_Target_1-IC:/Users/Kero/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kero/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/Device/ARM/ARMCM4/Include-D__UVISION_VERSION="533" -D_RTE_ -DARMCM4 -D_RTE_-o ./objects/system_armcm4.o -MD)
+F (RTE\Device\ARMCM4\startup_ARMCM4.s)(0x5E8ED12C)(--cpu Cortex-M4 --li -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 533" --pd "_RTE_ SETA 1" --pd "ARMCM4 SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_armcm4.lst --xref -o .\objects\startup_armcm4.o --depend .\objects\startup_armcm4.d)
+F (RTE\Device\ARMCM4\system_ARMCM4.c)(0x5E8ED12C)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I ..\User -I ..\rtthread\3.0.3\include-I.\RTE\_Target_1-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="533" -D_RTE_ -DARMCM4 -D_RTE_-o .\objects\system_armcm4.o --omf_browse .\objects\system_armcm4.crf --depend .\objects\system_armcm4.d)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include\ARMCM4.h)(0x5E8306CE)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8ED122)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F36D0A8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8ED122)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E8306C2)
-I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8ED122)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE12742)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F268738)
+I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8ED122)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8ED122)
 I (C:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\Device\ARM\ARMCM4\Include\system_ARMCM4.h)(0x5E8ED12C)

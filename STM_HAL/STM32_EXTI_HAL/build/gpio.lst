@@ -1,0 +1,197 @@
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.eabi_attribute 28, 1
+   5              		.fpu fpv4-sp-d16
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.thumb
+  16              		.syntax unified
+  17              		.file	"gpio.c"
+  18              		.text
+  19              	.Ltext0:
+  20              		.cfi_sections	.debug_frame
+  21              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  22              		.align	2
+  23              		.global	MX_GPIO_Init
+  24              		.thumb
+  25              		.thumb_func
+  27              	MX_GPIO_Init:
+  28              	.LFB130:
+  29              		.file 1 "Src/gpio.c"
+   1:Src/gpio.c    **** /**
+   2:Src/gpio.c    ****   ******************************************************************************
+   3:Src/gpio.c    ****   * File Name          : gpio.c
+   4:Src/gpio.c    ****   * Description        : This file provides code for the configuration
+   5:Src/gpio.c    ****   *                      of all used GPIO pins.
+   6:Src/gpio.c    ****   ******************************************************************************
+   7:Src/gpio.c    ****   * @attention
+   8:Src/gpio.c    ****   *
+   9:Src/gpio.c    ****   * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  10:Src/gpio.c    ****   * All rights reserved.</center></h2>
+  11:Src/gpio.c    ****   *
+  12:Src/gpio.c    ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Src/gpio.c    ****   * the "License"; You may not use this file except in compliance with the
+  14:Src/gpio.c    ****   * License. You may obtain a copy of the License at:
+  15:Src/gpio.c    ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Src/gpio.c    ****   *
+  17:Src/gpio.c    ****   ******************************************************************************
+  18:Src/gpio.c    ****   */
+  19:Src/gpio.c    **** 
+  20:Src/gpio.c    **** /* Includes ------------------------------------------------------------------*/
+  21:Src/gpio.c    **** #include "gpio.h"
+  22:Src/gpio.c    **** /* USER CODE BEGIN 0 */
+  23:Src/gpio.c    **** 
+  24:Src/gpio.c    **** /* USER CODE END 0 */
+  25:Src/gpio.c    **** 
+  26:Src/gpio.c    **** /*----------------------------------------------------------------------------*/
+  27:Src/gpio.c    **** /* Configure GPIO                                                             */
+  28:Src/gpio.c    **** /*----------------------------------------------------------------------------*/
+  29:Src/gpio.c    **** /* USER CODE BEGIN 1 */
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s 			page 2
+
+
+  30:Src/gpio.c    **** 
+  31:Src/gpio.c    **** /* USER CODE END 1 */
+  32:Src/gpio.c    **** 
+  33:Src/gpio.c    **** /** Configure pins as 
+  34:Src/gpio.c    ****         * Analog 
+  35:Src/gpio.c    ****         * Input 
+  36:Src/gpio.c    ****         * Output
+  37:Src/gpio.c    ****         * EVENT_OUT
+  38:Src/gpio.c    ****         * EXTI
+  39:Src/gpio.c    **** */
+  40:Src/gpio.c    **** void MX_GPIO_Init(void)
+  41:Src/gpio.c    **** {
+  30              		.loc 1 41 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 32
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34 0000 00B5     		push	{lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 4
+  37              		.cfi_offset 14, -4
+  38 0002 89B0     		sub	sp, sp, #36
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 40
+  42:Src/gpio.c    **** 
+  43:Src/gpio.c    ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  41              		.loc 1 43 0
+  42 0004 0023     		movs	r3, #0
+  43 0006 0393     		str	r3, [sp, #12]
+  44 0008 0493     		str	r3, [sp, #16]
+  45 000a 0593     		str	r3, [sp, #20]
+  46 000c 0693     		str	r3, [sp, #24]
+  47 000e 0793     		str	r3, [sp, #28]
+  48              	.LBB2:
+  44:Src/gpio.c    **** 
+  45:Src/gpio.c    ****   /* GPIO Ports Clock Enable */
+  46:Src/gpio.c    ****   __HAL_RCC_GPIOH_CLK_ENABLE();
+  49              		.loc 1 46 0
+  50 0010 0193     		str	r3, [sp, #4]
+  51 0012 134A     		ldr	r2, .L3
+  52 0014 116B     		ldr	r1, [r2, #48]
+  53 0016 41F08001 		orr	r1, r1, #128
+  54 001a 1163     		str	r1, [r2, #48]
+  55 001c 116B     		ldr	r1, [r2, #48]
+  56 001e 01F08001 		and	r1, r1, #128
+  57 0022 0191     		str	r1, [sp, #4]
+  58 0024 0199     		ldr	r1, [sp, #4]
+  59              	.LBE2:
+  60              	.LBB3:
+  47:Src/gpio.c    ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  61              		.loc 1 47 0
+  62 0026 0293     		str	r3, [sp, #8]
+  63 0028 136B     		ldr	r3, [r2, #48]
+  64 002a 43F00103 		orr	r3, r3, #1
+  65 002e 1363     		str	r3, [r2, #48]
+  66 0030 136B     		ldr	r3, [r2, #48]
+  67 0032 03F00103 		and	r3, r3, #1
+  68 0036 0293     		str	r3, [sp, #8]
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s 			page 3
+
+
+  69 0038 029B     		ldr	r3, [sp, #8]
+  70              	.LBE3:
+  48:Src/gpio.c    **** 
+  49:Src/gpio.c    ****   /*Configure GPIO pins : PA6 PA7 */
+  50:Src/gpio.c    ****   GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+  71              		.loc 1 50 0
+  72 003a C023     		movs	r3, #192
+  73 003c 0393     		str	r3, [sp, #12]
+  51:Src/gpio.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  74              		.loc 1 51 0
+  75 003e 094B     		ldr	r3, .L3+4
+  76 0040 0493     		str	r3, [sp, #16]
+  52:Src/gpio.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  53:Src/gpio.c    ****   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  77              		.loc 1 53 0
+  78 0042 03A9     		add	r1, sp, #12
+  79 0044 0848     		ldr	r0, .L3+8
+  80 0046 FFF7FEFF 		bl	HAL_GPIO_Init
+  81              	.LVL0:
+  54:Src/gpio.c    **** 
+  55:Src/gpio.c    ****   /* EXTI interrupt init*/
+  56:Src/gpio.c    ****   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 1);
+  82              		.loc 1 56 0
+  83 004a 0122     		movs	r2, #1
+  84 004c 1146     		mov	r1, r2
+  85 004e 1720     		movs	r0, #23
+  86 0050 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  87              	.LVL1:
+  57:Src/gpio.c    ****   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+  88              		.loc 1 57 0
+  89 0054 1720     		movs	r0, #23
+  90 0056 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  91              	.LVL2:
+  58:Src/gpio.c    **** 
+  59:Src/gpio.c    **** }
+  92              		.loc 1 59 0
+  93 005a 09B0     		add	sp, sp, #36
+  94              	.LCFI2:
+  95              		.cfi_def_cfa_offset 4
+  96              		@ sp needed
+  97 005c 5DF804FB 		ldr	pc, [sp], #4
+  98              	.L4:
+  99              		.align	2
+ 100              	.L3:
+ 101 0060 00380240 		.word	1073887232
+ 102 0064 00001110 		.word	269549568
+ 103 0068 00000240 		.word	1073872896
+ 104              		.cfi_endproc
+ 105              	.LFE130:
+ 107              		.text
+ 108              	.Letext0:
+ 109              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 110              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 111              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h"
+ 112              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 113              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 114              		.file 7 "Drivers/CMSIS/Include/core_cm4.h"
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s 			page 4
+
+
+ARM GAS  C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gpio.c
+C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s:22     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Kero\AppData\Local\Temp\ccEXykBs.s:101    .text.MX_GPIO_Init:00000060 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ

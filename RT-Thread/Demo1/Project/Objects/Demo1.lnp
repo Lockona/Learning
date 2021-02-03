@@ -1,5 +1,9 @@
 --cpu=Cortex-M4 --fpu=SoftVFP
 ".\objects\main.o"
+".\objects\cpuport.o"
+".\objects\context_rvds.o"
+".\objects\scheduler.o"
+".\objects\thread.o"
 ".\objects\startup_armcm4.o"
 ".\objects\system_armcm4.o"
 --strict --scatter ".\Objects\Demo1.sct"

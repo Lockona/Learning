@@ -9,12 +9,12 @@ License Information: z z, z, LIC=EPPLD-8G8VI-PHM89-45PDX-41UV3-HGPM8
  
 Tool Versions:
 Toolchain:       MDK-ARM Professional  Version: 5.33.0.0
-Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.15
-Assembler:       Armasm.exe V6.15
-Linker/Locator:  ArmLink.exe V6.15
-Library Manager: ArmAr.exe V6.15
-Hex Converter:   FromElf.exe V6.15
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.33.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
 Target DLL:      UL2CM3.DLL V1.163.9.0
@@ -22,36 +22,21 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 D:\STM32\Learning\RT-Thread\Demo1\Project\Demo1.uvprojx
-Project File Date:  02/02/2021
+Project File Date:  02/03/2021
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'Target 1'
-compiling system_ARMCM4.c...
-../User/main.c(3): warning: no previous extern declaration for non-static variable 'flag1' [-Wmissing-variable-declarations]
-uint32_t flag1 =0;
-         ^
-../User/main.c(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint32_t flag1 =0;
-^
-../User/main.c(4): warning: no previous extern declaration for non-static variable 'flag2' [-Wmissing-variable-declarations]
-uint32_t flag2 =0;
-         ^
-../User/main.c(4): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint32_t flag2 =0;
-^
-../User/main.c(6): warning: no previous prototype for function 'delay' [-Wmissing-prototypes]
-void delay(uint32_t count)
-     ^
-../User/main.c(6): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void delay(uint32_t count)
-^
-static 
-3 warnings generated.
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling context_rvds.s...
+compiling cpuport.c...
+compiling thread.c...
+compiling scheduler.c...
 compiling main.c...
+assembling startup_ARMCM4.s...
+compiling system_ARMCM4.c...
 linking...
-Program Size: Code=308 RO-data=992 RW-data=4 ZI-data=1036  
-".\Objects\Demo1.axf" - 0 Error(s), 3 Warning(s).
+Program Size: Code=924 RO-data=992 RW-data=32 ZI-data=2360  
+".\Objects\Demo1.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -74,7 +59,7 @@ Package Vendor: ARM
    * Component: ARM::Device:Startup:1.2.2
       Source file:   Device\ARM\ARMCM4\Source\ARM\startup_ARMCM4.s
       Source file:   Device\ARM\ARMCM4\Source\system_ARMCM4.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
