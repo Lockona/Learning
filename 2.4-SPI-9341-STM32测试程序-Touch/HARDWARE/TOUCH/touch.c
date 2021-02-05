@@ -77,11 +77,11 @@ void TP_Write_Byte(u8 num)
 	u8 count=0;   
 	for(count=0;count<8;count++)  
 	{ 	  
-		if(num&0x80)TDIN=1;  
-		else TDIN=0;   
+		if(num&0x80)TDIN(1);  
+		else TDIN(0);   
 		num<<=1;    
-		TCLK=0; 	 
-		TCLK=1;		//上升沿有效	        
+		TCLK(0); 	 
+		TCLK(1);		//上升沿有效	        
 	}		 			    
 } 		 
 //SPI读数据 
@@ -92,24 +92,24 @@ u16 TP_Read_AD(u8 CMD)
 { 	 
 	u8 count=0; 	  
 	u16 Num=0; 
-	TCLK=0;		//先拉低时钟 	 
-	TDIN=0; 	//拉低数据线
-	TCS=0; 		//选中触摸屏IC
+	TCLK(0);		//先拉低时钟 	 
+	TDIN(0); 	//拉低数据线
+	TCS(0); 		//选中触摸屏IC
 	TP_Write_Byte(CMD);//发送命令字
 	delay_us(6);//ADS7846的转换时间最长为6us
-	TCLK=0; 	     	    
+	TCLK(0); 	     	    
 	delay_us(1);    	   
-	TCLK=1;		//给1个时钟，清除BUSY	    	    
-	TCLK=0; 	     	    
+	TCLK(1);		//给1个时钟，清除BUSY	    	    
+	TCLK(0); 	     	    
 	for(count=0;count<16;count++)//读出16位数据,只有高12位有效 
 	{ 				  
 		Num<<=1; 	 
-		TCLK=0;	//下降沿有效  	    	   
-		TCLK=1;
+		TCLK(0);	//下降沿有效  	    	   
+		TCLK(1);
 		if(DOUT)Num++; 		 
 	}  	
 	Num>>=4;   	//只有高12位有效.
-	TCS=1;		//释放片选	 
+	TCS(1);		//释放片选	 
 	return(Num);   
 }
 //读取一个坐标值(x或者y)
@@ -214,7 +214,7 @@ void TP_Draw_Big_Point(u16 x,u16 y,u16 color)
 //返回值:当前触屏状态.
 //0,触屏无触摸;1,触屏有触摸
 u8 TP_Scan(u8 tp)
-{			   
+{		
 	if(PEN==0)//有按键按下
 	{
 		if(tp)TP_Read_XY2(&tp_dev.x,&tp_dev.y);//读取物理坐标
@@ -250,20 +250,20 @@ u8 TP_Scan(u8 tp)
 //保存校准参数										    
 void TP_Save_Adjdata(void)
 {
-//	s32 temp;			 
-//	//保存校正结果!		   							  
-//	temp=tp_dev.xfac*100000000;//保存x校正因素      
-//    AT24CXX_WriteLenByte(SAVE_ADDR_BASE,temp,4);   
-//	temp=tp_dev.yfac*100000000;//保存y校正因素    
-//    AT24CXX_WriteLenByte(SAVE_ADDR_BASE+4,temp,4);
-//	//保存x偏移量
-//    AT24CXX_WriteLenByte(SAVE_ADDR_BASE+8,tp_dev.xoff,2);		    
-//	//保存y偏移量
-//	AT24CXX_WriteLenByte(SAVE_ADDR_BASE+10,tp_dev.yoff,2);	
-//	//保存触屏类型
-//	AT24CXX_WriteOneByte(SAVE_ADDR_BASE+12,tp_dev.touchtype);	
-//	temp=0X0A;//标记校准过了
-//	AT24CXX_WriteOneByte(SAVE_ADDR_BASE+13,temp); 
+	s32 temp;			 
+	//保存校正结果!		   							  
+	temp=tp_dev.xfac*100000000;//保存x校正因素      
+    //AT24CXX_WriteLenByte(SAVE_ADDR_BASE,temp,4);   
+	temp=tp_dev.yfac*100000000;//保存y校正因素    
+    //AT24CXX_WriteLenByte(SAVE_ADDR_BASE+4,temp,4);
+	//保存x偏移量
+    //AT24CXX_WriteLenByte(SAVE_ADDR_BASE+8,tp_dev.xoff,2);		    
+	//保存y偏移量
+	//AT24CXX_WriteLenByte(SAVE_ADDR_BASE+10,tp_dev.yoff,2);	
+	//保存触屏类型
+	//AT24CXX_WriteOneByte(SAVE_ADDR_BASE+12,tp_dev.touchtype);	
+	temp=0X0A;//标记校准过了
+	//AT24CXX_WriteOneByte(SAVE_ADDR_BASE+13,temp); 
 }
 //得到保存在EEPROM里面的校准值
 //返回值：1，成功获取数据
@@ -332,7 +332,7 @@ void TP_Adjust(void)
 	u8  cnt=0;	
 	u16 d1,d2;
 	u32 tem1,tem2;
-	float fac; 	
+	double fac; 	
 	u16 outtime=0;
  	cnt=0;				
 	POINT_COLOR=BLUE;
@@ -466,7 +466,7 @@ void TP_Adjust(void)
 					LCD_Clear(WHITE);//清屏
 					LCD_ShowString(35,110, 16,"Touch Screen Adjust OK!",1);//校正完成
 					delay_ms(1000);
-					TP_Save_Adjdata();  
+					//TP_Save_Adjdata();  
  					LCD_Clear(WHITE);//清屏   
 					return;//校正完成				 
 			}
@@ -475,7 +475,7 @@ void TP_Adjust(void)
 		outtime++;
 		if(outtime>1000)
 		{
-			TP_Get_Adjdata();
+			//TP_Get_Adjdata();
 			break;
 	 	} 
  	}
@@ -494,28 +494,29 @@ u8 TP_Init(void)
 		    		   
 	//注意,时钟使能之后,对GPIO的操作才有效
 	//所以上拉之前,必须使能时钟.才能实现真正的上拉输出
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC  | RCC_APB2Periph_AFIO, ENABLE);
-	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3|GPIO_Pin_0|GPIO_Pin_13;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;  //推挽输出 
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC,ENABLE);
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4|GPIO_Pin_10|GPIO_Pin_12;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;  //推挽输出 
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);	
 
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1|GPIO_Pin_2;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU ;  //上拉输入
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2|GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN ;  //上拉输入
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
- 	   
 
   	TP_Read_XY(&tp_dev.x,&tp_dev.y);//第一次读取初始化	 
 // 	AT24CXX_Init();//初始化24CXX
-	if(TP_Get_Adjdata())return 0;//已经校准
-	else			   //未校准?
+	//if(TP_Get_Adjdata())return 0;//已经校准
+	//else			   //未校准?
 	{ 										    
 		LCD_Clear(WHITE);//清屏
-	    TP_Adjust();  //屏幕校准 
-		TP_Save_Adjdata();	 
+//	    TP_Adjust();  //屏幕校准 
+//		TP_Save_Adjdata();	 
 	}			
-	TP_Get_Adjdata();	
+//	TP_Get_Adjdata();	
 	return 1; 									 
 }
 

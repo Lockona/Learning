@@ -1,6 +1,6 @@
 #ifndef __TOUCH_H__
 #define __TOUCH_H__
-#include "sys.h"
+#include "stm32f4xx.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //测试硬件：单片机STM32F103RBT6,主频72M  单片机工作电压3.3V
@@ -61,12 +61,17 @@ extern _m_tp_dev tp_dev;	 	//触屏控制器在touch.c里面定义
 
 //与触摸屏芯片连接引脚	   
 //与触摸屏芯片连接引脚	   
-#define PEN  PCin(1)   //PC1  INT
-#define DOUT PCin(2)   //PC2  MISO
-#define TDIN PCout(3)  //PC3  MOSI
-#define TCLK PCout(0)  //PC0  SCLK
-#define TCS  PCout(13) //PC13 CS    
-     
+//#define PEN  PCin(2)   //PC1  INT
+//#define DOUT PCin(11)   //PC2  MISO
+//#define TDIN PCout(12)  //PC3  MOSI
+//#define TCLK PCout(10)  //PC0  SCLK
+//#define TCS  PCout(4) //PC13 CS    
+#define Touch_Port   	  	GPIOC		//定义TFT数据端口
+#define PEN  (Touch_Port->IDR &(1<<2))   //PC2  INT
+#define DOUT (Touch_Port->IDR &(1<<11))   //PC11  MISO
+#define TDIN(x) Touch_Port->ODR = x ? Touch_Port->ODR |(1<<12):Touch_Port->ODR &(~(1<<12)) //PC12  MOSI
+#define TCLK(x) Touch_Port->ODR = x ? Touch_Port->ODR |(1<<10):Touch_Port->ODR &(~(1<<10)) //PC10  SCLK
+#define TCS(x) Touch_Port->ODR = x ? Touch_Port->ODR |(1<<4):Touch_Port->ODR &(~(1<<4)) //PC4 CS    //PC3 MOSI--->>TFT --SDA/DIN    
 
 void TP_Write_Byte(u8 num);						//向控制芯片写入一个数据
 u16 TP_Read_AD(u8 CMD);							//读取AD转换值

@@ -1,6 +1,5 @@
 ..\obj\gui.o: GUI.c
 ..\obj\gui.o: ..\HARDWARE\LCD\lcd.h
-..\obj\gui.o: ..\SYSTEM\sys\sys.h
 ..\obj\gui.o: ..\CMSIS\Include\stm32f4xx.h
 ..\obj\gui.o: ..\CMSIS\Include\core_cm4.h
 ..\obj\gui.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

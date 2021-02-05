@@ -256,7 +256,7 @@ void Touch_Test(void)
 	u16 colorTemp=0;
 	TP_Init();
 //	KEY_Init();
-	//TP_Adjust();  		//强制执行一次屏幕校准 (适用于没有IIC存储触摸参数的用户)
+	TP_Adjust();  		//强制执行一次屏幕校准 (适用于没有IIC存储触摸参数的用户)
 	DrawTestPage("测试7:Touch测试");
 	LCD_ShowString(lcddev.width-24,0,16,"RST",1);//显示清屏区域
 	LCD_Fill(lcddev.width-52,2,lcddev.width-50+20,18,RED); 

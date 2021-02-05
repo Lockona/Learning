@@ -1,6 +1,5 @@
 ..\obj\lcd.o: ..\HARDWARE\LCD\lcd.c
 ..\obj\lcd.o: ..\HARDWARE\LCD\lcd.h
-..\obj\lcd.o: ..\SYSTEM\sys\sys.h
 ..\obj\lcd.o: ..\CMSIS\Include\stm32f4xx.h
 ..\obj\lcd.o: ..\CMSIS\Include\core_cm4.h
 ..\obj\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

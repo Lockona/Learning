@@ -50,17 +50,17 @@
 int main(void)
 {		
 	SystemInit();//初始化RCC 设置系统主频为72MHZ
-	delay_init(72);	     //延时初始化
+	delay_init(168);	     //延时初始化
 	LCD_Init();	   //液晶屏初始化	
 	while(1)
 	{		
-		main_test(); 		//测试主界面
-		Test_Color();  		//简单刷屏填充测试
-		Test_FillRec();		//GUI矩形绘图测试
-		Test_Circle(); 		//GUI画圆测试
-		English_Font_test();//英文字体示例测试
-		Chinese_Font_test();//中文字体示例测试
-		Pic_test();			//图片显示示例测试
+//		main_test(); 		//测试主界面
+//		Test_Color();  		//简单刷屏填充测试
+//		Test_FillRec();		//GUI矩形绘图测试
+//		Test_Circle(); 		//GUI画圆测试
+//		English_Font_test();//英文字体示例测试
+//		Chinese_Font_test();//中文字体示例测试
+//		Pic_test();			//图片显示示例测试
 		Touch_Test();		//触摸屏手写测试  
 	}				  
 	

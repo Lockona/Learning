@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\USER;..\HARDWARE\TOUCH;..\CMSIS\Include;..\STM32F4xx_StdPeriph_Driver\inc;..\SYSTEM\delay;..\SYSTEM\sys;..\HARDWARE\LCD;..\HARDWARE\IIC</IncludePath>
+              <IncludePath>..\USER;..\HARDWARE\TOUCH;..\CMSIS\Include;..\STM32F4xx_StdPeriph_Driver\inc;..\SYSTEM\delay;..\SYSTEM\sys;..\HARDWARE\LCD;..\HARDWARE\FLASH</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -447,11 +447,6 @@
               <FileName>stm32f4xx_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_rcc.c</FileName>

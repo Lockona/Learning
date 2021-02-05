@@ -518,7 +518,7 @@ void LCD_SetCursor(u16 Xpos, u16 Ypos)
 void LCD_SetParam(void)
 { 	
 	lcddev.wramcmd=0x2C;
-#if USE_HORIZONTAL==1	//使用横屏	  
+#if USE_HORIZONTAL==0	//使用横屏	  
 	lcddev.dir=1;//横屏
 	lcddev.width=320;
 	lcddev.height=240;
