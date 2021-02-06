@@ -133,7 +133,7 @@ I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5F0025CA)
-F (..\..\User\main.c)(0x601E010F)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+F (..\..\User\main.c)(0x601E7C54)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
 I (..\..\FreeRTOS\include\FreeRTOS.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
@@ -169,13 +169,13 @@ I (..\..\FreeRTOS\include\task.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\list.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\semphr.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\queue.h)(0x5F0025CA)
-I (..\..\User\lcd\lcd_driver.h)(0x601D6635)
+I (..\..\User\lcd\lcd_driver.h)(0x601E02F6)
 I (..\..\User\sys.h)(0x601BD757)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
-I (..\..\User\TOUCH\touch.h)(0x601E0074)
+I (..\..\User\TOUCH\touch.h)(0x601E02DD)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
-I (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)
+I (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)
 I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
@@ -216,8 +216,8 @@ I (..\..\STemWin\inc\SWIPELIST.h)(0x5F0025CA)
 I (..\..\STemWin\inc\TEXT.h)(0x5F0025CA)
 I (..\..\STemWin\inc\TREEVIEW.h)(0x5F0025CA)
 I (..\..\STemWin\inc\KNOB.h)(0x5F0025CA)
-I (..\..\STemWin_Task\MainTask.h)(0x5F0025CA)
-F (..\..\User\stm32f4xx_it.c)(0x5F0025CA)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\stm32f4xx_it.o --omf_browse ..\..\output\stm32f4xx_it.crf --depend ..\..\output\stm32f4xx_it.d)
+I (..\..\STemWin_Task\MainTask.h)(0x601E7B1D)
+F (..\..\User\stm32f4xx_it.c)(0x601E0513)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\stm32f4xx_it.o --omf_browse ..\..\output\stm32f4xx_it.crf --depend ..\..\output\stm32f4xx_it.d)
 I (..\..\User\stm32f4xx_it.h)(0x5F0025CA)
 I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x601C0930)
 I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5F0025CA)
@@ -253,8 +253,8 @@ I (..\..\FreeRTOS\include\mpu_wrappers.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\task.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\list.h)(0x5F0025CA)
 F (..\..\User\FreeRTOSConfig.h)(0x5F0025CA)()
-F (..\..\User\lcd\lcd_driver.c)(0x601D6A1F)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\lcd_driver.o --omf_browse ..\..\output\lcd_driver.crf --depend ..\..\output\lcd_driver.d)
-I (..\..\User\lcd\lcd_driver.h)(0x601D6635)
+F (..\..\User\lcd\lcd_driver.c)(0x601E02EC)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\lcd_driver.o --omf_browse ..\..\output\lcd_driver.crf --depend ..\..\output\lcd_driver.d)
+I (..\..\User\lcd\lcd_driver.h)(0x601E02F6)
 I (..\..\User\sys.h)(0x601BD757)
 I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x601C0930)
 I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5F0025CA)
@@ -290,9 +290,9 @@ I (..\..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\mpu_wrappers.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\task.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\list.h)(0x5F0025CA)
-I (..\..\User\TOUCH\touch.h)(0x601E0074)
-F (..\..\User\TOUCH\touch.c)(0x601E0074)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\touch.o --omf_browse ..\..\output\touch.crf --depend ..\..\output\touch.d)
-I (..\..\User\TOUCH\touch.h)(0x601E0074)
+I (..\..\User\TOUCH\touch.h)(0x601E02DD)
+F (..\..\User\TOUCH\touch.c)(0x601E0B48)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\touch.o --omf_browse ..\..\output\touch.crf --depend ..\..\output\touch.d)
+I (..\..\User\TOUCH\touch.h)(0x601E02DD)
 I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x601C0930)
 I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
@@ -314,14 +314,14 @@ I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5F0025CA)
-I (..\..\User\lcd\lcd_driver.h)(0x601D6635)
+I (..\..\User\lcd\lcd_driver.h)(0x601E02F6)
 I (..\..\User\sys.h)(0x601BD757)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
-I (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)
+I (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)
 I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
@@ -613,26 +613,26 @@ I (..\..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\mpu_wrappers.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\task.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\list.h)(0x5F0025CA)
-F (..\..\STemWin\Config\GUIConf.c)(0x601CC1E1)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\guiconf.o --omf_browse ..\..\output\guiconf.crf --depend ..\..\output\guiconf.d)
+F (..\..\STemWin\Config\GUIConf.c)(0x601E0310)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\guiconf.o --omf_browse ..\..\output\guiconf.crf --depend ..\..\output\guiconf.d)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
-I (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)
+I (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)
 I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_Version.h)(0x5F0025CA)
-F (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)()
-F (..\..\STemWin\Config\LCDConf_FlexColor.c)(0x601E015D)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\lcdconf_flexcolor.o --omf_browse ..\..\output\lcdconf_flexcolor.crf --depend ..\..\output\lcdconf_flexcolor.d)
+F (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)()
+F (..\..\STemWin\Config\LCDConf_FlexColor.c)(0x601E0342)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\lcdconf_flexcolor.o --omf_browse ..\..\output\lcdconf_flexcolor.crf --depend ..\..\output\lcdconf_flexcolor.d)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
-I (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)
+I (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)
 I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_Version.h)(0x5F0025CA)
-I (..\..\User\lcd\lcd_driver.h)(0x601D6635)
+I (..\..\User\lcd\lcd_driver.h)(0x601E02F6)
 I (..\..\User\sys.h)(0x601BD757)
 I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x601C0930)
 I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5F0025CA)
@@ -656,12 +656,12 @@ I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
-I (..\..\User\TOUCH\touch.h)(0x601E0074)
+I (..\..\User\TOUCH\touch.h)(0x601E02DD)
 F (..\..\STemWin\OS\GUI_X_FreeRTOS.c)(0x5F0025CA)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\gui_x_freertos.o --omf_browse ..\..\output\gui_x_freertos.crf --depend ..\..\output\gui_x_freertos.d)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
-I (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)
+I (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)
 I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
@@ -701,14 +701,14 @@ I (..\..\FreeRTOS\include\list.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\semphr.h)(0x5F0025CA)
 I (..\..\FreeRTOS\include\queue.h)(0x5F0025CA)
 F (..\..\STemWin\Lib\STemWin_CM4_OS_wc16_ot_ARGB.a)(0x5F0025CA)()
-F (..\..\STemWin\Config\GUIDRV_Template.c)(0x601D6735)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\guidrv_template.o --omf_browse ..\..\output\guidrv_template.crf --depend ..\..\output\guidrv_template.d)
+F (..\..\STemWin\Config\GUIDRV_Template.c)(0x601E0C57)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\guidrv_template.o --omf_browse ..\..\output\guidrv_template.crf --depend ..\..\output\guidrv_template.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\LCD_Private.h)(0x5F0025CA)
 I (..\..\STemWin\Config\LCDConf.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD_Protected.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
-I (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)
+I (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
@@ -717,7 +717,7 @@ I (..\..\STemWin\inc\GUI_Private.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_Debug.h)(0x5F0025CA)
 I (..\..\STemWin\inc\WM_GUI.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD_ConfDefaults.h)(0x5F0025CA)
-I (..\..\User\lcd\lcd_driver.h)(0x601D6635)
+I (..\..\User\lcd\lcd_driver.h)(0x601E02F6)
 I (..\..\User\sys.h)(0x601BD757)
 I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x601C0930)
 I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5F0025CA)
@@ -741,15 +741,16 @@ I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
-F (..\..\STemWin_Task\MainTask.c)(0x601CB11F)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\maintask.o --omf_browse ..\..\output\maintask.crf --depend ..\..\output\maintask.d)
+F (..\..\STemWin_Task\MainTask.c)(0x601E8AD3)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\maintask.o --omf_browse ..\..\output\maintask.crf --depend ..\..\output\maintask.d)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
-I (..\..\STemWin\Config\GUIConf.h)(0x5F0025CA)
+I (..\..\STemWin\Config\GUIConf.h)(0x601E4B52)
 I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_Version.h)(0x5F0025CA)
+I (..\..\STemWin_Task\MainTask.h)(0x601E7B1D)
 I (..\..\STemWin\inc\DIALOG.h)(0x5F0025CA)
 I (..\..\STemWin\inc\WM.h)(0x5F0025CA)
 I (..\..\STemWin\inc\WM_GUI.h)(0x5F0025CA)

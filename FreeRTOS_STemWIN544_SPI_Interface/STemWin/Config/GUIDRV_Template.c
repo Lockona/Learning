@@ -164,6 +164,7 @@ static void _SetPixelIndex(GUI_DEVICE *pDevice, int x, int y, unsigned long Pixe
     // TBD by customer...
     //
     LCD_DrawPoint(x, y, PixelIndex);
+	  
     //		   LCD_SetCursor(x,y);//���ù��λ��
     //		   LCD_CS_CLR;
     //		   LCD_RS_SET;

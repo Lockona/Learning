@@ -240,7 +240,6 @@ void GUI_TOUCH_Scan(void)
 		State.Layer = 0;
 		//�洢�������굽emwinʹ�õ�fifo
 		GUI_PID_StoreState(&State);
-		return;
 	}
 	else
 	{
