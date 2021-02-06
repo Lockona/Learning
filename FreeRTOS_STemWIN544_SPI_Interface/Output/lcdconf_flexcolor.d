@@ -32,3 +32,4 @@
 ..\..\output\lcdconf_flexcolor.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 ..\..\output\lcdconf_flexcolor.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 ..\..\output\lcdconf_flexcolor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\lcdconf_flexcolor.o: ..\..\User\TOUCH\touch.h

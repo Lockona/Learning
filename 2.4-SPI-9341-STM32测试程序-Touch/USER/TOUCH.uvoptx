@@ -148,60 +148,17 @@
           <Name>UL2CM3(-S0 -C0 -P0 ) -FN1 -FC1000 -FD20000000 -FF0STM32F4xx_512 -FL080000 -FS08000000 -FP0($$Device:STM32F407VETx$CMSIS\Flash\STM32F4xx_512.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>387</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134226948</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\STM32\Learning\2.4-SPI-9341-STM32娴嬭瘯绋嬪簭-Touch\HARDWARE\TOUCH\touch.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\TOUCH\../HARDWARE/TOUCH/touch.c\387</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>172</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134225482</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\STM32\Learning\2.4-SPI-9341-STM32娴嬭瘯绋嬪簭-Touch\HARDWARE\TOUCH\touch.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\TOUCH\../HARDWARE/TOUCH/touch.c\172</Expression>
-        </Bp>
-      </Breakpoint>
+      <Breakpoint/>
       <WatchWindow1>
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>PCin</ItemText>
+          <ItemText>tp_dev</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>PCin(11)</ItemText>
-        </Ww>
-        <Ww>
-          <count>2</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>tp_dev.xfac</ItemText>
-        </Ww>
-        <Ww>
-          <count>3</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>pos_temp[2]</ItemText>
+          <ItemText>point</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

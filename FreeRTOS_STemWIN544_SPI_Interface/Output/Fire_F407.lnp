@@ -9,6 +9,7 @@
 "..\..\output\main.o"
 "..\..\output\stm32f4xx_it.o"
 "..\..\output\lcd_driver.o"
+"..\..\output\touch.o"
 "..\..\output\croutine.o"
 "..\..\output\event_groups.o"
 "..\..\output\list.o"

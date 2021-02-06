@@ -54,11 +54,11 @@ Purpose     : Display controller initialization
 *
 **********************************************************************
 */
-/* ¶¨ÒåÓÃÓÚGUIµÄ¿ÉÓÃ×Ö½ÚÊý */
-#if 0//USE_EXTMEMHEAP
-  #define GUI_NUMBYTES   (1024 * 1024)    // x Byte
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GUIï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ */
+#if 0                              //USE_EXTMEMHEAP
+#define GUI_NUMBYTES (1024 * 1024) // x Byte
 #else
-  #define GUI_NUMBYTES  (1024 * 32)    // x Byte
+#define GUI_NUMBYTES (1024 * 32) // x Byte
 #endif
 
 /*********************************************************************
@@ -67,10 +67,10 @@ Purpose     : Display controller initialization
 *
 **********************************************************************
 */
-#if 0//USE_EXTMEMHEAP
+#if 0 //USE_EXTMEMHEAP
   static U32 HeapMem[GUI_NUMBYTES / 4] __attribute__((at(Bank1_SRAM4_ADDR)));
 #else
-  static U32 extMem[GUI_NUMBYTES / 4];
+static U32 extMem[GUI_NUMBYTES / 4];
 #endif
 
 /*********************************************************************
@@ -89,10 +89,10 @@ Purpose     : Display controller initialization
 */
 void GUI_X_Config(void)
 {
-#if 0//USE_EXTMEMHEAP
+#if 0 //USE_EXTMEMHEAP
   GUI_ALLOC_AssignMemory(HeapMem, GUI_NUMBYTES);
-#else	
-  GUI_ALLOC_AssignMemory(extMem, GUI_NUMBYTES);	
+#else
+  GUI_ALLOC_AssignMemory(extMem, GUI_NUMBYTES);
 #endif
 }
 

@@ -59,7 +59,6 @@ Purpose     : Template driver, could be used as starting point for new
 #include "LCD_ConfDefaults.h"
 #include "lcd_driver.h"
 
-
 /*********************************************************************
 *
 *       Defines
@@ -70,43 +69,43 @@ Purpose     : Template driver, could be used as starting point for new
 *
 *       Macros for MIRROR_, SWAP_ and LUT_
 */
-#if (!defined (LCD_LUT_COM) && !defined(LCD_LUT_SEG))
-  #if   (!LCD_MIRROR_X && !LCD_MIRROR_Y && !LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) x
-    #define LOG2PHYS_Y(x, y) y
-  #elif (!LCD_MIRROR_X && !LCD_MIRROR_Y &&  LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) y
-    #define LOG2PHYS_Y(x, y) x
-  #elif (!LCD_MIRROR_X &&  LCD_MIRROR_Y && !LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) x
-    #define LOG2PHYS_Y(x, y) LCD_YSIZE - 1 - (y)
-  #elif (!LCD_MIRROR_X &&  LCD_MIRROR_Y &&  LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) y
-    #define LOG2PHYS_Y(x, y) LCD_XSIZE - 1 - (x)
-  #elif ( LCD_MIRROR_X && !LCD_MIRROR_Y && !LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) LCD_XSIZE - 1 - (x)
-    #define LOG2PHYS_Y(x, y) y
-  #elif ( LCD_MIRROR_X && !LCD_MIRROR_Y &&  LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) LCD_YSIZE - 1 - (y)
-    #define LOG2PHYS_Y(x, y) x
-  #elif ( LCD_MIRROR_X &&  LCD_MIRROR_Y && !LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) LCD_XSIZE - 1 - (x)
-    #define LOG2PHYS_Y(x, y) LCD_YSIZE - 1 - (y)
-  #elif ( LCD_MIRROR_X &&  LCD_MIRROR_Y &&  LCD_SWAP_XY) 
-    #define LOG2PHYS_X(x, y) LCD_YSIZE - 1 - (y)
-    #define LOG2PHYS_Y(x, y) LCD_XSIZE - 1 - (x)
-  #endif
+#if (!defined(LCD_LUT_COM) && !defined(LCD_LUT_SEG))
+#if (!LCD_MIRROR_X && !LCD_MIRROR_Y && !LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) x
+#define LOG2PHYS_Y(x, y) y
+#elif (!LCD_MIRROR_X && !LCD_MIRROR_Y && LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) y
+#define LOG2PHYS_Y(x, y) x
+#elif (!LCD_MIRROR_X && LCD_MIRROR_Y && !LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) x
+#define LOG2PHYS_Y(x, y) LCD_YSIZE - 1 - (y)
+#elif (!LCD_MIRROR_X && LCD_MIRROR_Y && LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) y
+#define LOG2PHYS_Y(x, y) LCD_XSIZE - 1 - (x)
+#elif (LCD_MIRROR_X && !LCD_MIRROR_Y && !LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) LCD_XSIZE - 1 - (x)
+#define LOG2PHYS_Y(x, y) y
+#elif (LCD_MIRROR_X && !LCD_MIRROR_Y && LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) LCD_YSIZE - 1 - (y)
+#define LOG2PHYS_Y(x, y) x
+#elif (LCD_MIRROR_X && LCD_MIRROR_Y && !LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) LCD_XSIZE - 1 - (x)
+#define LOG2PHYS_Y(x, y) LCD_YSIZE - 1 - (y)
+#elif (LCD_MIRROR_X && LCD_MIRROR_Y && LCD_SWAP_XY)
+#define LOG2PHYS_X(x, y) LCD_YSIZE - 1 - (y)
+#define LOG2PHYS_Y(x, y) LCD_XSIZE - 1 - (x)
+#endif
 #else
-  #if   ( defined (LCD_LUT_COM) && !defined(LCD_LUT_SEG))
-    #define LOG2PHYS_X(x, y) x
-    #define LOG2PHYS_Y(x, y) LCD__aLine2Com0[y]
-  #elif (!defined (LCD_LUT_COM) &&  defined(LCD_LUT_SEG))
-    #define LOG2PHYS_X(x, y) LCD__aCol2Seg0[x]
-    #define LOG2PHYS_Y(x, y) y
-  #elif ( defined (LCD_LUT_COM) &&  defined(LCD_LUT_SEG))
-    #define LOG2PHYS_X(x, y) LCD__aCol2Seg0[x]
-    #define LOG2PHYS_Y(x, y) LCD__aLine2Com0[y]
-  #endif
+#if (defined(LCD_LUT_COM) && !defined(LCD_LUT_SEG))
+#define LOG2PHYS_X(x, y) x
+#define LOG2PHYS_Y(x, y) LCD__aLine2Com0[y]
+#elif (!defined(LCD_LUT_COM) && defined(LCD_LUT_SEG))
+#define LOG2PHYS_X(x, y) LCD__aCol2Seg0[x]
+#define LOG2PHYS_Y(x, y) y
+#elif (defined(LCD_LUT_COM) && defined(LCD_LUT_SEG))
+#define LOG2PHYS_X(x, y) LCD__aCol2Seg0[x]
+#define LOG2PHYS_Y(x, y) LCD__aLine2Com0[y]
+#endif
 #endif
 
 /*********************************************************************
@@ -115,7 +114,8 @@ Purpose     : Template driver, could be used as starting point for new
 *
 **********************************************************************
 */
-typedef struct {
+typedef struct
+{
   U32 VRAMAddr;
   int xSize, ySize;
   int vxSize, vySize;
@@ -138,53 +138,54 @@ typedef struct {
 *   calling this routine make sure that the coordinates are in range, so
 *   that no check on the parameters needs to be performed.
 */
-static void _SetPixelIndex(GUI_DEVICE * pDevice, int x, int y, unsigned long PixelIndex) {
-    //
-    // Convert logical into physical coordinates (Dep. on LCDConf.h)
-    //
-//	int h;
-    #if (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)
-      int xPhys, yPhys;
+static void _SetPixelIndex(GUI_DEVICE *pDevice, int x, int y, unsigned long PixelIndex)
+{
+  //
+  // Convert logical into physical coordinates (Dep. on LCDConf.h)
+  //
+  //	int h;
+#if (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)
+  int xPhys, yPhys;
 
-      xPhys = LOG2PHYS_X(x, y);
-      yPhys = LOG2PHYS_Y(x, y);
-    #else
-      #define xPhys x
-      #define yPhys y
-    #endif
-    GUI_USE_PARA(pDevice);
-    GUI_USE_PARA(x);
-    GUI_USE_PARA(y);
-    GUI_USE_PARA(PixelIndex);
-    {
-      //
-      // Write into hardware ... Adapt to your system
-      //
-      // TBD by customer...
-      //
-		LCD_DrawPoint(x,y,PixelIndex);
-//		   LCD_SetCursor(x,y);//ÉèÖÃ¹â±êÎ»ÖÃ 
-//		   LCD_CS_CLR;
-//		   LCD_RS_SET;
-//		#if USE_HARDWARE_SPI   
-//			//while((SPI2->SR&SPI_I2S_FLAG_TXE)==RESET);		//µÈ´ý·¢ËÍÇø¿Õ	  
-//			SPI2->DR=(u8)(PixelIndex>>8);	 	//·¢ËÍÒ»¸öbyte   
-//			while((SPI2->SR&SPI_I2S_FLAG_RXNE)==RESET);//µÈ´ý½ÓÊÕÍêÒ»¸öbyte  
-//			h =SPI2->DR;
-//			//while((SPI2->SR&SPI_I2S_FLAG_TXE)==RESET);		//µÈ´ý·¢ËÍÇø¿Õ	  
-//			SPI2->DR=(u8)(PixelIndex);	 	//·¢ËÍÒ»¸öbyte   
-//			while((SPI2->SR&SPI_I2S_FLAG_RXNE)==RESET);//µÈ´ý½ÓÊÕÍêÒ»¸öbyte  
-//			h =SPI2->DR;
-//		#else
-//			  SPIv_WriteData(POINT_COLOR>>8);
-//			 SPIv_WriteData(POINT_COLOR);
-//		#endif 
-//		   LCD_CS_SET;
-    }
-    #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
-      #undef xPhys
-      #undef yPhys
-    #endif
+  xPhys = LOG2PHYS_X(x, y);
+  yPhys = LOG2PHYS_Y(x, y);
+#else
+#define xPhys x
+#define yPhys y
+#endif
+  GUI_USE_PARA(pDevice);
+  GUI_USE_PARA(x);
+  GUI_USE_PARA(y);
+  GUI_USE_PARA(PixelIndex);
+  {
+    //
+    // Write into hardware ... Adapt to your system
+    //
+    // TBD by customer...
+    //
+    LCD_DrawPoint(x, y, PixelIndex);
+    //		   LCD_SetCursor(x,y);//ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½Î»ï¿½ï¿½
+    //		   LCD_CS_CLR;
+    //		   LCD_RS_SET;
+    //		#if USE_HARDWARE_SPI
+    //			//while((SPI2->SR&SPI_I2S_FLAG_TXE)==RESET);		//ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //			SPI2->DR=(u8)(PixelIndex>>8);	 	//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½byte
+    //			while((SPI2->SR&SPI_I2S_FLAG_RXNE)==RESET);//ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½byte
+    //			h =SPI2->DR;
+    //			//while((SPI2->SR&SPI_I2S_FLAG_TXE)==RESET);		//ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //			SPI2->DR=(u8)(PixelIndex);	 	//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½byte
+    //			while((SPI2->SR&SPI_I2S_FLAG_RXNE)==RESET);//ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½byte
+    //			h =SPI2->DR;
+    //		#else
+    //			  SPIv_WriteData(POINT_COLOR>>8);
+    //			 SPIv_WriteData(POINT_COLOR);
+    //		#endif
+    //		   LCD_CS_SET;
+  }
+#if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
+#undef xPhys
+#undef yPhys
+#endif
 }
 
 /*********************************************************************
@@ -196,35 +197,36 @@ static void _SetPixelIndex(GUI_DEVICE * pDevice, int x, int y, unsigned long Pix
 *   calling this routine make sure that the coordinates are in range, so
 *   that no check on the parameters needs to be performed.
 */
-static unsigned long _GetPixelIndex(GUI_DEVICE * pDevice, int x, int y) {
+static unsigned long _GetPixelIndex(GUI_DEVICE *pDevice, int x, int y)
+{
   unsigned int PixelIndex;
-    //
-    // Convert logical into physical coordinates (Dep. on LCDConf.h)
-    //
-    #if (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)
-      int xPhys, yPhys;
+//
+// Convert logical into physical coordinates (Dep. on LCDConf.h)
+//
+#if (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)
+  int xPhys, yPhys;
 
-      xPhys = LOG2PHYS_X(x, y);
-      yPhys = LOG2PHYS_Y(x, y);
-    #else
-      #define xPhys x
-      #define yPhys y
-    #endif
-    GUI_USE_PARA(pDevice);
-    GUI_USE_PARA(x);
-    GUI_USE_PARA(y);
-    {
-      //
-      // Write into hardware ... Adapt to your system
-      //
-      // TBD by customer...
-      //
-      PixelIndex = 0;
-    }
-    #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
-      #undef xPhys
-      #undef yPhys
-    #endif
+  xPhys = LOG2PHYS_X(x, y);
+  yPhys = LOG2PHYS_Y(x, y);
+#else
+#define xPhys x
+#define yPhys y
+#endif
+  GUI_USE_PARA(pDevice);
+  GUI_USE_PARA(x);
+  GUI_USE_PARA(y);
+  {
+    //
+    // Write into hardware ... Adapt to your system
+    //
+    // TBD by customer...
+    //
+    PixelIndex = 0;
+  }
+#if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
+#undef xPhys
+#undef yPhys
+#endif
   return PixelIndex;
 }
 
@@ -232,12 +234,13 @@ static unsigned long _GetPixelIndex(GUI_DEVICE * pDevice, int x, int y) {
 *
 *       _XorPixel
 */
-static void _XorPixel(GUI_DEVICE * pDevice, int x, int y) {
+static void _XorPixel(GUI_DEVICE *pDevice, int x, int y)
+{
   LCD_PIXELINDEX PixelIndex;
   LCD_PIXELINDEX IndexMask;
 
   PixelIndex = _GetPixelIndex(pDevice, x, y);
-  IndexMask  = pDevice->pColorConvAPI->pfGetIndexMask();
+  IndexMask = pDevice->pColorConvAPI->pfGetIndexMask();
   _SetPixelIndex(pDevice, x, y, PixelIndex ^ IndexMask);
 }
 
@@ -245,24 +248,30 @@ static void _XorPixel(GUI_DEVICE * pDevice, int x, int y) {
 *
 *       _FillRect
 */
-static void _FillRect(GUI_DEVICE * pDevice, int x0, int y0, int x1, int y1) {
-  LCD_PIXELINDEX PixelIndex;
+static void _FillRect(GUI_DEVICE *pDevice, int x0, int y0, int x1, int y1)
+{
+  //  LCD_PIXELINDEX PixelIndex;
   int x;
 
-  PixelIndex = LCD__GetColorIndex();
-  if (GUI_pContext->DrawMode & LCD_DRAWMODE_XOR) {
-    for (; y0 <= y1; y0++) {
-      for (x = x0; x <= x1; x++) {
+  //  PixelIndex = LCD__GetColorIndex();
+  if (GUI_pContext->DrawMode & LCD_DRAWMODE_XOR)
+  {
+    for (; y0 <= y1; y0++)
+    {
+      for (x = x0; x <= x1; x++)
+      {
         _XorPixel(pDevice, x, y0);
       }
     }
-  } else {
-//    for (; y0 <= y1; y0++) {
-//      for (x = x0; x <= x1; x++) {
-//        _SetPixelIndex(pDevice, x, y0, PixelIndex);
-//      }
-//    }
-	LCD_Fill(x0,y0,x1,y1,LCD_COLORINDEX);
+  }
+  else
+  {
+    //    for (; y0 <= y1; y0++) {
+    //      for (x = x0; x <= x1; x++) {
+    //        _SetPixelIndex(pDevice, x, y0, PixelIndex);
+    //      }
+    //    }
+    LCD_Fill(x0, y0, x1, y1, LCD_COLORINDEX);
   }
 }
 
@@ -270,7 +279,8 @@ static void _FillRect(GUI_DEVICE * pDevice, int x0, int y0, int x1, int y1) {
 *
 *       _DrawHLine
 */
-static void _DrawHLine(GUI_DEVICE * pDevice, int x0, int y, int x1) {
+static void _DrawHLine(GUI_DEVICE *pDevice, int x0, int y, int x1)
+{
   _FillRect(pDevice, x0, y, x1, y);
 }
 
@@ -278,7 +288,8 @@ static void _DrawHLine(GUI_DEVICE * pDevice, int x0, int y, int x1) {
 *
 *       _DrawVLine, not optimized
 */
-static void _DrawVLine(GUI_DEVICE * pDevice, int x, int y0, int y1) {
+static void _DrawVLine(GUI_DEVICE *pDevice, int x, int y0, int y1)
+{
   _FillRect(pDevice, x, y0, x, y1);
 }
 
@@ -286,28 +297,34 @@ static void _DrawVLine(GUI_DEVICE * pDevice, int x, int y0, int y1) {
 *
 *       Draw Bitmap 1 BPP
 */
-static void _DrawBitLine1BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_UNI_PTR * p, int Diff, int xsize, const LCD_PIXELINDEX * pTrans) {
+static void _DrawBitLine1BPP(GUI_DEVICE *pDevice, int x, int y, U8 const GUI_UNI_PTR *p, int Diff, int xsize, const LCD_PIXELINDEX *pTrans)
+{
   LCD_PIXELINDEX IndexMask, Index0, Index1, Pixel;
 
   Index0 = *(pTrans + 0);
   Index1 = *(pTrans + 1);
   x += Diff;
-  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR)) {
+  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR))
+  {
   case 0:
-    do {
+    do
+    {
       _SetPixelIndex(pDevice, x++, y, (*p & (0x80 >> Diff)) ? Index1 : Index0);
-      if (++Diff == 8) {
+      if (++Diff == 8)
+      {
         Diff = 0;
         p++;
       }
     } while (--xsize);
     break;
   case LCD_DRAWMODE_TRANS:
-    do {
+    do
+    {
       if (*p & (0x80 >> Diff))
         _SetPixelIndex(pDevice, x, y, Index1);
       x++;
-      if (++Diff == 8) {
+      if (++Diff == 8)
+      {
         Diff = 0;
         p++;
       }
@@ -316,13 +333,16 @@ static void _DrawBitLine1BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_UN
   case LCD_DRAWMODE_XOR | LCD_DRAWMODE_TRANS:
   case LCD_DRAWMODE_XOR:
     IndexMask = pDevice->pColorConvAPI->pfGetIndexMask();
-    do {
-      if (*p & (0x80 >> Diff)) {
+    do
+    {
+      if (*p & (0x80 >> Diff))
+      {
         Pixel = _GetPixelIndex(pDevice, x, y);
         _SetPixelIndex(pDevice, x, y, Pixel ^ IndexMask);
       }
       x++;
-      if (++Diff == 8) {
+      if (++Diff == 8)
+      {
         Diff = 0;
         p++;
       }
@@ -335,32 +355,41 @@ static void _DrawBitLine1BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_UN
 *
 *       Draw Bitmap 2 BPP
 */
-static void  _DrawBitLine2BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_UNI_PTR * p, int Diff, int xsize, const LCD_PIXELINDEX * pTrans) {
+static void _DrawBitLine2BPP(GUI_DEVICE *pDevice, int x, int y, U8 const GUI_UNI_PTR *p, int Diff, int xsize, const LCD_PIXELINDEX *pTrans)
+{
   LCD_PIXELINDEX Pixels, PixelIndex;
   int CurrentPixel, Shift, Index;
 
   Pixels = *p;
   CurrentPixel = Diff;
   x += Diff;
-  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR)) {
+  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR))
+  {
   case 0:
-    if (pTrans) {
-      do {
+    if (pTrans)
+    {
+      do
+      {
         Shift = (3 - CurrentPixel) << 1;
         Index = (Pixels & (0xC0 >> (6 - Shift))) >> Shift;
         PixelIndex = *(pTrans + Index);
         _SetPixelIndex(pDevice, x++, y, PixelIndex);
-        if (++CurrentPixel == 4) {
+        if (++CurrentPixel == 4)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
       } while (--xsize);
-    } else {
-      do {
+    }
+    else
+    {
+      do
+      {
         Shift = (3 - CurrentPixel) << 1;
         Index = (Pixels & (0xC0 >> (6 - Shift))) >> Shift;
         _SetPixelIndex(pDevice, x++, y, Index);
-        if (++CurrentPixel == 4) {
+        if (++CurrentPixel == 4)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
@@ -368,29 +397,38 @@ static void  _DrawBitLine2BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_U
     }
     break;
   case LCD_DRAWMODE_TRANS:
-    if (pTrans) {
-      do {
+    if (pTrans)
+    {
+      do
+      {
         Shift = (3 - CurrentPixel) << 1;
         Index = (Pixels & (0xC0 >> (6 - Shift))) >> Shift;
-        if (Index) {
+        if (Index)
+        {
           PixelIndex = *(pTrans + Index);
           _SetPixelIndex(pDevice, x, y, PixelIndex);
         }
         x++;
-        if (++CurrentPixel == 4) {
+        if (++CurrentPixel == 4)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
       } while (--xsize);
-    } else {
-      do {
+    }
+    else
+    {
+      do
+      {
         Shift = (3 - CurrentPixel) << 1;
         Index = (Pixels & (0xC0 >> (6 - Shift))) >> Shift;
-        if (Index) {
+        if (Index)
+        {
           _SetPixelIndex(pDevice, x, y, Index);
         }
         x++;
-        if (++CurrentPixel == 4) {
+        if (++CurrentPixel == 4)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
@@ -404,32 +442,41 @@ static void  _DrawBitLine2BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_U
 *
 *       Draw Bitmap 4 BPP
 */
-static void  _DrawBitLine4BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_UNI_PTR * p, int Diff, int xsize, const LCD_PIXELINDEX * pTrans) {
+static void _DrawBitLine4BPP(GUI_DEVICE *pDevice, int x, int y, U8 const GUI_UNI_PTR *p, int Diff, int xsize, const LCD_PIXELINDEX *pTrans)
+{
   LCD_PIXELINDEX Pixels, PixelIndex;
   int CurrentPixel, Shift, Index;
 
   Pixels = *p;
   CurrentPixel = Diff;
   x += Diff;
-  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR)) {
+  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR))
+  {
   case 0:
-    if (pTrans) {
-      do {
+    if (pTrans)
+    {
+      do
+      {
         Shift = (1 - CurrentPixel) << 2;
         Index = (Pixels & (0xF0 >> (4 - Shift))) >> Shift;
         PixelIndex = *(pTrans + Index);
         _SetPixelIndex(pDevice, x++, y, PixelIndex);
-        if (++CurrentPixel == 2) {
+        if (++CurrentPixel == 2)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
       } while (--xsize);
-    } else {
-      do {
+    }
+    else
+    {
+      do
+      {
         Shift = (1 - CurrentPixel) << 2;
         Index = (Pixels & (0xF0 >> (4 - Shift))) >> Shift;
         _SetPixelIndex(pDevice, x++, y, Index);
-        if (++CurrentPixel == 2) {
+        if (++CurrentPixel == 2)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
@@ -437,29 +484,38 @@ static void  _DrawBitLine4BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_U
     }
     break;
   case LCD_DRAWMODE_TRANS:
-    if (pTrans) {
-      do {
+    if (pTrans)
+    {
+      do
+      {
         Shift = (1 - CurrentPixel) << 2;
         Index = (Pixels & (0xF0 >> (4 - Shift))) >> Shift;
-        if (Index) {
+        if (Index)
+        {
           PixelIndex = *(pTrans + Index);
           _SetPixelIndex(pDevice, x, y, PixelIndex);
         }
         x++;
-        if (++CurrentPixel == 2) {
+        if (++CurrentPixel == 2)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
       } while (--xsize);
-    } else {
-      do {
+    }
+    else
+    {
+      do
+      {
         Shift = (1 - CurrentPixel) << 2;
         Index = (Pixels & (0xF0 >> (4 - Shift))) >> Shift;
-        if (Index) {
+        if (Index)
+        {
           _SetPixelIndex(pDevice, x, y, Index);
         }
         x++;
-        if (++CurrentPixel == 2) {
+        if (++CurrentPixel == 2)
+        {
           CurrentPixel = 0;
           Pixels = *(++p);
         }
@@ -473,34 +529,48 @@ static void  _DrawBitLine4BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_U
 *
 *       Draw Bitmap 8 BPP
 */
-static void  _DrawBitLine8BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_UNI_PTR * p, int xsize, const LCD_PIXELINDEX * pTrans) {
+static void _DrawBitLine8BPP(GUI_DEVICE *pDevice, int x, int y, U8 const GUI_UNI_PTR *p, int xsize, const LCD_PIXELINDEX *pTrans)
+{
   LCD_PIXELINDEX Pixel;
 
-  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR)) {
+  switch (GUI_pContext->DrawMode & (LCD_DRAWMODE_TRANS | LCD_DRAWMODE_XOR))
+  {
   case 0:
-    if (pTrans) {
-      for (; xsize > 0; xsize--, x++, p++) {
+    if (pTrans)
+    {
+      for (; xsize > 0; xsize--, x++, p++)
+      {
         Pixel = *p;
         _SetPixelIndex(pDevice, x, y, *(pTrans + Pixel));
       }
-    } else {
-      for (; xsize > 0; xsize--, x++, p++) {
+    }
+    else
+    {
+      for (; xsize > 0; xsize--, x++, p++)
+      {
         _SetPixelIndex(pDevice, x, y, *p);
       }
     }
     break;
   case LCD_DRAWMODE_TRANS:
-    if (pTrans) {
-      for (; xsize > 0; xsize--, x++, p++) {
+    if (pTrans)
+    {
+      for (; xsize > 0; xsize--, x++, p++)
+      {
         Pixel = *p;
-        if (Pixel) {
+        if (Pixel)
+        {
           _SetPixelIndex(pDevice, x, y, *(pTrans + Pixel));
         }
       }
-    } else {
-      for (; xsize > 0; xsize--, x++, p++) {
+    }
+    else
+    {
+      for (; xsize > 0; xsize--, x++, p++)
+      {
         Pixel = *p;
-        if (Pixel) {
+        if (Pixel)
+        {
           _SetPixelIndex(pDevice, x, y, Pixel);
         }
       }
@@ -517,8 +587,10 @@ static void  _DrawBitLine8BPP(GUI_DEVICE * pDevice, int x, int y, U8 const GUI_U
 *   Drawing of 16bpp high color bitmaps.
 *   Only required for 16bpp color depth of target. Should be removed otherwise.
 */
-static void _DrawBitLine16BPP(GUI_DEVICE * pDevice, int x, int y, U16 const GUI_UNI_PTR * p, int xsize) {
-  for (;xsize > 0; xsize--, x++, p++) {
+static void _DrawBitLine16BPP(GUI_DEVICE *pDevice, int x, int y, U16 const GUI_UNI_PTR *p, int xsize)
+{
+  for (; xsize > 0; xsize--, x++, p++)
+  {
     _SetPixelIndex(pDevice, x, y, *p);
   }
 }
@@ -531,8 +603,10 @@ static void _DrawBitLine16BPP(GUI_DEVICE * pDevice, int x, int y, U16 const GUI_
 *   Drawing of 32bpp true color bitmaps.
 *   Only required for 32bpp color depth of target. Should be removed otherwise.
 */
-static void _DrawBitLine32BPP(GUI_DEVICE * pDevice, int x, int y, U32 const GUI_UNI_PTR * p, int xsize) {
-  for (;xsize > 0; xsize--, x++, p++) {
+static void _DrawBitLine32BPP(GUI_DEVICE *pDevice, int x, int y, U32 const GUI_UNI_PTR *p, int xsize)
+{
+  for (; xsize > 0; xsize--, x++, p++)
+  {
     _SetPixelIndex(pDevice, x, y, *p);
   }
 }
@@ -541,35 +615,41 @@ static void _DrawBitLine32BPP(GUI_DEVICE * pDevice, int x, int y, U32 const GUI_
 *
 *       _DrawBitmap
 */
-static void _DrawBitmap(GUI_DEVICE * pDevice, int x0, int y0,
-                       int xSize, int ySize,
-                       int BitsPerPixel, 
-                       int BytesPerLine,
-                       const U8 GUI_UNI_PTR * pData, int Diff,
-                       const LCD_PIXELINDEX * pTrans) {
+static void _DrawBitmap(GUI_DEVICE *pDevice, int x0, int y0,
+                        int xSize, int ySize,
+                        int BitsPerPixel,
+                        int BytesPerLine,
+                        const U8 GUI_UNI_PTR *pData, int Diff,
+                        const LCD_PIXELINDEX *pTrans)
+{
   int i;
 
-  switch (BitsPerPixel) {
+  switch (BitsPerPixel)
+  {
   case 1:
-    for (i = 0; i < ySize; i++) {
+    for (i = 0; i < ySize; i++)
+    {
       _DrawBitLine1BPP(pDevice, x0, i + y0, pData, Diff, xSize, pTrans);
       pData += BytesPerLine;
     }
     break;
   case 2:
-    for (i = 0; i < ySize; i++) {
+    for (i = 0; i < ySize; i++)
+    {
       _DrawBitLine2BPP(pDevice, x0, i + y0, pData, Diff, xSize, pTrans);
       pData += BytesPerLine;
     }
     break;
   case 4:
-    for (i = 0; i < ySize; i++) {
+    for (i = 0; i < ySize; i++)
+    {
       _DrawBitLine4BPP(pDevice, x0, i + y0, pData, Diff, xSize, pTrans);
       pData += BytesPerLine;
     }
     break;
   case 8:
-    for (i = 0; i < ySize; i++) {
+    for (i = 0; i < ySize; i++)
+    {
       _DrawBitLine8BPP(pDevice, x0, i + y0, pData, xSize, pTrans);
       pData += BytesPerLine;
     }
@@ -578,7 +658,8 @@ static void _DrawBitmap(GUI_DEVICE * pDevice, int x0, int y0,
   // Only required for 16bpp color depth of target. Should be removed otherwise.
   //
   case 16:
-    for (i = 0; i < ySize; i++) {
+    for (i = 0; i < ySize; i++)
+    {
       _DrawBitLine16BPP(pDevice, x0, i + y0, (const U16 *)pData, xSize);
       pData += BytesPerLine;
     }
@@ -587,7 +668,8 @@ static void _DrawBitmap(GUI_DEVICE * pDevice, int x0, int y0,
   // Only required for 32bpp color depth of target. Should be removed otherwise.
   //
   case 32:
-    for (i = 0; i < ySize; i++) {
+    for (i = 0; i < ySize; i++)
+    {
       _DrawBitLine32BPP(pDevice, x0, i + y0, (const U32 *)pData, xSize);
       pData += BytesPerLine;
     }
@@ -605,10 +687,12 @@ static void _DrawBitmap(GUI_DEVICE * pDevice, int x0, int y0,
 * Return value:
 *   0 on success, 1 on error
 */
-static int _InitOnce(GUI_DEVICE * pDevice) {
-  DRIVER_CONTEXT_TEMPLATE * pContext;
+static int _InitOnce(GUI_DEVICE *pDevice)
+{
+  DRIVER_CONTEXT_TEMPLATE *pContext;
 
-  if (pDevice->u.pContext == NULL) {
+  if (pDevice->u.pContext == NULL)
+  {
     pDevice->u.pContext = GUI_ALLOC_GetFixedBlock(sizeof(DRIVER_CONTEXT_TEMPLATE));
     pContext = (DRIVER_CONTEXT_TEMPLATE *)pDevice->u.pContext;
     pContext->BitsPerPixel = LCD__GetBPP(pDevice->pColorConvAPI->pfGetIndexMask());
@@ -620,11 +704,13 @@ static int _InitOnce(GUI_DEVICE * pDevice) {
 *
 *       _GetDevProp
 */
-static I32 _GetDevProp(GUI_DEVICE * pDevice, int Index) {
-  DRIVER_CONTEXT_TEMPLATE * pContext;
+static I32 _GetDevProp(GUI_DEVICE *pDevice, int Index)
+{
+  DRIVER_CONTEXT_TEMPLATE *pContext;
 
   pContext = (DRIVER_CONTEXT_TEMPLATE *)pDevice->u.pContext;
-  switch (Index) {
+  switch (Index)
+  {
   case LCD_DEVCAP_XSIZE:
     return pContext->xSize;
   case LCD_DEVCAP_YSIZE:
@@ -655,16 +741,18 @@ static I32 _GetDevProp(GUI_DEVICE * pDevice, int Index) {
 *
 *       _GetDevData
 */
-static void * _GetDevData(GUI_DEVICE * pDevice, int Index) {
+static void *_GetDevData(GUI_DEVICE *pDevice, int Index)
+{
   GUI_USE_PARA(pDevice);
-  #if GUI_SUPPORT_MEMDEV
-    switch (Index) {
-    case LCD_DEVDATA_MEMDEV:
-      return (void *)&GUI_MEMDEV_DEVICE_16; // TBD: Has to be adapted to the right memory device depending on the used color depth!
-    }
-  #else
-    GUI_USE_PARA(Index);
-  #endif
+#if GUI_SUPPORT_MEMDEV
+  switch (Index)
+  {
+  case LCD_DEVDATA_MEMDEV:
+    return (void *)&GUI_MEMDEV_DEVICE_16; // TBD: Has to be adapted to the right memory device depending on the used color depth!
+  }
+#else
+  GUI_USE_PARA(Index);
+#endif
   return NULL;
 }
 
@@ -672,8 +760,9 @@ static void * _GetDevData(GUI_DEVICE * pDevice, int Index) {
 *
 *       _GetRect
 */
-static void _GetRect(GUI_DEVICE * pDevice, LCD_RECT * pRect) {
-  DRIVER_CONTEXT_TEMPLATE * pContext;
+static void _GetRect(GUI_DEVICE *pDevice, LCD_RECT *pRect)
+{
+  DRIVER_CONTEXT_TEMPLATE *pContext;
 
   pContext = (DRIVER_CONTEXT_TEMPLATE *)pDevice->u.pContext;
   pRect->x0 = 0;
@@ -686,7 +775,8 @@ static void _GetRect(GUI_DEVICE * pDevice, LCD_RECT * pRect) {
 *
 *       _SetOrg
 */
-static void _SetOrg(GUI_DEVICE * pDevice, int x, int y) {
+static void _SetOrg(GUI_DEVICE *pDevice, int x, int y)
+{
   LCD_X_SETORG_INFO Data = {0};
 
   Data.xPos = x;
@@ -704,12 +794,14 @@ static void _SetOrg(GUI_DEVICE * pDevice, int x, int y) {
 *
 *       _SetVRAMAddr
 */
-static void _SetVRAMAddr(GUI_DEVICE * pDevice, void * pVRAM) {
-  DRIVER_CONTEXT_TEMPLATE * pContext;
+static void _SetVRAMAddr(GUI_DEVICE *pDevice, void *pVRAM)
+{
+  DRIVER_CONTEXT_TEMPLATE *pContext;
   LCD_X_SETVRAMADDR_INFO Data = {0};
 
   _InitOnce(pDevice);
-  if (pDevice->u.pContext) {
+  if (pDevice->u.pContext)
+  {
     pContext = (DRIVER_CONTEXT_TEMPLATE *)pDevice->u.pContext;
     pContext->VRAMAddr = (U32)pVRAM;
     Data.pVRAM = pVRAM;
@@ -721,11 +813,13 @@ static void _SetVRAMAddr(GUI_DEVICE * pDevice, void * pVRAM) {
 *
 *       _SetVSize
 */
-static void _SetVSize(GUI_DEVICE * pDevice, int xSize, int ySize) {
-  DRIVER_CONTEXT_TEMPLATE * pContext;
+static void _SetVSize(GUI_DEVICE *pDevice, int xSize, int ySize)
+{
+  DRIVER_CONTEXT_TEMPLATE *pContext;
 
   _InitOnce(pDevice);
-  if (pDevice->u.pContext) {
+  if (pDevice->u.pContext)
+  {
     pContext = (DRIVER_CONTEXT_TEMPLATE *)pDevice->u.pContext;
     pContext->vxSize = xSize;
     pContext->vySize = ySize;
@@ -737,12 +831,14 @@ static void _SetVSize(GUI_DEVICE * pDevice, int xSize, int ySize) {
 *
 *       _SetSize
 */
-static void _SetSize(GUI_DEVICE * pDevice, int xSize, int ySize) {
-  DRIVER_CONTEXT_TEMPLATE * pContext;
+static void _SetSize(GUI_DEVICE *pDevice, int xSize, int ySize)
+{
+  DRIVER_CONTEXT_TEMPLATE *pContext;
   LCD_X_SETSIZE_INFO Data = {0};
 
   _InitOnce(pDevice);
-  if (pDevice->u.pContext) {
+  if (pDevice->u.pContext)
+  {
     pContext = (DRIVER_CONTEXT_TEMPLATE *)pDevice->u.pContext;
     pContext->vxSizePhys = (pContext->vxSizePhys == 0) ? xSize : pContext->vxSizePhys;
     pContext->xSize = xSize;
@@ -756,7 +852,8 @@ static void _SetSize(GUI_DEVICE * pDevice, int xSize, int ySize) {
 *
 *       _Init
 */
-static int  _Init(GUI_DEVICE * pDevice) {
+static int _Init(GUI_DEVICE *pDevice)
+{
   int r;
 
   r = _InitOnce(pDevice);
@@ -768,7 +865,8 @@ static int  _Init(GUI_DEVICE * pDevice) {
 *
 *       _On
 */
-static void _On (GUI_DEVICE * pDevice) {
+static void _On(GUI_DEVICE *pDevice)
+{
   LCD_X_DisplayDriver(pDevice->LayerIndex, LCD_X_ON, NULL);
 }
 
@@ -776,7 +874,8 @@ static void _On (GUI_DEVICE * pDevice) {
 *
 *       _Off
 */
-static void _Off (GUI_DEVICE * pDevice) {
+static void _Off(GUI_DEVICE *pDevice)
+{
   LCD_X_DisplayDriver(pDevice->LayerIndex, LCD_X_OFF, NULL);
 }
 
@@ -784,10 +883,11 @@ static void _Off (GUI_DEVICE * pDevice) {
 *
 *       _SetLUTEntry
 */
-static void _SetLUTEntry(GUI_DEVICE * pDevice, U8 Pos, LCD_COLOR Color) {
+static void _SetLUTEntry(GUI_DEVICE *pDevice, U8 Pos, LCD_COLOR Color)
+{
   LCD_X_SETLUTENTRY_INFO Data = {0};
 
-  Data.Pos   = Pos;
+  Data.Pos = Pos;
   Data.Color = Color;
   LCD_X_DisplayDriver(pDevice->LayerIndex, LCD_X_SETLUTENTRY, (void *)&Data);
 }
@@ -796,9 +896,11 @@ static void _SetLUTEntry(GUI_DEVICE * pDevice, U8 Pos, LCD_COLOR Color) {
 *
 *       _GetDevFunc
 */
-static void (* _GetDevFunc(GUI_DEVICE ** ppDevice, int Index))(void) {
+static void (*_GetDevFunc(GUI_DEVICE **ppDevice, int Index))(void)
+{
   GUI_USE_PARA(ppDevice);
-  switch (Index) {
+  switch (Index)
+  {
   case LCD_DEVFUNC_SET_VRAM_ADDR:
     return (void (*)(void))_SetVRAMAddr;
   case LCD_DEVFUNC_SET_VSIZE:
@@ -828,31 +930,31 @@ static void (* _GetDevFunc(GUI_DEVICE ** ppDevice, int Index))(void) {
 *       GUI_DEVICE_API structure
 */
 const GUI_DEVICE_API GUIDRV_Template_API = {
-  //
-  // Data
-  //
-  DEVICE_CLASS_DRIVER,
-  //
-  // Drawing functions
-  //
-  _DrawBitmap,
-  _DrawHLine,
-  _DrawVLine,
-  _FillRect,
-  _GetPixelIndex,
-  _SetPixelIndex,
-  _XorPixel,
-  //
-  // Set origin
-  //
-  _SetOrg,
-  //
-  // Request information
-  //
-  _GetDevFunc,
-  _GetDevProp,
-  _GetDevData,
-  _GetRect,
+    //
+    // Data
+    //
+    DEVICE_CLASS_DRIVER,
+    //
+    // Drawing functions
+    //
+    _DrawBitmap,
+    _DrawHLine,
+    _DrawVLine,
+    _FillRect,
+    _GetPixelIndex,
+    _SetPixelIndex,
+    _XorPixel,
+    //
+    // Set origin
+    //
+    _SetOrg,
+    //
+    // Request information
+    //
+    _GetDevFunc,
+    _GetDevProp,
+    _GetDevData,
+    _GetRect,
 };
 
 /*************************** End of file ****************************/

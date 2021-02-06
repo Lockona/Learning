@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,OS_SUPPORT</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\..\Libraries\CMSIS\Include;..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\..\User;..\..\FreeRTOS\include;..\..\FreeRTOS\port\RVDS\ARM_CM4F;..\..\User\uart;..\..\User\key;..\..\User\led;..\..\STemWin\Config;..\..\STemWin\inc;..\..\STemWin_Task;..\..\User\FATFS;..\..\User\lcd</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\..\Libraries\CMSIS\Include;..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\..\User;..\..\FreeRTOS\include;..\..\FreeRTOS\port\RVDS\ARM_CM4F;..\..\User\uart;..\..\User\key;..\..\User\led;..\..\STemWin\Config;..\..\STemWin\inc;..\..\STemWin_Task;..\..\User\FATFS;..\..\User\lcd;..\..\User\TOUCH</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -452,6 +452,11 @@
               <FileName>lcd_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\lcd\lcd_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>touch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\TOUCH\touch.c</FilePath>
             </File>
           </Files>
         </Group>

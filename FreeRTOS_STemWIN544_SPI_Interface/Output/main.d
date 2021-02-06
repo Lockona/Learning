@@ -38,6 +38,7 @@
 ..\..\output\main.o: ..\..\User\lcd\lcd_driver.h
 ..\..\output\main.o: ..\..\User\sys.h
 ..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\main.o: ..\..\User\TOUCH\touch.h
 ..\..\output\main.o: ..\..\STemWin\inc\GUI.h
 ..\..\output\main.o: ..\..\STemWin\inc\GUI_ConfDefaults.h
 ..\..\output\main.o: ..\..\STemWin\Config\GUIConf.h

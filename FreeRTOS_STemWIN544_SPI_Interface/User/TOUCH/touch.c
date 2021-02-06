@@ -1,10 +1,10 @@
 #include "touch.h"
-#include "lcd.h"
-#include "delay.h"
+#include "lcd_driver.h"
+//#include "delay.h"
 #include "stdlib.h"
 #include "math.h"
 //#include "24cxx.h"
-#include "gui.h"
+//#include "gui.h"
 //////////////////////////////////////////////////////////////////////////////////
 //������ֻ��ѧϰʹ�ã�δ���������ɣ��������������κ���;
 //����Ӳ������Ƭ��STM32F103RBT6,����ԭ��MiniSTM32������,��Ƶ72MHZ
@@ -59,16 +59,24 @@ _m_tp_dev tp_dev =
 		0,
 		0,
 		0,
-		0,
-		0,
-		0,
-		0,
+
+		0.065789476,
+		0.0912646651,
+		0xFFEE,
+		0xFFDD,
+
 		0,
 };
 //Ĭ��Ϊtouchtype=0������.
 u8 CMD_RDX = 0XD0;
 u8 CMD_RDY = 0X90;
-int point[2][2];
+
+void delay_us(int count)
+{
+	//count=count;
+	for (; count; count--)
+		;
+}
 //SPIд����
 //������ICд��1byte����
 //num:Ҫд�������
@@ -198,13 +206,13 @@ u8 TP_Read_XY2(u16 *x, u16 *y)
 void TP_Drow_Touch_Point(u16 x, u16 y, u16 color)
 {
 	POINT_COLOR = color;
-	LCD_DrawLine(x - 12, y, x + 13, y); //����
-	LCD_DrawLine(x, y - 12, x, y + 13); //����
-	LCD_DrawPoint(x + 1, y + 1);
-	LCD_DrawPoint(x - 1, y + 1);
-	LCD_DrawPoint(x + 1, y - 1);
-	LCD_DrawPoint(x - 1, y - 1);
-	gui_circle(x, y, POINT_COLOR, 6, 0); //������Ȧ
+	//	LCD_DrawLine(x-12,y,x+13,y);//����
+	//	LCD_DrawLine(x,y-12,x,y+13);//����
+	LCD_DrawPoint(x + 1, y + 1, POINT_COLOR);
+	LCD_DrawPoint(x - 1, y + 1, POINT_COLOR);
+	LCD_DrawPoint(x + 1, y - 1, POINT_COLOR);
+	LCD_DrawPoint(x - 1, y - 1, POINT_COLOR);
+	//gui_circle(x,y,POINT_COLOR,6,0);//������Ȧ
 }
 //��һ�����(2*2�ĵ�)
 //x,y:����
@@ -212,10 +220,37 @@ void TP_Drow_Touch_Point(u16 x, u16 y, u16 color)
 void TP_Draw_Big_Point(u16 x, u16 y, u16 color)
 {
 	POINT_COLOR = color;
-	LCD_DrawPoint(x, y); //���ĵ�
-	LCD_DrawPoint(x + 1, y);
-	LCD_DrawPoint(x, y + 1);
-	LCD_DrawPoint(x + 1, y + 1);
+	LCD_DrawPoint(x, y, POINT_COLOR); //���ĵ�
+	LCD_DrawPoint(x + 1, y, POINT_COLOR);
+	LCD_DrawPoint(x, y + 1, POINT_COLOR);
+	LCD_DrawPoint(x + 1, y + 1, POINT_COLOR);
+}
+
+#include "GUI.h"
+void GUI_TOUCH_Scan(void)
+{
+	GUI_PID_STATE State;
+
+	TP_Scan(0);
+	if ((tp_dev.sta & 0xc0) == TP_CATH_PRES)
+	{
+		State.x = tp_dev.x;
+		State.y = tp_dev.y;
+		State.Pressed = 1;
+		State.Layer = 0;
+		//�洢�������굽emwinʹ�õ�fifo
+		GUI_PID_StoreState(&State);
+		return;
+	}
+	else
+	{
+		State.Pressed = 0;
+		State.x = -1;
+		State.y = -1;
+		State.Layer = 0;
+		//�洢�������굽emwinʹ�õ�fifo
+		GUI_PID_StoreState(&State);
+	}
 }
 //////////////////////////////////////////////////////////////////////////////////
 //��������ɨ��
@@ -262,20 +297,20 @@ u8 TP_Scan(u8 tp)
 //����У׼����
 void TP_Save_Adjdata(void)
 {
-	s32 temp;
-	//����У�����!
-	temp = tp_dev.xfac * 100000000; //����xУ������
-									//AT24CXX_WriteLenByte(SAVE_ADDR_BASE,temp,4);
-	temp = tp_dev.yfac * 100000000; //����yУ������
-									//AT24CXX_WriteLenByte(SAVE_ADDR_BASE+4,temp,4);
+	//	s32 temp;
+	//	//����У�����!
+	//	temp=tp_dev.xfac*100000000;//����xУ������
+	//    //AT24CXX_WriteLenByte(SAVE_ADDR_BASE,temp,4);
+	//	temp=tp_dev.yfac*100000000;//����yУ������
+	//AT24CXX_WriteLenByte(SAVE_ADDR_BASE+4,temp,4);
 	//����xƫ����
 	//AT24CXX_WriteLenByte(SAVE_ADDR_BASE+8,tp_dev.xoff,2);
 	//����yƫ����
 	//AT24CXX_WriteLenByte(SAVE_ADDR_BASE+10,tp_dev.yoff,2);
 	//���津������
 	//AT24CXX_WriteOneByte(SAVE_ADDR_BASE+12,tp_dev.touchtype);
-	temp = 0X0A; //���У׼����
-				 //AT24CXX_WriteOneByte(SAVE_ADDR_BASE+13,temp);
+	//	temp=0X0A;//���У׼����
+	//AT24CXX_WriteOneByte(SAVE_ADDR_BASE+13,temp);
 }
 //�õ�������EEPROM�����У׼ֵ
 //����ֵ��1���ɹ���ȡ����
@@ -314,187 +349,182 @@ const u8 *TP_REMIND_MSG_TBL = "Please use the stylus click the cross on the scre
 //��ʾУ׼���(��������)
 void TP_Adj_Info_Show(u16 x0, u16 y0, u16 x1, u16 y1, u16 x2, u16 y2, u16 x3, u16 y3, u16 fac)
 {
-	POINT_COLOR = RED;
-	LCD_ShowString(40, 160, 16, "x1:", 1);
-	LCD_ShowString(40 + 80, 160, 16, "y1:", 1);
-	LCD_ShowString(40, 180, 16, "x2:", 1);
-	LCD_ShowString(40 + 80, 180, 16, "y2:", 1);
-	LCD_ShowString(40, 200, 16, "x3:", 1);
-	LCD_ShowString(40 + 80, 200, 16, "y3:", 1);
-	LCD_ShowString(40, 220, 16, "x4:", 1);
-	LCD_ShowString(40 + 80, 220, 16, "y4:", 1);
-	LCD_ShowString(40, 240, 16, "fac is:", 1);
-	LCD_ShowNum(40 + 24, 160, x0, 4, 16);			//��ʾ��ֵ
-	LCD_ShowNum(40 + 24 + 80, 160, y0, 4, 16);		//��ʾ��ֵ
-	LCD_ShowNum(40 + 24, 180, x1, 4, 16);			//��ʾ��ֵ
-	LCD_ShowNum(40 + 24 + 80, 180, y1, 4, 16);		//��ʾ��ֵ
-	LCD_ShowNum(40 + 24, 200, x2, 4, 16);			//��ʾ��ֵ
-	LCD_ShowNum(40 + 24 + 80, 200, y2, 4, 16);		//��ʾ��ֵ
-	LCD_ShowNum(40 + 24, 220, x3, 4, 16);			//��ʾ��ֵ
-	LCD_ShowNum(40 + 24 + 80, 220, y3, 4, 16);		//��ʾ��ֵ
-	LCD_ShowNum(40 + 56, lcddev.width, fac, 3, 16); //��ʾ��ֵ,����ֵ������95~105��Χ֮��.
+	//	POINT_COLOR=RED;
+	//	LCD_ShowString(40,160,16,"x1:",1);
+	// 	LCD_ShowString(40+80,160,16,"y1:",1);
+	// 	LCD_ShowString(40,180,16,"x2:",1);
+	// 	LCD_ShowString(40+80,180, 16,"y2:",1);
+	//	LCD_ShowString(40,200, 16,"x3:",1);
+	// 	LCD_ShowString(40+80,200, 16,"y3:",1);
+	//	LCD_ShowString(40,220, 16,"x4:",1);
+	// 	LCD_ShowString(40+80,220, 16,"y4:",1);
+	// 	LCD_ShowString(40,240, 16,"fac is:",1);
+	//	LCD_ShowNum(40+24,160,x0,4,16);		//��ʾ��ֵ
+	//	LCD_ShowNum(40+24+80,160,y0,4,16);	//��ʾ��ֵ
+	//	LCD_ShowNum(40+24,180,x1,4,16);		//��ʾ��ֵ
+	//	LCD_ShowNum(40+24+80,180,y1,4,16);	//��ʾ��ֵ
+	//	LCD_ShowNum(40+24,200,x2,4,16);		//��ʾ��ֵ
+	//	LCD_ShowNum(40+24+80,200,y2,4,16);	//��ʾ��ֵ
+	//	LCD_ShowNum(40+24,220,x3,4,16);		//��ʾ��ֵ
+	//	LCD_ShowNum(40+24+80,220,y3,4,16);	//��ʾ��ֵ
+	// 	LCD_ShowNum(40+56,lcddev.width,fac,3,16); 	//��ʾ��ֵ,����ֵ������95~105��Χ֮��.
 }
 
 //������У׼����
 //�õ��ĸ�У׼����
 void TP_Adjust(void)
 {
-	u16 pos_temp[4][2]; //���껺��ֵ
-	u8 cnt = 0;
-	u16 d1, d2;
-	u32 tem1, tem2;
-	double fac;
-	u16 outtime = 0;
-	cnt = 0;
-	POINT_COLOR = BLUE;
-	BACK_COLOR = WHITE;
-	LCD_Clear(WHITE);  //����
-	POINT_COLOR = RED; //��ɫ
-	LCD_Clear(WHITE);  //����
-	POINT_COLOR = BLACK;
-	LCD_ShowString(10, 40, 16, "Please use the stylus click the", 1);	 //��ʾ��ʾ��Ϣ
-	LCD_ShowString(10, 56, 16, "cross on the screen.The cross will", 1); //��ʾ��ʾ��Ϣ
-	LCD_ShowString(10, 72, 16, "always move until the screen ", 1);		 //��ʾ��ʾ��Ϣ
-	LCD_ShowString(10, 88, 16, "adjustment is completed.", 1);			 //��ʾ��ʾ��Ϣ
+	//	u16 pos_temp[4][2];//���껺��ֵ
+	//	u8  cnt=0;
+	//	u16 d1,d2;
+	//	u32 tem1,tem2;
+	//	double fac;
+	//	u16 outtime=0;
+	// 	cnt=0;
+	//	POINT_COLOR=BLUE;
+	//	BACK_COLOR =WHITE;
+	//	LCD_Clear(WHITE);//����
+	//	POINT_COLOR=RED;//��ɫ
+	//	LCD_Clear(WHITE);//����
+	//	POINT_COLOR=BLACK;
+	//	LCD_ShowString(10,40,16,"Please use the stylus click the",1);//��ʾ��ʾ��Ϣ
+	//	LCD_ShowString(10,56,16,"cross on the screen.The cross will",1);//��ʾ��ʾ��Ϣ
+	//	LCD_ShowString(10,72,16,"always move until the screen ",1);//��ʾ��ʾ��Ϣ
+	//	LCD_ShowString(10,88,16,"adjustment is completed.",1);//��ʾ��ʾ��Ϣ
 
-	TP_Drow_Touch_Point(20, 20, RED); //����1
-	tp_dev.sta = 0;					  //���������ź�
-	tp_dev.xfac = 0;				  //xfac��������Ƿ�У׼��,����У׼֮ǰ�������!�������
-	while (1)						  //�������10����û�а���,���Զ��˳�
-	{
-		tp_dev.scan(1);							 //ɨ����������
-		if ((tp_dev.sta & 0xc0) == TP_CATH_PRES) //����������һ��(��ʱ�����ɿ���.)
-		{
-			outtime = 0;
-			tp_dev.sta &= ~(1 << 6); //��ǰ����Ѿ�����������.
-
-			pos_temp[cnt][0] = tp_dev.x;
-			pos_temp[cnt][1] = tp_dev.y;
-			cnt++;
-			switch (cnt)
-			{
-			case 1:
-				point[0][0] = tp_dev.x;
-				point[0][1] = tp_dev.y;
-				TP_Drow_Touch_Point(20, 20, WHITE);				 //�����1
-				TP_Drow_Touch_Point(lcddev.width - 20, 20, RED); //����2
-				break;
-			case 2:
-				TP_Drow_Touch_Point(lcddev.width - 20, 20, WHITE); //�����2
-				TP_Drow_Touch_Point(20, lcddev.height - 20, RED);  //����3
-				break;
-			case 3:
-				TP_Drow_Touch_Point(20, lcddev.height - 20, WHITE);				 //�����3
-				TP_Drow_Touch_Point(lcddev.width - 20, lcddev.height - 20, RED); //����4
-				break;
-			case 4: //ȫ���ĸ����Ѿ��õ�
-					//�Ա����
-				point[1][0] = tp_dev.x;
-				point[1][1] = tp_dev.y;
-				tem1 = abs(pos_temp[0][0] - pos_temp[1][0]); //x1-x2
-				tem2 = abs(pos_temp[0][1] - pos_temp[1][1]); //y1-y2
-				tem1 *= tem1;
-				tem2 *= tem2;
-				d1 = sqrt(tem1 + tem2); //�õ�1,2�ľ���
-
-				tem1 = abs(pos_temp[2][0] - pos_temp[3][0]); //x3-x4
-				tem2 = abs(pos_temp[2][1] - pos_temp[3][1]); //y3-y4
-				tem1 *= tem1;
-				tem2 *= tem2;
-				d2 = sqrt(tem1 + tem2); //�õ�3,4�ľ���
-				fac = (float)d1 / d2;
-				if (fac < 0.8 || fac > 1.05 || d1 == 0 || d2 == 0) //���ϸ�
-				{
-					cnt = 0;
-					TP_Drow_Touch_Point(lcddev.width - 20, lcddev.height - 20, WHITE);																							 //�����4
-					TP_Drow_Touch_Point(20, 20, RED);																															 //����1
-					TP_Adj_Info_Show(pos_temp[0][0], pos_temp[0][1], pos_temp[1][0], pos_temp[1][1], pos_temp[2][0], pos_temp[2][1], pos_temp[3][0], pos_temp[3][1], fac * 100); //��ʾ����
-					continue;
-				}
-				tem1 = abs(pos_temp[0][0] - pos_temp[2][0]); //x1-x3
-				tem2 = abs(pos_temp[0][1] - pos_temp[2][1]); //y1-y3
-				tem1 *= tem1;
-				tem2 *= tem2;
-				d1 = sqrt(tem1 + tem2); //�õ�1,3�ľ���
-
-				tem1 = abs(pos_temp[1][0] - pos_temp[3][0]); //x2-x4
-				tem2 = abs(pos_temp[1][1] - pos_temp[3][1]); //y2-y4
-				tem1 *= tem1;
-				tem2 *= tem2;
-				d2 = sqrt(tem1 + tem2); //�õ�2,4�ľ���
-				fac = (float)d1 / d2;
-				if (fac < 0.8 || fac > 1.05) //���ϸ�
-				{
-					cnt = 0;
-					TP_Drow_Touch_Point(lcddev.width - 20, lcddev.height - 20, WHITE);																							 //�����4
-					TP_Drow_Touch_Point(20, 20, RED);																															 //����1
-					TP_Adj_Info_Show(pos_temp[0][0], pos_temp[0][1], pos_temp[1][0], pos_temp[1][1], pos_temp[2][0], pos_temp[2][1], pos_temp[3][0], pos_temp[3][1], fac * 100); //��ʾ����
-					continue;
-				} //��ȷ��
-
-				//�Խ������
-				tem1 = abs(pos_temp[1][0] - pos_temp[2][0]); //x1-x3
-				tem2 = abs(pos_temp[1][1] - pos_temp[2][1]); //y1-y3
-				tem1 *= tem1;
-				tem2 *= tem2;
-				d1 = sqrt(tem1 + tem2); //�õ�1,4�ľ���
-
-				tem1 = abs(pos_temp[0][0] - pos_temp[3][0]); //x2-x4
-				tem2 = abs(pos_temp[0][1] - pos_temp[3][1]); //y2-y4
-				tem1 *= tem1;
-				tem2 *= tem2;
-				d2 = sqrt(tem1 + tem2); //�õ�2,3�ľ���
-				fac = (float)d1 / d2;
-				if (fac < 0.8 || fac > 1.05) //���ϸ�
-				{
-					cnt = 0;
-					TP_Drow_Touch_Point(lcddev.width - 20, lcddev.height - 20, WHITE);																							 //�����4
-					TP_Drow_Touch_Point(20, 20, RED);																															 //����1
-					TP_Adj_Info_Show(pos_temp[0][0], pos_temp[0][1], pos_temp[1][0], pos_temp[1][1], pos_temp[2][0], pos_temp[2][1], pos_temp[3][0], pos_temp[3][1], fac * 100); //��ʾ����
-					continue;
-				} //��ȷ��
-				//������
-				tp_dev.xfac = (float)(lcddev.width - 40) / (pos_temp[1][0] - pos_temp[0][0]);		//�õ�xfac
-				tp_dev.xoff = (lcddev.width - tp_dev.xfac * (pos_temp[1][0] + pos_temp[0][0])) / 2; //�õ�xoff
-
-				tp_dev.yfac = (float)(lcddev.height - 40) / (pos_temp[2][1] - pos_temp[0][1]);		 //�õ�yfac
-				tp_dev.yoff = (lcddev.height - tp_dev.yfac * (pos_temp[2][1] + pos_temp[0][1])) / 2; //�õ�yoff
-				if (abs(tp_dev.xfac) > 2 || abs(tp_dev.yfac) > 2)									 //������Ԥ����෴��.
-				{
-					cnt = 0;
-					TP_Drow_Touch_Point(lcddev.width - 20, lcddev.height - 20, WHITE); //�����4
-					TP_Drow_Touch_Point(20, 20, RED);								   //����1
-					LCD_ShowString(40, 26, 16, "TP Need readjust!", 1);
-					tp_dev.touchtype = !tp_dev.touchtype; //�޸Ĵ�������.
-					if (tp_dev.touchtype)				  //X,Y��������Ļ�෴
-					{
-						CMD_RDX = 0X90;
-						CMD_RDY = 0XD0;
-					}
-					else //X,Y��������Ļ��ͬ
-					{
-						CMD_RDX = 0XD0;
-						CMD_RDY = 0X90;
-					}
-					continue;
-				}
-				POINT_COLOR = BLUE;
-				LCD_Clear(WHITE);										   //����
-				LCD_ShowString(35, 110, 16, "Touch Screen Adjust OK!", 1); //У�����
-				delay_ms(1000);
-				//TP_Save_Adjdata();
-				LCD_Clear(WHITE); //����
-				return;			  //У�����
-			}
-		}
-		delay_ms(10);
-		outtime++;
-		if (outtime > 1000)
-		{
-			//TP_Get_Adjdata();
-			break;
-		}
-	}
+	//	TP_Drow_Touch_Point(20,20,RED);//����1
+	//	tp_dev.sta=0;//���������ź�
+	//	tp_dev.xfac=0;//xfac��������Ƿ�У׼��,����У׼֮ǰ�������!�������
+	//	while(1)//�������10����û�а���,���Զ��˳�
+	//	{
+	//		tp_dev.scan(1);//ɨ����������
+	//		if((tp_dev.sta&0xc0)==TP_CATH_PRES)//����������һ��(��ʱ�����ɿ���.)
+	//		{
+	//			outtime=0;
+	//			tp_dev.sta&=~(1<<6);//��ǰ����Ѿ�����������.
+	//
+	//			pos_temp[cnt][0]=tp_dev.x;
+	//			pos_temp[cnt][1]=tp_dev.y;
+	//			cnt++;
+	//			switch(cnt)
+	//			{
+	//				case 1:
+	//					TP_Drow_Touch_Point(20,20,WHITE);				//�����1
+	//					TP_Drow_Touch_Point(lcddev.width-20,20,RED);	//����2
+	//					break;
+	//				case 2:
+	// 					TP_Drow_Touch_Point(lcddev.width-20,20,WHITE);	//�����2
+	//					TP_Drow_Touch_Point(20,lcddev.height-20,RED);	//����3
+	//					break;
+	//				case 3:
+	// 					TP_Drow_Touch_Point(20,lcddev.height-20,WHITE);			//�����3
+	// 					TP_Drow_Touch_Point(lcddev.width-20,lcddev.height-20,RED);	//����4
+	//					break;
+	//				case 4:	 //ȫ���ĸ����Ѿ��õ�
+	//	    		    //�Ա����
+	//					tem1=abs(pos_temp[0][0]-pos_temp[1][0]);//x1-x2
+	//					tem2=abs(pos_temp[0][1]-pos_temp[1][1]);//y1-y2
+	//					tem1*=tem1;
+	//					tem2*=tem2;
+	//					d1=sqrt(tem1+tem2);//�õ�1,2�ľ���
+	//
+	//					tem1=abs(pos_temp[2][0]-pos_temp[3][0]);//x3-x4
+	//					tem2=abs(pos_temp[2][1]-pos_temp[3][1]);//y3-y4
+	//					tem1*=tem1;
+	//					tem2*=tem2;
+	//					d2=sqrt(tem1+tem2);//�õ�3,4�ľ���
+	//					fac=(float)d1/d2;
+	//					if(fac<0.8||fac>1.05||d1==0||d2==0)//���ϸ�
+	//					{
+	//						cnt=0;
+	// 				    	TP_Drow_Touch_Point(lcddev.width-20,lcddev.height-20,WHITE);	//�����4
+	//   	 					TP_Drow_Touch_Point(20,20,RED);								//����1
+	// 						TP_Adj_Info_Show(pos_temp[0][0],pos_temp[0][1],pos_temp[1][0],pos_temp[1][1],pos_temp[2][0],pos_temp[2][1],pos_temp[3][0],pos_temp[3][1],fac*100);//��ʾ����
+	// 						continue;
+	//					}
+	//					tem1=abs(pos_temp[0][0]-pos_temp[2][0]);//x1-x3
+	//					tem2=abs(pos_temp[0][1]-pos_temp[2][1]);//y1-y3
+	//					tem1*=tem1;
+	//					tem2*=tem2;
+	//					d1=sqrt(tem1+tem2);//�õ�1,3�ľ���
+	//
+	//					tem1=abs(pos_temp[1][0]-pos_temp[3][0]);//x2-x4
+	//					tem2=abs(pos_temp[1][1]-pos_temp[3][1]);//y2-y4
+	//					tem1*=tem1;
+	//					tem2*=tem2;
+	//					d2=sqrt(tem1+tem2);//�õ�2,4�ľ���
+	//					fac=(float)d1/d2;
+	//					if(fac<0.8||fac>1.05)//���ϸ�
+	//					{
+	//						cnt=0;
+	// 				    	TP_Drow_Touch_Point(lcddev.width-20,lcddev.height-20,WHITE);	//�����4
+	//   	 					TP_Drow_Touch_Point(20,20,RED);								//����1
+	// 						TP_Adj_Info_Show(pos_temp[0][0],pos_temp[0][1],pos_temp[1][0],pos_temp[1][1],pos_temp[2][0],pos_temp[2][1],pos_temp[3][0],pos_temp[3][1],fac*100);//��ʾ����
+	//						continue;
+	//					}//��ȷ��
+	//
+	//					//�Խ������
+	//					tem1=abs(pos_temp[1][0]-pos_temp[2][0]);//x1-x3
+	//					tem2=abs(pos_temp[1][1]-pos_temp[2][1]);//y1-y3
+	//					tem1*=tem1;
+	//					tem2*=tem2;
+	//					d1=sqrt(tem1+tem2);//�õ�1,4�ľ���
+	//
+	//					tem1=abs(pos_temp[0][0]-pos_temp[3][0]);//x2-x4
+	//					tem2=abs(pos_temp[0][1]-pos_temp[3][1]);//y2-y4
+	//					tem1*=tem1;
+	//					tem2*=tem2;
+	//					d2=sqrt(tem1+tem2);//�õ�2,3�ľ���
+	//					fac=(float)d1/d2;
+	//					if(fac<0.8||fac>1.05)//���ϸ�
+	//					{
+	//						cnt=0;
+	// 				    	TP_Drow_Touch_Point(lcddev.width-20,lcddev.height-20,WHITE);	//�����4
+	//   	 					TP_Drow_Touch_Point(20,20,RED);								//����1
+	// 						TP_Adj_Info_Show(pos_temp[0][0],pos_temp[0][1],pos_temp[1][0],pos_temp[1][1],pos_temp[2][0],pos_temp[2][1],pos_temp[3][0],pos_temp[3][1],fac*100);//��ʾ����
+	//						continue;
+	//					}//��ȷ��
+	//					//������
+	//					tp_dev.xfac=(float)(lcddev.width-40)/(pos_temp[1][0]-pos_temp[0][0]);//�õ�xfac
+	//					tp_dev.xoff=(lcddev.width-tp_dev.xfac*(pos_temp[1][0]+pos_temp[0][0]))/2;//�õ�xoff
+	//
+	//					tp_dev.yfac=(float)(lcddev.height-40)/(pos_temp[2][1]-pos_temp[0][1]);//�õ�yfac
+	//					tp_dev.yoff=(lcddev.height-tp_dev.yfac*(pos_temp[2][1]+pos_temp[0][1]))/2;//�õ�yoff
+	//					if(abs(tp_dev.xfac)>2||abs(tp_dev.yfac)>2)//������Ԥ����෴��.
+	//					{
+	//						cnt=0;
+	// 				    	TP_Drow_Touch_Point(lcddev.width-20,lcddev.height-20,WHITE);	//�����4
+	//   	 					TP_Drow_Touch_Point(20,20,RED);								//����1
+	//						LCD_ShowString(40,26, 16,"TP Need readjust!",1);
+	//						tp_dev.touchtype=!tp_dev.touchtype;//�޸Ĵ�������.
+	//						if(tp_dev.touchtype)//X,Y��������Ļ�෴
+	//						{
+	//							CMD_RDX=0X90;
+	//							CMD_RDY=0XD0;
+	//						}else				   //X,Y��������Ļ��ͬ
+	//						{
+	//							CMD_RDX=0XD0;
+	//							CMD_RDY=0X90;
+	//						}
+	//						continue;
+	//					}
+	//					POINT_COLOR=BLUE;
+	//					LCD_Clear(WHITE);//����
+	//					LCD_ShowString(35,110, 16,"Touch Screen Adjust OK!",1);//У�����
+	//					delay_ms(1000);
+	//					//TP_Save_Adjdata();
+	// 					LCD_Clear(WHITE);//����
+	//					return;//У�����
+	//			}
+	//		}
+	//		delay_ms(10);
+	//		outtime++;
+	//		if(outtime>1000)
+	//		{
+	//			//TP_Get_Adjdata();
+	//			break;
+	//	 	}
+	// 	}
 }
 //��������ʼ��
 //����ֵ:0,û�н���У׼
@@ -528,9 +558,9 @@ u8 TP_Init(void)
 	//if(TP_Get_Adjdata())return 0;//�Ѿ�У׼
 	//else			   //δУ׼?
 	{
-		LCD_Clear(WHITE); //����
-						  //	    TP_Adjust();  //��ĻУ׼
-						  //		TP_Save_Adjdata();
+		//		LCD_Clear(WHITE);//����
+		//	    TP_Adjust();  //��ĻУ׼
+		//		TP_Save_Adjdata();
 	}
 	//	TP_Get_Adjdata();
 	return 1;

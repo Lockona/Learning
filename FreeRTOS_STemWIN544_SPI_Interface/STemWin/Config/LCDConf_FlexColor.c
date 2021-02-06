@@ -48,6 +48,7 @@ Purpose     : Display controller configuration (single layer)
 
 #include "GUI.h"
 #include "lcd_driver.h"
+#include "touch.h"
 /*********************************************************************
 *
 *       Layer configuration (to be modified)
@@ -59,9 +60,8 @@ Purpose     : Display controller configuration (single layer)
 // Physical display size
 //
 
-#define XSIZE_PHYS  LCD_SPI_W // To be adapted to x-screen size
-#define YSIZE_PHYS  LCD_SPI_H // To be adapted to y-screen size
-
+#define XSIZE_PHYS LCD_SPI_W // To be adapted to x-screen size
+#define YSIZE_PHYS LCD_SPI_H // To be adapted to y-screen size
 
 /*********************************************************************
 *
@@ -69,26 +69,26 @@ Purpose     : Display controller configuration (single layer)
 *
 **********************************************************************
 */
-#ifndef   VRAM_ADDR
-  #define VRAM_ADDR 0
+#ifndef VRAM_ADDR
+#define VRAM_ADDR 0
 #endif
-#ifndef   VXSIZE_PHYS
-  #define VXSIZE_PHYS XSIZE_PHYS
+#ifndef VXSIZE_PHYS
+#define VXSIZE_PHYS XSIZE_PHYS
 #endif
-#ifndef   VYSIZE_PHYS
-  #define VYSIZE_PHYS YSIZE_PHYS
+#ifndef VYSIZE_PHYS
+#define VYSIZE_PHYS YSIZE_PHYS
 #endif
-#ifndef   XSIZE_PHYS
-  #error Physical X size of display is not defined!
+#ifndef XSIZE_PHYS
+#error Physical X size of display is not defined!
 #endif
-#ifndef   YSIZE_PHYS
-  #error Physical Y size of display is not defined!
+#ifndef YSIZE_PHYS
+#error Physical Y size of display is not defined!
 #endif
-#ifndef   GUICC_565
-  #error Color conversion not defined!
+#ifndef GUICC_565
+#error Color conversion not defined!
 #endif
-#ifndef   GUIDRV_TEMPLATE
-  #error No display driver defined!
+#ifndef GUIDRV_TEMPLATE
+#error No display driver defined!
 #endif
 
 /*********************************************************************
@@ -146,8 +146,8 @@ Purpose     : Display controller configuration (single layer)
 //*   Reads multiple values from a display register.
 //*/
 //static void LcdReadDataMultiple(U16 * pData, int NumItems) {
-//  //ili9806¶ÁÈ¡µÄµÚÒ»¸öÊý¾ÝÎªÎÞÐ§Êý¾Ý£¬ÉáÆú(Ô­À´Ã»ÓÐÊ¹ÓÃconfig.numdummyreads²ÎÊýµÄÊ±ºòÐèÒªÕâ¸öÓï¾ä)
-//	//*pData = * ( __IO uint16_t * ) ( FSMC_Addr_ILI9806G_DATA );	
+//  //ili9806ï¿½ï¿½È¡ï¿½Äµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ð§ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½(Ô­ï¿½ï¿½Ã»ï¿½ï¿½Ê¹ï¿½ï¿½config.numdummyreadsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+//	//*pData = * ( __IO uint16_t * ) ( FSMC_Addr_ILI9806G_DATA );
 //  while (NumItems--) {
 //    // ... TBD by user
 //	//	*pData++ = * ( __IO uint16_t * ) ( FSMC_Addr_ILI9806G_DATA );//modify by fire
@@ -170,42 +170,44 @@ Purpose     : Display controller configuration (single layer)
 *   display driver configuration.
 *
 */
-void LCD_X_Config(void) {
-//  GUI_DEVICE * pDevice;
-//  CONFIG_FLEXCOLOR Config = {0};
-//  GUI_PORT_API PortAPI = {0};
+void LCD_X_Config(void)
+{
+  //  GUI_DEVICE * pDevice;
+  //  CONFIG_FLEXCOLOR Config = {0};
+  //  GUI_PORT_API PortAPI = {0};
   //
   // Set display driver and color conversion
   //
- // pDevice = 
-	GUI_DEVICE_CreateAndLink(GUIDRV_TEMPLATE, GUICC_M565, 0, 0);
+  // pDevice =
+  GUI_DEVICE_CreateAndLink(GUIDRV_TEMPLATE, GUICC_M565, 0, 0);
   //
   // Display driver configuration, required for Lin-driver
   //
-  LCD_SetSizeEx (0, XSIZE_PHYS , YSIZE_PHYS);
+  LCD_SetSizeEx(0, XSIZE_PHYS, YSIZE_PHYS);
   LCD_SetVSizeEx(0, VXSIZE_PHYS, VYSIZE_PHYS);
+
   //
   // Orientation
   //
-//  Config.FirstCOM = 0;                                          //modify by fire
-//  Config.FirstSEG = 0;                                          //modify by fire  
-//	Config.Orientation = GUI_MIRROR_Y|GUI_MIRROR_X;								//modify by fire ÊúÆÁ
-////µ÷ÕûÉ¨Ãè·½Ïò£¬Ö÷ÒªÊÇÎªÁËÊ¹´¥ÃþÊä³öµÄ×ø±ê¶ÔÓ¦
-////	LCD_SCAN_MODE = 6;	
-////  Config.Orientation = GUI_SWAP_XY | GUI_MIRROR_Y;					    //modify by fire  ºáÆÁ
-//////µ÷ÕûÉ¨Ãè·½Ïò£¬Ö÷ÒªÊÇÎªÁËÊ¹´¥ÃþÊä³öµÄ×ø±ê¶ÔÓ¦	
-////	LCD_SCAN_MODE = 5;	
-//  Config.NumDummyReads = 2;                                     //modify by fire ¶ÁÈ¡µÄµÚ¶þ¸öÊý¾Ý²ÅÊÇÕæÊµÊý¾Ý
+  //  Config.FirstCOM = 0;                                          //modify by fire
+  //  Config.FirstSEG = 0;                                          //modify by fire
+  //	Config.Orientation = GUI_MIRROR_Y|GUI_MIRROR_X;								//modify by fire ï¿½ï¿½ï¿½ï¿½
+  ////ï¿½ï¿½ï¿½ï¿½É¨ï¿½è·½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Îªï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
+  ////	LCD_SCAN_MODE = 6;
+  ////  Config.Orientation = GUI_SWAP_XY | GUI_MIRROR_Y;					    //modify by fire  ï¿½ï¿½ï¿½ï¿½
+  //////ï¿½ï¿½ï¿½ï¿½É¨ï¿½è·½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Îªï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
+  ////	LCD_SCAN_MODE = 5;
+  //  Config.NumDummyReads = 2;                                     //modify by fire ï¿½ï¿½È¡ï¿½ÄµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
 
-//  GUIDRV_FlexColor_Config(pDevice, &Config);
-//  //
-//  // Set controller and operation mode
-//  //
-//  PortAPI.pfWrite16_A0  = LcdWriteReg;
-//  PortAPI.pfWrite16_A1  = LcdWriteData;
-//  PortAPI.pfWriteM16_A1 = LcdWriteDataMultiple;
-//  PortAPI.pfReadM16_A1  = LcdReadDataMultiple;
-//  GUIDRV_FlexColor_SetFunc(pDevice, &PortAPI, GUIDRV_FLEXCOLOR_F66709, GUIDRV_FLEXCOLOR_M16C0B16);//modify by fire
+  //  GUIDRV_FlexColor_Config(pDevice, &Config);
+  //  //
+  //  // Set controller and operation mode
+  //  //
+  //  PortAPI.pfWrite16_A0  = LcdWriteReg;
+  //  PortAPI.pfWrite16_A1  = LcdWriteData;
+  //  PortAPI.pfWriteM16_A1 = LcdWriteDataMultiple;
+  //  PortAPI.pfReadM16_A1  = LcdReadDataMultiple;
+  //  GUIDRV_FlexColor_SetFunc(pDevice, &PortAPI, GUIDRV_FLEXCOLOR_F66709, GUIDRV_FLEXCOLOR_M16C0B16);//modify by fire
 }
 
 /*********************************************************************
@@ -229,13 +231,16 @@ void LCD_X_Config(void) {
 *     -1 - Command not handled
 *      0 - Ok
 */
-int LCD_X_DisplayDriver(unsigned LayerIndex, unsigned Cmd, void * pData) {
+int LCD_X_DisplayDriver(unsigned LayerIndex, unsigned Cmd, void *pData)
+{
   int r;
-  (void) LayerIndex;
-  (void) pData;
-   LCD_Init();
-  switch (Cmd) {
-  case LCD_X_INITCONTROLLER: {
+  (void)LayerIndex;
+  (void)pData;
+  LCD_Init();
+  switch (Cmd)
+  {
+  case LCD_X_INITCONTROLLER:
+  {
     //
     // Called during the initialization process in order to set up the
     // display controller and put it into operation. If the display
@@ -244,7 +249,7 @@ int LCD_X_DisplayDriver(unsigned LayerIndex, unsigned Cmd, void * pData) {
     //
     // ...
     //ILI9806G_Init();//modify by fire
-    
+
     return 0;
   }
   default:
@@ -254,4 +259,3 @@ int LCD_X_DisplayDriver(unsigned LayerIndex, unsigned Cmd, void * pData) {
 }
 
 /*************************** End of file ****************************/
-

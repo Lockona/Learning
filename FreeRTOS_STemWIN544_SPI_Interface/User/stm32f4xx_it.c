@@ -30,9 +30,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
 
-#include "FreeRTOS.h"					//FreeRTOS使用		  
-#include "task.h" 
-
+#include "FreeRTOS.h" //FreeRTOS使用
+#include "task.h"
 
 /** @addtogroup STM32F407I_DISCOVERY_Examples
   * @{
@@ -40,7 +39,7 @@
 
 /** @addtogroup FMC_SDRAM
   * @{
-  */ 
+  */
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -71,7 +70,8 @@ void HardFault_Handler(void)
 {
   /* Go to infinite loop when Hard Fault exception occurs */
   while (1)
-  {}
+  {
+  }
 }
 
 /**
@@ -83,7 +83,8 @@ void MemManage_Handler(void)
 {
   /* Go to infinite loop when Memory Manage exception occurs */
   while (1)
-  {}
+  {
+  }
 }
 
 /**
@@ -95,7 +96,8 @@ void BusFault_Handler(void)
 {
   /* Go to infinite loop when Bus Fault exception occurs */
   while (1)
-  {}
+  {
+  }
 }
 
 /**
@@ -107,7 +109,8 @@ void UsageFault_Handler(void)
 {
   /* Go to infinite loop when Usage Fault exception occurs */
   while (1)
-  {}
+  {
+  }
 }
 
 /**
@@ -116,8 +119,8 @@ void UsageFault_Handler(void)
   * @retval None
   */
 void DebugMon_Handler(void)
-{}
-
+{
+}
 
 /**
   * @brief  This function handles SysTick Handler.
@@ -127,15 +130,15 @@ void DebugMon_Handler(void)
 extern void xPortSysTickHandler(void);
 //systick中断服务函数
 void SysTick_Handler(void)
-{	
-    #if (INCLUDE_xTaskGetSchedulerState  == 1 )
-      if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
-      {
-    #endif  /* INCLUDE_xTaskGetSchedulerState */  
-        xPortSysTickHandler();
-    #if (INCLUDE_xTaskGetSchedulerState  == 1 )
-      }
-    #endif  /* INCLUDE_xTaskGetSchedulerState */
+{
+#if (INCLUDE_xTaskGetSchedulerState == 1)
+  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+  {
+#endif /* INCLUDE_xTaskGetSchedulerState */
+    xPortSysTickHandler();
+#if (INCLUDE_xTaskGetSchedulerState == 1)
+  }
+#endif /* INCLUDE_xTaskGetSchedulerState */
 }
 
 /******************************************************************************/
@@ -147,10 +150,10 @@ void SysTick_Handler(void)
 
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
-  */ 
+  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

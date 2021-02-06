@@ -36,3 +36,4 @@
 ..\..\output\lcd_driver.o: ..\..\FreeRTOS\include\mpu_wrappers.h
 ..\..\output\lcd_driver.o: ..\..\FreeRTOS\include\task.h
 ..\..\output\lcd_driver.o: ..\..\FreeRTOS\include\list.h
+..\..\output\lcd_driver.o: ..\..\User\TOUCH\touch.h

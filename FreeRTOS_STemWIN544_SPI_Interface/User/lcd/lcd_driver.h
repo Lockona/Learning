@@ -1,49 +1,49 @@
 #ifndef __LCD_H
-#define __LCD_H		
-#include "sys.h"	 
+#define __LCD_H
+#include "sys.h"
 //#include "stm32f4xx.h"
 #include "stdlib.h"
 
 /****************************************************************************************************
-//=======================================Òº¾§ÆÁÊý¾ÝÏß½ÓÏß==========================================//
-STM32 PB×é½ÓÒº¾§ÆÁDB0~DB16,¾ÙÀýÒÀ´ÎÎªDB0½ÓPB0,..DB15½ÓPB15.   
-//=======================================Òº¾§ÆÁ¿ØÖÆÏß½ÓÏß==========================================//
-//LCD_CS	½ÓPC9	//Æ¬Ñ¡ÐÅºÅ
-//LCD_RS	½ÓPC8	//¼Ä´æÆ÷/Êý¾ÝÑ¡ÔñÐÅºÅ
-//LCD_WR	½ÓPC7	//Ð´ÐÅºÅ
-//LCD_RD	½ÓPC6	//¶ÁÐÅºÅ
-//LCD_RST	½ÓPC5	//¸´Î»ÐÅºÅ
-//LCD_LED	½ÓPC10	//±³¹â¿ØÖÆÐÅºÅ(¸ßµçÆ½µãÁÁ)
-//=========================================´¥ÃþÆÁ´¥½ÓÏß=========================================//
-//²»Ê¹ÓÃ´¥Ãþ»òÕßÄ£¿é±¾Éí²»´ø´¥Ãþ£¬Ôò¿É²»Á¬½Ó
-//MO(MISO)	½ÓPC2	//SPI×ÜÏßÊä³ö
-//MI(MOSI)	½ÓPC3	//SPI×ÜÏßÊäÈë
-//PEN		½ÓPC1	//´¥ÃþÆÁÖÐ¶ÏÐÅºÅ
-//TCS		½ÓPC13	//´¥ÃþICÆ¬Ñ¡
-//CLK		½ÓPC0	//SPI×ÜÏßÊ±ÖÓ
-**************************************************************************************************/	
+//=======================================Òºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½==========================================//
+STM32 PBï¿½ï¿½ï¿½Òºï¿½ï¿½ï¿½ï¿½DB0~DB16,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªDB0ï¿½ï¿½PB0,..DB15ï¿½ï¿½PB15.   
+//=======================================Òºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½==========================================//
+//LCD_CS	ï¿½ï¿½PC9	//Æ¬Ñ¡ï¿½Åºï¿½
+//LCD_RS	ï¿½ï¿½PC8	//ï¿½Ä´ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Åºï¿½
+//LCD_WR	ï¿½ï¿½PC7	//Ð´ï¿½Åºï¿½
+//LCD_RD	ï¿½ï¿½PC6	//ï¿½ï¿½ï¿½Åºï¿½
+//LCD_RST	ï¿½ï¿½PC5	//ï¿½ï¿½Î»ï¿½Åºï¿½
+//LCD_LED	ï¿½ï¿½PC10	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½(ï¿½ßµï¿½Æ½ï¿½ï¿½ï¿½ï¿½)
+//=========================================ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=========================================//
+//ï¿½ï¿½Ê¹ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½é±¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½
+//MO(MISO)	ï¿½ï¿½PC2	//SPIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//MI(MOSI)	ï¿½ï¿½PC3	//SPIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//PEN		ï¿½ï¿½PC1	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Åºï¿½
+//TCS		ï¿½ï¿½PC13	//ï¿½ï¿½ï¿½ï¿½ICÆ¬Ñ¡
+//CLK		ï¿½ï¿½PC0	//SPIï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+**************************************************************************************************/
 
-/////////////////////////////////////ÓÃ»§ÅäÖÃÇø///////////////////////////////////	 
-#define USE_HORIZONTAL  			1	//¶¨ÒåÊÇ·ñÊ¹ÓÃºáÆÁ 		0,²»Ê¹ÓÃ; 1,Ê¹ÓÃ.
-#define USE_HARDWARE_SPI     	1 //¶¨ÒåÊ¹ÓÃÓ²¼þSPI»¹ÊÇÄ£ÄâSPI 0,²»Ê¹ÓÃ; 1,Ê¹ÓÃ
-//////////////////////////////////////////////////////////////////////////////////	
+/////////////////////////////////////ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½///////////////////////////////////
+#define USE_HORIZONTAL 1   //ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Ê¹ï¿½Ãºï¿½ï¿½ï¿½ 		0,ï¿½ï¿½Ê¹ï¿½ï¿½; 1,Ê¹ï¿½ï¿½.
+#define USE_HARDWARE_SPI 1 //ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Ó²ï¿½ï¿½SPIï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½SPI 0,ï¿½ï¿½Ê¹ï¿½ï¿½; 1,Ê¹ï¿½ï¿½
+//////////////////////////////////////////////////////////////////////////////////
 
-//LCDÖØÒª²ÎÊý¼¯
-typedef struct  
-{										    
-	u16 width;			//LCD ¿í¶È
-	u16 height;			//LCD ¸ß¶È
-	u16 id;				//LCD ID
-	u8  dir;			//ºáÆÁ»¹ÊÇÊúÆÁ¿ØÖÆ£º0£¬ÊúÆÁ£»1£¬ºáÆÁ¡£	
-	u16	 wramcmd;		//¿ªÊ¼Ð´gramÖ¸Áî
-	u16  setxcmd;		//ÉèÖÃx×ø±êÖ¸Áî
-	u16  setycmd;		//ÉèÖÃy×ø±êÖ¸Áî	 
-}_lcd_dev; 	
+//LCDï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+typedef struct
+{
+	u16 width;	 //LCD ï¿½ï¿½ï¿½ï¿½
+	u16 height;	 //LCD ï¿½ß¶ï¿½
+	u16 id;		 //LCD ID
+	u8 dir;		 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	u16 wramcmd; //ï¿½ï¿½Ê¼Ð´gramÖ¸ï¿½ï¿½
+	u16 setxcmd; //ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+	u16 setycmd; //ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+} _lcd_dev;
 
-//LCD²ÎÊý
-extern _lcd_dev lcddev;	//¹ÜÀíLCDÖØÒª²ÎÊý  
-//¶¨ÒåLCDµÄ³ß´ç
-#if USE_HORIZONTAL==0	//Ê¹ÓÃºáÆÁ
+//LCDï¿½ï¿½ï¿½ï¿½
+extern _lcd_dev lcddev; //ï¿½ï¿½ï¿½ï¿½LCDï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½ï¿½ï¿½LCDï¿½Ä³ß´ï¿½
+#if USE_HORIZONTAL == 0 //Ê¹ï¿½Ãºï¿½ï¿½ï¿½
 #define LCD_W 320
 #define LCD_H 240
 #else
@@ -51,120 +51,115 @@ extern _lcd_dev lcddev;	//¹ÜÀíLCDÖØÒª²ÎÊý
 #define LCD_SPI_H 320
 #endif
 
-//TFTLCD²¿·ÖÍâÒªµ÷ÓÃµÄº¯Êý		   
-extern u16  POINT_COLOR;//Ä¬ÈÏºìÉ«    
-extern u16  BACK_COLOR; //±³¾°ÑÕÉ«.Ä¬ÈÏÎª°×É«
-
-
+//TFTLCDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ÃµÄºï¿½ï¿½ï¿½
+extern u16 POINT_COLOR; //Ä¬ï¿½Ïºï¿½É«
+extern u16 BACK_COLOR;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«.Ä¬ï¿½ï¿½Îªï¿½ï¿½É«
 
 ////////////////////////////////////////////////////////////////////
-//-----------------LCD½ÓÏß¶¨Òå---------------- 
+//-----------------LCDï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½----------------
 
-#define LCD_CTRL_B   	  	GPIOB		//¶¨ÒåTFTÊý¾Ý¶Ë¿Ú
-#define LCD_CTRL_C   	  	GPIOC		//¶¨ÒåTFTÊý¾Ý¶Ë¿Ú
-#define LCD_BL        	GPIO_Pin_11  //MCU_PB11--->>TFT --BL
-#define LCD_RS         	GPIO_Pin_12	//PB12--->>TFT --RS/DC
-#define LCD_CS        	GPIO_Pin_13 //MCU_PB13--->>TFT --CS/CE
-#define LCD_RST     	GPIO_Pin_14	//PB14--->>TFT --RST
-#define LCD_SCL        	GPIO_Pin_10	//PB10--->>TFT --SCL/SCK
-#define LCD_SDA        	GPIO_Pin_3	//PC3 MOSI--->>TFT --SDA/DIN
-
+#define LCD_CTRL_B GPIOB	//ï¿½ï¿½ï¿½ï¿½TFTï¿½ï¿½ï¿½Ý¶Ë¿ï¿½
+#define LCD_CTRL_C GPIOC	//ï¿½ï¿½ï¿½ï¿½TFTï¿½ï¿½ï¿½Ý¶Ë¿ï¿½
+#define LCD_BL GPIO_Pin_11	//MCU_PB11--->>TFT --BL
+#define LCD_RS GPIO_Pin_12	//PB12--->>TFT --RS/DC
+#define LCD_CS GPIO_Pin_13	//MCU_PB13--->>TFT --CS/CE
+#define LCD_RST GPIO_Pin_14 //PB14--->>TFT --RST
+#define LCD_SCL GPIO_Pin_10 //PB10--->>TFT --SCL/SCK
+#define LCD_SDA GPIO_Pin_3	//PC3 MOSI--->>TFT --SDA/DIN
 
 //#define LCD_CS_SET(x) LCD_CTRL->ODR=(LCD_CTRL->ODR&~LCD_CS)|(x ? LCD_CS:0)
 
-//Òº¾§¿ØÖÆ¿ÚÖÃ1²Ù×÷Óï¾äºê¶¨Òå
-#define	LCD_CS_SET  	LCD_CTRL_B->BSRRL=LCD_CS    
-#define	LCD_RS_SET  	LCD_CTRL_B->BSRRL=LCD_RS    
-#define	LCD_SDA_SET  	LCD_CTRL_C->BSRRL=LCD_SDA    
-#define	LCD_SCL_SET  	LCD_CTRL_B->BSRRL=LCD_SCL    
-#define	LCD_RST_SET  	LCD_CTRL_B->BSRRL=LCD_RST    
-#define	LCD_BL_SET  	LCD_CTRL_B->BSRRL=LCD_BL  
+//Òºï¿½ï¿½ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê¶¨ï¿½ï¿½
+#define LCD_CS_SET LCD_CTRL_B->BSRRL = LCD_CS
+#define LCD_RS_SET LCD_CTRL_B->BSRRL = LCD_RS
+#define LCD_SDA_SET LCD_CTRL_C->BSRRL = LCD_SDA
+#define LCD_SCL_SET LCD_CTRL_B->BSRRL = LCD_SCL
+#define LCD_RST_SET LCD_CTRL_B->BSRRL = LCD_RST
+#define LCD_BL_SET LCD_CTRL_B->BSRRL = LCD_BL
 
-//Òº¾§¿ØÖÆ¿ÚÖÃ0²Ù×÷Óï¾äºê¶¨Òå
-#define	LCD_CS_CLR  	LCD_CTRL_B->BSRRH=LCD_CS    
-#define	LCD_RS_CLR  	LCD_CTRL_B->BSRRH=LCD_RS    
-#define	LCD_SDA_CLR  	LCD_CTRL_C->BSRRH=LCD_SDA    
-#define	LCD_SCL_CLR  	LCD_CTRL_B->BSRRH=LCD_SCL    
-#define	LCD_RST_CLR  	LCD_CTRL_B->BSRRH=LCD_RST    
-#define	LCD_BL_CLR  	LCD_CTRL_B->BSRRH=LCD_BL 
+//Òºï¿½ï¿½ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê¶¨ï¿½ï¿½
+#define LCD_CS_CLR LCD_CTRL_B->BSRRH = LCD_CS
+#define LCD_RS_CLR LCD_CTRL_B->BSRRH = LCD_RS
+#define LCD_SDA_CLR LCD_CTRL_C->BSRRH = LCD_SDA
+#define LCD_SCL_CLR LCD_CTRL_B->BSRRH = LCD_SCL
+#define LCD_RST_CLR LCD_CTRL_B->BSRRH = LCD_RST
+#define LCD_BL_CLR LCD_CTRL_B->BSRRH = LCD_BL
 //////////////////////////////////////////////////////////////////////
 
+//É¨ï¿½è·½ï¿½ï¿½ï¿½ï¿½
+#define L2R_U2D 0 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½
+#define L2R_D2U 1 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½
+#define R2L_U2D 2 //ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½
+#define R2L_D2U 3 //ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½
 
-//É¨Ãè·½Ïò¶¨Òå
-#define L2R_U2D  0 //´Ó×óµ½ÓÒ,´ÓÉÏµ½ÏÂ
-#define L2R_D2U  1 //´Ó×óµ½ÓÒ,´ÓÏÂµ½ÉÏ
-#define R2L_U2D  2 //´ÓÓÒµ½×ó,´ÓÉÏµ½ÏÂ
-#define R2L_D2U  3 //´ÓÓÒµ½×ó,´ÓÏÂµ½ÉÏ
+#define U2D_L2R 4 //ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define U2D_R2L 5 //ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½
+#define D2U_L2R 6 //ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define D2U_R2L 7 //ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½
 
-#define U2D_L2R  4 //´ÓÉÏµ½ÏÂ,´Ó×óµ½ÓÒ
-#define U2D_R2L  5 //´ÓÉÏµ½ÏÂ,´ÓÓÒµ½×ó
-#define D2U_L2R  6 //´ÓÏÂµ½ÉÏ,´Ó×óµ½ÓÒ
-#define D2U_R2L  7 //´ÓÏÂµ½ÉÏ,´ÓÓÒµ½×ó
+#define DFT_SCAN_DIR L2R_U2D //Ä¬ï¿½Ïµï¿½É¨ï¿½è·½ï¿½ï¿½
 
-#define DFT_SCAN_DIR  L2R_U2D  //Ä¬ÈÏµÄÉ¨Ãè·½Ïò
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+#define WHITE 0xFFFF
+#define BLACK 0x0000
+#define BLUE 0x001F
+#define BRED 0XF81F
+#define GRED 0XFFE0
+#define GBLUE 0X07FF
+#define RED 0xF800
+#define MAGENTA 0xF81F
+#define GREEN 0x07E0
+#define CYAN 0x7FFF
+#define YELLOW 0xFFE0
+#define BROWN 0XBC40 //ï¿½ï¿½É«
+#define BRRED 0XFC07 //ï¿½Øºï¿½É«
+#define GRAY 0X8430	 //ï¿½ï¿½É«
+//GUIï¿½ï¿½É«
 
+#define DARKBLUE 0X01CF	 //ï¿½ï¿½ï¿½ï¿½É«
+#define LIGHTBLUE 0X7D7C //Ç³ï¿½ï¿½É«
+#define GRAYBLUE 0X5458	 //ï¿½ï¿½ï¿½ï¿½É«
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ÎªPANELï¿½ï¿½ï¿½ï¿½É«
 
-//»­±ÊÑÕÉ«
-#define WHITE       0xFFFF
-#define BLACK      	0x0000	  
-#define BLUE       	0x001F  
-#define BRED        0XF81F
-#define GRED 			 	0XFFE0
-#define GBLUE			 	0X07FF
-#define RED         0xF800
-#define MAGENTA     0xF81F
-#define GREEN       0x07E0
-#define CYAN        0x7FFF
-#define YELLOW      0xFFE0
-#define BROWN 			0XBC40 //×ØÉ«
-#define BRRED 			0XFC07 //×ØºìÉ«
-#define GRAY  			0X8430 //»ÒÉ«
-//GUIÑÕÉ«
+#define LIGHTGREEN 0X841F //Ç³ï¿½ï¿½É«
+//#define LIGHTGRAY     0XEF5B //Ç³ï¿½ï¿½É«(PANNEL)
+#define LGRAY 0XC618 //Ç³ï¿½ï¿½É«(PANNEL),ï¿½ï¿½ï¿½å±³ï¿½ï¿½É«
 
-#define DARKBLUE      	 0X01CF	//ÉîÀ¶É«
-#define LIGHTBLUE      	 0X7D7C	//Ç³À¶É«  
-#define GRAYBLUE       	 0X5458 //»ÒÀ¶É«
-//ÒÔÉÏÈýÉ«ÎªPANELµÄÑÕÉ« 
- 
-#define LIGHTGREEN     	0X841F //Ç³ÂÌÉ«
-//#define LIGHTGRAY     0XEF5B //Ç³»ÒÉ«(PANNEL)
-#define LGRAY 			 		0XC618 //Ç³»ÒÉ«(PANNEL),´°Ìå±³¾°É«
+#define LGRAYBLUE 0XA651 //Ç³ï¿½ï¿½ï¿½ï¿½É«(ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½É«)
+#define LBBLUE 0X2B12	 //Ç³ï¿½ï¿½ï¿½ï¿½É«(Ñ¡ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ä·ï¿½É«)
 
-#define LGRAYBLUE      	0XA651 //Ç³»ÒÀ¶É«(ÖÐ¼ä²ãÑÕÉ«)
-#define LBBLUE          0X2B12 //Ç³×ØÀ¶É«(Ñ¡ÔñÌõÄ¿µÄ·´É«)
-	    															  
-extern u16 BACK_COLOR, POINT_COLOR ;  
+extern u16 BACK_COLOR, POINT_COLOR;
 
+void delay_ms(int count);
 void LCD_Init(void);
 void LCD_DisplayOn(void);
 void LCD_DisplayOff(void);
-void LCD_Clear(u16 Color);	
-void LCD_Fill(u16 x0,u16 y0,u16 x1,u16 y1,u16 Color);
+void LCD_Clear(u16 Color);
+void LCD_Fill(u16 x0, u16 y0, u16 x1, u16 y1, u16 Color);
 void LCD_SetCursor(u16 Xpos, u16 Ypos);
-void LCD_DrawPoint(u16 x,u16 y,u16 color);//»­µã
-u16  LCD_ReadPoint(u16 x,u16 y); //¶Áµã
+void LCD_DrawPoint(u16 x, u16 y, u16 color); //ï¿½ï¿½ï¿½ï¿½
+u16 LCD_ReadPoint(u16 x, u16 y);			 //ï¿½ï¿½ï¿½ï¿½
 void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2);
-void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2);		   
-void LCD_SetWindows(u16 xStar, u16 yStar,u16 xEnd,u16 yEnd);
+void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2);
+void LCD_SetWindows(u16 xStar, u16 yStar, u16 xEnd, u16 yEnd);
 void LCD_DrawPoint_16Bit(u16 color);
-u16 LCD_RD_DATA(void);//¶ÁÈ¡LCDÊý¾Ý		
+u16 LCD_RD_DATA(void); //ï¿½ï¿½È¡LCDï¿½ï¿½ï¿½ï¿½
 void LCD_WR_REG(u8 data);
 void LCD_WriteReg(u8 LCD_Reg, u16 LCD_RegValue);
 void LCD_WR_DATA(u8 data);
 u16 LCD_ReadReg(u8 LCD_Reg);
 void LCD_WriteRAM_Prepare(void);
 void LCD_WriteRAM(u16 RGB_Code);
-u16 LCD_ReadRAM(void);		   
+u16 LCD_ReadRAM(void);
 u16 LCD_BGR2RGB(u16 c);
 void LCD_SetParam(void);
-void  SPIv_WriteData(u8 Data);
-u8 SPI_WriteByte(SPI_TypeDef* SPIx,u8 Byte);
+void SPIv_WriteData(u8 Data);
+u8 SPI_WriteByte(SPI_TypeDef *SPIx, u8 Byte);
 
-
-//Èç¹ûÈÔÈ»¾õµÃËÙ¶È²»¹»¿ì£¬¿ÉÒÔÊ¹ÓÃÏÂÃæµÄºê¶¨Òå,Ìá¸ßËÙ¶È.
-//×¢ÒâÒªÈ¥µôlcd.cÖÐvoid LCD_WR_DATA(u16 data)º¯Êý¶¨ÒåÅ¶
+//ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È²ï¿½ï¿½ï¿½ï¿½ì£¬ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äºê¶¨ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½.
+//×¢ï¿½ï¿½ÒªÈ¥ï¿½ï¿½lcd.cï¿½ï¿½void LCD_WR_DATA(u16 data)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶
 /*
-#if LCD_USE8BIT_MODEL==1//Ê¹ÓÃ8Î»²¢ÐÐÊý¾Ý×ÜÏßÄ£Ê½
+#if LCD_USE8BIT_MODEL==1//Ê¹ï¿½ï¿½8Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
 	#define LCD_WR_DATA(data){\
 	LCD_RS_SET;\
 	LCD_CS_CLR;\
@@ -176,7 +171,7 @@ u8 SPI_WriteByte(SPI_TypeDef* SPIx,u8 Byte);
 	LCD_WR_SET;\
 	LCD_CS_SET;\
 	}
-	#else//Ê¹ÓÃ16Î»²¢ÐÐÊý¾Ý×ÜÏßÄ£Ê½
+	#else//Ê¹ï¿½ï¿½16Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
 	#define LCD_WR_DATA(data){\
 	LCD_RS_SET;\
 	LCD_CS_CLR;\
@@ -188,118 +183,113 @@ u8 SPI_WriteByte(SPI_TypeDef* SPIx,u8 Byte);
 #endif
 */
 
-//9320/9325 LCD¼Ä´æÆ÷  
-#define R0             0x00
-#define R1             0x01
-#define R2             0x02
-#define R3             0x03
-#define R4             0x04
-#define R5             0x05
-#define R6             0x06
-#define R7             0x07
-#define R8             0x08
-#define R9             0x09
-#define R10            0x0A
-#define R12            0x0C
-#define R13            0x0D
-#define R14            0x0E
-#define R15            0x0F
-#define R16            0x10
-#define R17            0x11
-#define R18            0x12
-#define R19            0x13
-#define R20            0x14
-#define R21            0x15
-#define R22            0x16
-#define R23            0x17
-#define R24            0x18
-#define R25            0x19
-#define R26            0x1A
-#define R27            0x1B
-#define R28            0x1C
-#define R29            0x1D
-#define R30            0x1E
-#define R31            0x1F
-#define R32            0x20
-#define R33            0x21
-#define R34            0x22
-#define R36            0x24
-#define R37            0x25
-#define R40            0x28
-#define R41            0x29
-#define R43            0x2B
-#define R45            0x2D
-#define R48            0x30
-#define R49            0x31
-#define R50            0x32
-#define R51            0x33
-#define R52            0x34
-#define R53            0x35
-#define R54            0x36
-#define R55            0x37
-#define R56            0x38
-#define R57            0x39
-#define R59            0x3B
-#define R60            0x3C
-#define R61            0x3D
-#define R62            0x3E
-#define R63            0x3F
-#define R64            0x40
-#define R65            0x41
-#define R66            0x42
-#define R67            0x43
-#define R68            0x44
-#define R69            0x45
-#define R70            0x46
-#define R71            0x47
-#define R72            0x48
-#define R73            0x49
-#define R74            0x4A
-#define R75            0x4B
-#define R76            0x4C
-#define R77            0x4D
-#define R78            0x4E
-#define R79            0x4F
-#define R80            0x50
-#define R81            0x51
-#define R82            0x52
-#define R83            0x53
-#define R96            0x60
-#define R97            0x61
-#define R106           0x6A
-#define R118           0x76
-#define R128           0x80
-#define R129           0x81
-#define R130           0x82
-#define R131           0x83
-#define R132           0x84
-#define R133           0x85
-#define R134           0x86
-#define R135           0x87
-#define R136           0x88
-#define R137           0x89
-#define R139           0x8B
-#define R140           0x8C
-#define R141           0x8D
-#define R143           0x8F
-#define R144           0x90
-#define R145           0x91
-#define R146           0x92
-#define R147           0x93
-#define R148           0x94
-#define R149           0x95
-#define R150           0x96
-#define R151           0x97
-#define R152           0x98
-#define R153           0x99
-#define R154           0x9A
-#define R157           0x9D
-#define R192           0xC0
-#define R193           0xC1
-#define R229           0xE5							  		 
-#endif  
-	 
-	 
-
-
-
+//9320/9325 LCDï¿½Ä´ï¿½ï¿½ï¿½
+#define R0 0x00
+#define R1 0x01
+#define R2 0x02
+#define R3 0x03
+#define R4 0x04
+#define R5 0x05
+#define R6 0x06
+#define R7 0x07
+#define R8 0x08
+#define R9 0x09
+#define R10 0x0A
+#define R12 0x0C
+#define R13 0x0D
+#define R14 0x0E
+#define R15 0x0F
+#define R16 0x10
+#define R17 0x11
+#define R18 0x12
+#define R19 0x13
+#define R20 0x14
+#define R21 0x15
+#define R22 0x16
+#define R23 0x17
+#define R24 0x18
+#define R25 0x19
+#define R26 0x1A
+#define R27 0x1B
+#define R28 0x1C
+#define R29 0x1D
+#define R30 0x1E
+#define R31 0x1F
+#define R32 0x20
+#define R33 0x21
+#define R34 0x22
+#define R36 0x24
+#define R37 0x25
+#define R40 0x28
+#define R41 0x29
+#define R43 0x2B
+#define R45 0x2D
+#define R48 0x30
+#define R49 0x31
+#define R50 0x32
+#define R51 0x33
+#define R52 0x34
+#define R53 0x35
+#define R54 0x36
+#define R55 0x37
+#define R56 0x38
+#define R57 0x39
+#define R59 0x3B
+#define R60 0x3C
+#define R61 0x3D
+#define R62 0x3E
+#define R63 0x3F
+#define R64 0x40
+#define R65 0x41
+#define R66 0x42
+#define R67 0x43
+#define R68 0x44
+#define R69 0x45
+#define R70 0x46
+#define R71 0x47
+#define R72 0x48
+#define R73 0x49
+#define R74 0x4A
+#define R75 0x4B
+#define R76 0x4C
+#define R77 0x4D
+#define R78 0x4E
+#define R79 0x4F
+#define R80 0x50
+#define R81 0x51
+#define R82 0x52
+#define R83 0x53
+#define R96 0x60
+#define R97 0x61
+#define R106 0x6A
+#define R118 0x76
+#define R128 0x80
+#define R129 0x81
+#define R130 0x82
+#define R131 0x83
+#define R132 0x84
+#define R133 0x85
+#define R134 0x86
+#define R135 0x87
+#define R136 0x88
+#define R137 0x89
+#define R139 0x8B
+#define R140 0x8C
+#define R141 0x8D
+#define R143 0x8F
+#define R144 0x90
+#define R145 0x91
+#define R146 0x92
+#define R147 0x93
+#define R148 0x94
+#define R149 0x95
+#define R150 0x96
+#define R151 0x97
+#define R152 0x98
+#define R153 0x99
+#define R154 0x9A
+#define R157 0x9D
+#define R192 0xC0
+#define R193 0xC1
+#define R229 0xE5
+#endif
