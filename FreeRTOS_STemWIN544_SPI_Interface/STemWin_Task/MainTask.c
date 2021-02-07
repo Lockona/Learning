@@ -1,29 +1,63 @@
 
 #include "GUI.h"
 #include "MainTask.h"
-int i = 2;
-char acText[] = "This example demostrates text wrapping";					//å®šä¹‰å­—ç¬¦ä¸²
-GUI_RECT Rect = { 50, 50, 220, 300 };													//å®šä¹‰çŸ©å½¢æ˜¾ç¤ºåŒºåŸŸ
-GUI_WRAPMODE  aWm[] = { GUI_WRAPMODE_NONE,GUI_WRAPMODE_CHAR,GUI_WRAPMODE_WORD };
+#include "ScreenShot.h"
+#include "FreeRTOS.h"
+#include "task.h"
+UINT    f_num;
+GUI_BITMAP bitmap;
+GUI_LOGPALETTE palette;
+/**
+  * @brief ´ÓÍâ²¿´æ´¢Æ÷ÖĞ¶ÁÈ¡²¢»æÖÆBMPÍ¼Æ¬Êı¾İ
+  * @note ÎŞ
+  * @param sFilename£ºÒª¶ÁÈ¡µÄÎÄ¼şÃû
+  *        x£ºÒªÏÔÊ¾µÄxÖá×ø±ê
+  *        y£ºÒªÏÔÊ¾µÄyÖá×ø±ê
+  * @retval ÎŞ
+  */
+static void ShowStreamedBitmap(const char *sFilename, int x, int y)
+{
+ 	WM_HMEM hMem;
+  char *_acbuffer = NULL;
+
+	/* ½øÈëÁÙ½ç¶Î */
+	taskENTER_CRITICAL();
+	/* ´ò¿ªÍ¼Æ¬ */
+	result = f_open(&file, sFilename, FA_READ);
+	if ((result != FR_OK))
+	{
+	//	printf("ÎÄ¼ş´ò¿ªÊ§°Ü£¡\r\n");
+		_acbuffer[0]='\0';
+	}
+	
+	/* ÉêÇëÒ»¿é¶¯Ì¬ÄÚ´æ¿Õ¼ä */
+	hMem = GUI_ALLOC_AllocZero(file.fsize);
+	/* ×ª»»¶¯Ì¬ÄÚ´æµÄ¾ä±úÎªÖ¸Õë */
+	_acbuffer = GUI_ALLOC_h2p(hMem);
+
+	/* ¶ÁÈ¡Í¼Æ¬Êı¾İµ½¶¯Ì¬ÄÚ´æÖĞ */
+
+	result = f_read(&file, _acbuffer, file.fsize, &f_num);
+	if(result != FR_OK)
+	{
+//		printf("ÎÄ¼ş¶ÁÈ¡Ê§°Ü£¡\r\n");
+	}	
+	/* »æÖÆÁ÷Î»Í¼ */
+	GUI_DrawStreamedBitmapAuto(_acbuffer, x, y);
+	
+	/* ¶ÁÈ¡Íê±Ï¹Ø±ÕÎÄ¼ş */
+  f_close(&file);
+	/* ÍË³öÁÙ½ç¶Î */
+	taskEXIT_CRITICAL();
+	/* ÊÍ·ÅÄÚ´æ */
+	GUI_ALLOC_Free(hMem);
+}
 // USER START (Optionally insert additional public code)
 // USER END
 
 void MainTask(void)
 {
-  //GUI_Init();
-	GUI_HMEM hQr;
-	char str[]="http://www.baidu.com";
-	GUI_SetBkColor(GUI_WHITE);
-	GUI_Clear();
-	GUI_Clear();//æ¸…å±ä¸å®Œå…¨ï¼Œè¦æ¸…ä¸¤æ¬¡
-	GUI_SetColor(GUI_BLACK);
-//	GUI_SetPenSize(1);
-	hQr = GUI_QR_Create(str,5,GUI_QR_ECLEVEL_H,0);
-	GUI_QR_Draw(hQr,10,10);
-//	GUI_SetLineStyle(GUI_LS_DASH);
-//	GUI_DrawLine(50,50,170,270);
-//	GUI_FillRect(50,50,170,270);
-	GUI_QR_Delete(hQr);
+  ShowStreamedBitmap("0:/main.py", 0,0);
   while (1)
   {
     GUI_Delay(100);

@@ -12,9 +12,10 @@
 ..\..\output\main.o: ..\..\User\stm32f4xx_conf.h
 ..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 ..\..\output\main.o: ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h
+..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 ..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
 ..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 ..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 ..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 ..\..\output\main.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h
@@ -85,3 +86,8 @@
 ..\..\output\main.o: ..\..\STemWin\inc\TREEVIEW.h
 ..\..\output\main.o: ..\..\STemWin\inc\KNOB.h
 ..\..\output\main.o: ..\..\STemWin_Task\MainTask.h
+..\..\output\main.o: ..\..\STemWin_Task\ScreenShot.h
+..\..\output\main.o: ..\..\FATFS\ff.h
+..\..\output\main.o: ..\..\FATFS\integer.h
+..\..\output\main.o: ..\..\FATFS\ffconf.h
+..\..\output\main.o: ..\..\FATFS\diskio.h

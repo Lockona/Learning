@@ -26,9 +26,10 @@
 ..\..\output\guidrv_template.o: ..\..\User\stm32f4xx_conf.h
 ..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 ..\..\output\guidrv_template.o: ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h
+..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 ..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
 ..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 ..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 ..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 ..\..\output\guidrv_template.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h

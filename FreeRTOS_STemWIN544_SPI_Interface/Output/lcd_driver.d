@@ -11,9 +11,10 @@
 ..\..\output\lcd_driver.o: ..\..\User\stm32f4xx_conf.h
 ..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 ..\..\output\lcd_driver.o: ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h
+..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 ..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
 ..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 ..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 ..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 ..\..\output\lcd_driver.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h

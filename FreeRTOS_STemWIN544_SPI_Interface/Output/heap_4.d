@@ -13,9 +13,10 @@
 ..\..\output\heap_4.o: ..\..\User\stm32f4xx_conf.h
 ..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 ..\..\output\heap_4.o: ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h
+..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 ..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
 ..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 ..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 ..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
 ..\..\output\heap_4.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h

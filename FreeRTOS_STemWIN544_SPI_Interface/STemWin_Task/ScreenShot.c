@@ -8,7 +8,7 @@
   *********************************************************************
   * @attention
   *
-  * 实验平台:野火  STM32 F429 开发板 
+  * 实验平台:野火  STM32 F407 开发板 
   * 论坛    :http://www.firebbs.cn
   * 淘宝    :https://fire-stm32.taobao.com
   *
@@ -18,7 +18,7 @@
  * 包含的头文件
  ******************************************************************************/
 #include "ScreenShot.h"
-#include "./usart/bsp_usart.h"
+//#include "./usart/bsp_debug_usart.h"
 /* FreeRTOS头文件 */
 #include "FreeRTOS.h"
 #include "task.h"
@@ -26,12 +26,12 @@
 /*******************************************************************************
  * 全局变量
  ******************************************************************************/ 
-extern FATFS   fs;			/* FatFs文件系统对象 */
-extern FIL     file;		/* file objects */
-extern UINT    bw;     /* File R/W count */
-extern FRESULT result; 
-extern FILINFO fno;
-extern DIR dir;
+FATFS   fs;								/* FatFs文件系统对象 */
+FIL     file;							/* file objects */
+UINT    bw;            		/* File R/W count */
+FRESULT result; 
+FILINFO fno;
+DIR dir;
 
 uint16_t  file_num = 0;
 
@@ -49,7 +49,7 @@ void FS_Init(void)
   result = f_mount(&fs,"0:",1);
 	if(result != FR_OK)
 	{
-		printf("SD卡初始化失败，请确保SD卡已正确接入开发板，或换一张SD卡测试！\n");
+		//printf("SD卡初始化失败，请确保SD卡已正确接入开发板，或换一张SD卡测试！\n");
 		while(1);
 	}
 	/*  如果路径不存在，则创建路径  */
@@ -84,18 +84,18 @@ void ScreenShot(void)
 	result = f_open(&file, (const char*)filename, FA_WRITE | FA_CREATE_ALWAYS);
 	if(result == FR_OK)
 	{
-		printf("开始创建截屏文件\r\n");
+		//printf("开始创建截屏文件\r\n");
 		
 		GUI_BMP_Serialize(_WriteByte2File, &file);
 	
 		result = f_close(&file);
 		
-		printf("截屏文件创建成功\r\n");
+		//printf("截屏文件创建成功\r\n");
 		file_num++;
 	}
 	else
 	{
-		printf("截屏文件创建失败\r\n");
+		//printf("截屏文件创建失败\r\n");
 	}
 }
 

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,OS_SUPPORT</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\..\Libraries\CMSIS\Include;..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\..\User;..\..\FreeRTOS\include;..\..\FreeRTOS\port\RVDS\ARM_CM4F;..\..\User\uart;..\..\User\key;..\..\User\led;..\..\STemWin\Config;..\..\STemWin\inc;..\..\STemWin_Task;..\..\User\FATFS;..\..\User\lcd;..\..\User\TOUCH</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\..\Libraries\CMSIS\Include;..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\..\User;..\..\FreeRTOS\include;..\..\FreeRTOS\port\RVDS\ARM_CM4F;..\..\User\uart;..\..\User\key;..\..\User\led;..\..\STemWin\Config;..\..\STemWin\inc;..\..\STemWin_Task;..\..\User\FATFS;..\..\User\lcd;..\..\User\TOUCH;..\..\FATFS;..\..\User\sdio;..\..\FATFS\option</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -428,6 +428,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_sdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -457,6 +467,11 @@
               <FileName>touch.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\TOUCH\touch.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_sdio_sd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\sdio\bsp_sdio_sd.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -553,6 +568,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\STemWin_Task\MainTask.c</FilePath>
             </File>
+            <File>
+              <FileName>ScreenShot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\STemWin_Task\ScreenShot.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -562,6 +582,26 @@
               <FileName>必读说明.txt</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\必读说明.txt</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FatFs</GroupName>
+          <Files>
+            <File>
+              <FileName>diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\FATFS\diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\FATFS\ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>cc936.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\FATFS\option\cc936.c</FilePath>
             </File>
           </Files>
         </Group>
