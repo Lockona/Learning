@@ -85,3 +85,4 @@
 ..\..\output\maintask.o: ..\..\FreeRTOS\include\mpu_wrappers.h
 ..\..\output\maintask.o: ..\..\FreeRTOS\include\task.h
 ..\..\output\maintask.o: ..\..\FreeRTOS\include\list.h
+..\..\output\maintask.o: ..\..\STemWin_Task\GUIFont_Create.h

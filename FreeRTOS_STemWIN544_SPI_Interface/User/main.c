@@ -252,7 +252,7 @@ static void BSP_Init(void)
 	 * ?????????????????飬????????飬?мɡ?
 	 */
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
-	 WM_SetCreateFlags(WM_CF_MEMDEV);//使用内存设备.不复杂的界面要注释,
+	// WM_SetCreateFlags(WM_CF_MEMDEV);//使用内存设备.不复杂的界面要注释,
   /* LED ????? */
   //	LED_GPIO_Config();
 	result = f_mount(&fs,"0:",1);

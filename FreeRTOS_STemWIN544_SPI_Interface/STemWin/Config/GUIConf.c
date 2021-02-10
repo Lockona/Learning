@@ -58,7 +58,7 @@ Purpose     : Display controller initialization
 #if 0                              //USE_EXTMEMHEAP
 #define GUI_NUMBYTES (1024 * 1024) // x Byte
 #else
-#define GUI_NUMBYTES (1024 * 50) // x Byte
+#define GUI_NUMBYTES (1024 * 60) // x Byte
 #endif
 
 /*********************************************************************

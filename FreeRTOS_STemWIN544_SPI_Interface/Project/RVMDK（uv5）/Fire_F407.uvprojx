@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -572,6 +572,16 @@
               <FileName>ScreenShot.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\STemWin_Task\ScreenShot.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIFont_Create.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\STemWin_Task\GUIFont_Create.c</FilePath>
+            </File>
+            <File>
+              <FileName>text.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\STemWin_Task\text.c</FilePath>
             </File>
           </Files>
         </Group>

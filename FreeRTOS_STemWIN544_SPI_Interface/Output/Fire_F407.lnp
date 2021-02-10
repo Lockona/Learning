@@ -28,6 +28,8 @@
 "..\..\output\guidrv_template.o"
 "..\..\output\maintask.o"
 "..\..\output\screenshot.o"
+"..\..\output\guifont_create.o"
+"..\..\output\text.o"
 "..\..\output\diskio.o"
 "..\..\output\ff.o"
 "..\..\output\cc936.o"
