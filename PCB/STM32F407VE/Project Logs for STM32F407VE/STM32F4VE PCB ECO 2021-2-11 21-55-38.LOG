@@ -1,0 +1,26 @@
+Change Component Designator: OldDesignator=BOOT? NewDesignator=BOOT
+Change Component Designator: OldDesignator=RESET? NewDesignator=RESET
+Added Component: Designator=R17(0603P)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R18(0603P)
+Add component. Clean all parameters for all variants
+Added Component: Designator=SWD(HDR1X4)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=R17-1
+Added Pin To Net: NetName=GND Pin=R18-1
+Added Pin To Net: NetName=3V3 Pin=SWD-1
+Added Pin To Net: NetName=GND Pin=SWD-4
+Change Net Name : Old Net Name=NetBOOT?_3 New Net Name=NetBOOT_3
+Change Net Name : Old Net Name=NetBOOT?_4 New Net Name=NetBOOT_4
+Added Pin To Net: NetName=SWCLK Pin=R18-2
+Added Pin To Net: NetName=SWCLK Pin=SWD-3
+Added Net: Name=SWCLK
+Added Pin To Net: NetName=SWDIO Pin=R17-2
+Added Pin To Net: NetName=SWDIO Pin=SWD-2
+Added Net: Name=SWDIO
+Added Member To Class: ClassName=STMF4VE Member=Component R17 10K
+Added Member To Class: ClassName=STMF4VE Member=Component R18 10K
+Added Member To Class: ClassName=STMF4VE Member=Component SWD Header 4

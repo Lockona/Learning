@@ -1,0 +1,8 @@
+Added Component: Designator=U2(AMS1117)
+Add component. Clean all parameters for all variants
+Added Component: Designator=USB_SLAVE(USB/SM0.8-6H5)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=VCC Pin=USB_SLAVE-1
+Added Pin To Net: NetName=GND Pin=USB_SLAVE-5
+Added Member To Class: ClassName=STMF4VE Member=Component U2 AMS1117-3.3
+Added Member To Class: ClassName=STMF4VE Member=Component USB_SLAVE USB-B(Mini)
