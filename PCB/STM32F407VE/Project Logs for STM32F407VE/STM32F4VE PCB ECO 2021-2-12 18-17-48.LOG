@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=SD_CARD Old Footprint=SDCARD_L New Footprint=TF_SD
+Change Component Designator: OldDesignator=BAT? NewDesignator=BAT
+Added Pin To Net: NetName=BOOT0 Pin=U1-96
+Change Net Name : Old Net Name=NetBAT?_1 New Net Name=NetBAT_1

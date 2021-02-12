@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=Y3 Old Footprint=XTAL_US New Footprint=49S_SMD
+Change Component Footprint: Designator=Y4 Old Footprint=XTAL_US New Footprint=49S_SMD
+Change Component Comment : Designator=Y3 Old Comment=8MHz New Comment=12MHz
+Added Pin To Net: NetName=I2C_SDA Pin=U1-96
