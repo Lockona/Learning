@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=TFTLCD Old Footprint=PCBComponent_1 New Footprint=db2*17-4.3
+Added Pin To Net: NetName=I2C_SDA Pin=U1-96

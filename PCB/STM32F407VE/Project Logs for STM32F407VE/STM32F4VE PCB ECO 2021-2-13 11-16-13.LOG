@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=SDIO_CMD Pin=U1-84
+Change Component Footprint: Designator=P2 Old Footprint=HDR2X5 New Footprint=HDR2X10
+Change Component Comment : Designator=P2 Old Comment=Header 5X2 New Comment=Header 10X2
+Added Pin To Net: NetName=5V Pin=P2-1
+Added Pin To Net: NetName=5V Pin=P2-2
+Added Pin To Net: NetName=GND Pin=P2-3
+Added Pin To Net: NetName=GND Pin=P2-4
+Added Pin To Net: NetName=GND Pin=P2-5
+Added Pin To Net: NetName=GND Pin=P2-6
+Added Pin To Net: NetName=3V3 Pin=P2-7
+Added Pin To Net: NetName=3V3 Pin=P2-8
+Added Pin To Net: NetName=PB14 Pin=P2-9
+Added Pin To Net: NetName=PB10 Pin=P2-10
+Added Pin To Net: NetName=PB15 Pin=P2-11
+Added Pin To Net: NetName=PA0 Pin=P2-12
+Added Pin To Net: NetName=PD12 Pin=P2-13
+Added Pin To Net: NetName=PC3 Pin=P2-14
+Added Pin To Net: NetName=PD13 Pin=P2-15
+Added Pin To Net: NetName=PC2 Pin=P2-16
+Added Pin To Net: NetName=PA15 Pin=P2-17
+Added Pin To Net: NetName=PC13 Pin=P2-18
+Added Pin To Net: NetName=PD6 Pin=P2-20
+Added Pin To Net: NetName=SDIO_CMD Pin=U1-83
+Added Pin To Net: NetName=I2C_SDA Pin=U1-96
+Added Pin To Net: NetName=PD3 Pin=P2-19
+Added Pin To Net: NetName=PD3 Pin=U1-84
+Added Net: Name=PD3

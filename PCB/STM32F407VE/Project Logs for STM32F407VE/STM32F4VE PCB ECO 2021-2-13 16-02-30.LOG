@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=TFTLCD Old Footprint=HDR2X17 New Footprint=db2*17-4.3
+Added Pin To Net: NetName=BOOT0 Pin=U1-96
+Added Room: Name=STMF4VE

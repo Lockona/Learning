@@ -2,9 +2,13 @@
 #define __RTTHREAD_CFG_H__
 
 
-#define RT_THREAD_PRIORITY_MAX  32     /* æœ€å¤§ä¼˜å…ˆçº§ */
-#define RT_ALIGN_SIZE           4      /* å¤šå°‘ä¸ªå­—èŠ‚å¯¹é½ */ 
+#define RT_THREAD_PRIORITY_MAX  32     /* ×î´óÓÅÏÈ¼¶ */
+#define RT_ALIGN_SIZE           4      /* ¶àÉÙ¸ö×Ö½Ú¶ÔÆë */
+
+#define RT_NAME_MAX	            8      /* ÄÚºË¶ÔÏóµÄÃû×Ö³¤¶È£¬×Ö·û´®ÐÎÊ½ */
 
 
+#define RT_TICK_PER_SECOND	    100
 
 #endif /* __RTTHREAD_CFG_H__ */
+

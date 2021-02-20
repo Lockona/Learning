@@ -1,0 +1,37 @@
+Added Component: Designator=TFTLCD(TFT_LCD)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=FSMC_NE1 Pin=TFTLCD-1
+Added Pin To Net: NetName=FSMC_A16 Pin=TFTLCD-2
+Added Pin To Net: NetName=FSMC_NWE Pin=TFTLCD-3
+Added Pin To Net: NetName=FSMC_NOE Pin=TFTLCD-4
+Added Pin To Net: NetName=RESET Pin=TFTLCD-5
+Added Pin To Net: NetName=FSMC_D0 Pin=TFTLCD-6
+Added Pin To Net: NetName=FSMC_D1 Pin=TFTLCD-7
+Added Pin To Net: NetName=FSMC_D2 Pin=TFTLCD-8
+Added Pin To Net: NetName=FSMC_D3 Pin=TFTLCD-9
+Added Pin To Net: NetName=FSMC_D4 Pin=TFTLCD-10
+Added Pin To Net: NetName=FSMC_D5 Pin=TFTLCD-11
+Added Pin To Net: NetName=FSMC_D6 Pin=TFTLCD-12
+Added Pin To Net: NetName=FSMC_D7 Pin=TFTLCD-13
+Added Pin To Net: NetName=FSMC_D8 Pin=TFTLCD-14
+Added Pin To Net: NetName=FSMC_D9 Pin=TFTLCD-15
+Added Pin To Net: NetName=FSMC_D10 Pin=TFTLCD-16
+Added Pin To Net: NetName=FSMC_D11 Pin=TFTLCD-17
+Added Pin To Net: NetName=FSMC_D12 Pin=TFTLCD-18
+Added Pin To Net: NetName=FSMC_D13 Pin=TFTLCD-19
+Added Pin To Net: NetName=FSMC_D14 Pin=TFTLCD-20
+Added Pin To Net: NetName=FSMC_D15 Pin=TFTLCD-21
+Added Pin To Net: NetName=GND Pin=TFTLCD-22
+Added Pin To Net: NetName=LCD_BL Pin=TFTLCD-23
+Added Pin To Net: NetName=3V3 Pin=TFTLCD-24
+Added Pin To Net: NetName=3V3 Pin=TFTLCD-25
+Added Pin To Net: NetName=GND Pin=TFTLCD-26
+Added Pin To Net: NetName=GND Pin=TFTLCD-27
+Added Pin To Net: NetName=5V Pin=TFTLCD-28
+Added Pin To Net: NetName=T_MISO Pin=TFTLCD-29
+Added Pin To Net: NetName=T_MOSI Pin=TFTLCD-30
+Added Pin To Net: NetName=T_PEN Pin=TFTLCD-31
+Added Pin To Net: NetName=T_CS Pin=TFTLCD-33
+Added Pin To Net: NetName=T_SCK Pin=TFTLCD-34
+Added Pin To Net: NetName=BOOT0 Pin=U1-96
+Added Member To Class: ClassName=STMF4VE Member=Component TFTLCD TFT_LCD

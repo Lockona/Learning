@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=TFTLCD Old Footprint=HDR2X17 New Footprint=MHDR2X17
+Added Pin To Net: NetName=BOOT0 Pin=U1-96

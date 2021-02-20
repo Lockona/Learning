@@ -423,6 +423,31 @@
               <FileType>1</FileType>
               <FilePath>..\rtthread\3.0.3\src\thread.c</FilePath>
             </File>
+            <File>
+              <FileName>idle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\idle.c</FilePath>
+            </File>
+            <File>
+              <FileName>clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\clock.c</FilePath>
+            </File>
+            <File>
+              <FileName>irq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\irq.c</FilePath>
+            </File>
+            <File>
+              <FileName>kservice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\kservice.c</FilePath>
+            </File>
+            <File>
+              <FileName>object.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\object.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
