@@ -15,6 +15,7 @@
 "..\output\bsp_led.o"
 "..\output\board.o"
 "..\output\core_delay.o"
+"..\output\bsp_key.o"
 "..\output\clock.o"
 "..\output\components.o"
 "..\output\device.o"

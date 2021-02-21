@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS\Include;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\Libraries\STM32F4xx_HAL_Driver\Inc;..\User;..\User\led;..\rtthread_nano\3.0.3\include;..\rtthread_nano\3.0.3\include\libc;..\rtthread_nano\3.0.3\components\finsh;..\User\delay</IncludePath>
+              <IncludePath>..\Libraries\CMSIS\Include;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\Libraries\STM32F4xx_HAL_Driver\Inc;..\User;..\User\led;..\rtthread_nano\3.0.3\include;..\rtthread_nano\3.0.3\include\libc;..\rtthread_nano\3.0.3\components\finsh;..\User\delay;..\User\key</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -477,6 +477,11 @@
               <FileName>core_delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\delay\core_delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\key\bsp_key.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -28,6 +28,7 @@
 ..\output\board.o: ..\Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h
 ..\output\board.o: ..\Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
 ..\output\board.o: ..\User\./led/bsp_led.h
+..\output\board.o: ..\User\.\key\bsp_key.h
 ..\output\board.o: ..\rtthread_nano\3.0.3\include\rthw.h
 ..\output\board.o: ..\rtthread_nano\3.0.3\include\rtthread.h
 ..\output\board.o: ..\User\rtconfig.h

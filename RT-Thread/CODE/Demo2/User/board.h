@@ -5,6 +5,7 @@
 #include "main.h"
 #include "stm32f4xx.h"
 #include "./led/bsp_led.h"
+#include ".\key\bsp_key.h" 
 
 void rt_hw_board_init(void);
 void SysTick_Handler(void);
