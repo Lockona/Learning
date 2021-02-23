@@ -185,7 +185,7 @@ I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5F0025CA)
-F (..\..\User\main.c)(0x6023F883)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH -I ..\..\FATFS -I ..\..\User\sdio -I ..\..\FATFS\option-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+F (..\..\User\main.c)(0x603519DC)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH -I ..\..\FATFS -I ..\..\User\sdio -I ..\..\FATFS\option-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
 I (..\..\FreeRTOS\include\FreeRTOS.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
@@ -837,7 +837,7 @@ I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5F0025CA)
 I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
-F (..\..\STemWin_Task\MainTask.c)(0x6023FBA5)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH -I ..\..\FATFS -I ..\..\User\sdio -I ..\..\FATFS\option-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\maintask.o --omf_browse ..\..\output\maintask.crf --depend ..\..\output\maintask.d)
+F (..\..\STemWin_Task\MainTask.c)(0x603519BE)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH -I ..\..\FATFS -I ..\..\User\sdio -I ..\..\FATFS\option-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\maintask.o --omf_browse ..\..\output\maintask.crf --depend ..\..\output\maintask.d)
 I (..\..\STemWin\inc\GUI.h)(0x5F0025CA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E2EB2)
 I (..\..\STemWin\inc\GUI_ConfDefaults.h)(0x5F0025CA)
@@ -846,7 +846,6 @@ I (..\..\STemWin\inc\GUI_Type.h)(0x5F0025CA)
 I (..\..\STemWin\inc\LCD.h)(0x5F0025CA)
 I (..\..\STemWin\inc\Global.h)(0x5F0025CA)
 I (..\..\STemWin\inc\GUI_Version.h)(0x5F0025CA)
-I (..\..\STemWin_Task\MainTask.h)(0x601E7B1D)
 I (..\..\STemWin\inc\DIALOG.h)(0x5F0025CA)
 I (..\..\STemWin\inc\WM.h)(0x5F0025CA)
 I (..\..\STemWin\inc\WM_GUI.h)(0x5F0025CA)
@@ -883,45 +882,7 @@ I (..\..\STemWin\inc\SWIPELIST.h)(0x5F0025CA)
 I (..\..\STemWin\inc\TEXT.h)(0x5F0025CA)
 I (..\..\STemWin\inc\TREEVIEW.h)(0x5F0025CA)
 I (..\..\STemWin\inc\KNOB.h)(0x5F0025CA)
-I (..\..\STemWin_Task\ScreenShot.h)(0x601FCDA0)
-I (..\..\FATFS\ff.h)(0x5F0025CB)
-I (..\..\FATFS\integer.h)(0x5F0025CB)
-I (..\..\FATFS\ffconf.h)(0x5F0025CB)
-I (..\..\FATFS\diskio.h)(0x5F0025CB)
-I (..\..\FreeRTOS\include\FreeRTOS.h)(0x5F0025CA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
-I (..\..\User\FreeRTOSConfig.h)(0x5F0025CA)
-I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x601C0930)
-I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5F0025CA)
-I (..\..\Libraries\CMSIS\Include\core_cmInstr.h)(0x5F0025CA)
-I (..\..\Libraries\CMSIS\Include\core_cmFunc.h)(0x5F0025CA)
-I (..\..\Libraries\CMSIS\Include\core_cmSimd.h)(0x5F0025CA)
-I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5F0025CA)
-I (..\..\User\stm32f4xx_conf.h)(0x601FB5DB)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5F0025CA)
-I (..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5F0025CA)
-I (..\..\User\./usart/bsp_debug_usart.h)(0x5F0025CA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E2EB2)
-I (..\..\FreeRTOS\include\projdefs.h)(0x5F0025CA)
-I (..\..\FreeRTOS\include\portable.h)(0x5F0025CA)
-I (..\..\FreeRTOS\include\deprecated_definitions.h)(0x5F0025CA)
-I (..\..\FreeRTOS\port\RVDS\ARM_CM4F\portmacro.h)(0x5F0025CA)
-I (..\..\FreeRTOS\include\mpu_wrappers.h)(0x5F0025CA)
-I (..\..\FreeRTOS\include\task.h)(0x5F0025CA)
-I (..\..\FreeRTOS\include\list.h)(0x5F0025CA)
-I (..\..\STemWin_Task\GUIFont_Create.h)(0x6023F607)
+I (..\..\STemWin_Task\MainTask.h)(0x601E7B1D)
 F (..\..\STemWin_Task\ScreenShot.c)(0x601FB586)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I ..\..\User -I ..\..\FreeRTOS\include -I ..\..\FreeRTOS\port\RVDS\ARM_CM4F -I ..\..\User\uart -I ..\..\User\key -I ..\..\User\led -I ..\..\STemWin\Config -I ..\..\STemWin\inc -I ..\..\STemWin_Task -I ..\..\User\FATFS -I ..\..\User\lcd -I ..\..\User\TOUCH -I ..\..\FATFS -I ..\..\User\sdio -I ..\..\FATFS\option-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o ..\..\output\screenshot.o --omf_browse ..\..\output\screenshot.crf --depend ..\..\output\screenshot.d)
 I (..\..\STemWin_Task\ScreenShot.h)(0x601FCDA0)
 I (..\..\FATFS\ff.h)(0x5F0025CB)
