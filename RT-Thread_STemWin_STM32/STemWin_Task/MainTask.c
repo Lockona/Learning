@@ -1,3 +1,4 @@
+
 /*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
@@ -20,9 +21,18 @@
 
 // USER START (Optionally insert additional includes)
 // USER END
+
 #include "GUI.h"
-#include "DIALOG.h"
 #include "MainTask.h"
+#include "ScreenShot.h"
+//#include "FreeRTOS.h"
+//#include "task.h"
+#include "rtthread.h"
+#include "rthw.h"
+#include "GUIFont_Create.h"
+#include "DIALOG.h"
+
+#include "DIALOG.h"
 
 /*********************************************************************
 *
@@ -54,8 +64,8 @@
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { FRAMEWIN_CreateIndirect, "Framewin", ID_FRAMEWIN_0, 0, 0, 240, 320, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "Button", ID_BUTTON_0, 30, 16, 80, 20, 0, 0x0, 0 },
-  { CHECKBOX_CreateIndirect, "Checkbox", ID_CHECKBOX_0, 30, 50, 80, 20, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "Button", ID_BUTTON_0, 20, 17, 80, 20, 0, 0x0, 0 },
+  { CHECKBOX_CreateIndirect, "Checkbox", ID_CHECKBOX_0, 20, 60, 80, 20, 0, 0x0, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
 };
@@ -165,14 +175,11 @@ WM_HWIN CreateFramewin(void) {
 
 void MainTask(void)
 {
-    //GUI_Init();
-
-    CreateFramewin();
-
-    while (1)
-    {
-        GUI_Delay(100);
-    }
+	CreateFramewin();
+  while (1)
+  {
+    GUI_Delay(100);
+  }
 }
 
 /*************************** End of file ****************************/

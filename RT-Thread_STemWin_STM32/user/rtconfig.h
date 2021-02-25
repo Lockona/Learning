@@ -86,7 +86,7 @@
 // </c>
 // <c1>Using Event
 //  <i>Using Event
-//#define RT_USING_EVENT
+#define RT_USING_EVENT
 // </c>
 // <c1>Using MailBox
 //  <i>Using MailBox
@@ -157,11 +157,18 @@
 // </c>
 // </h>
 #endif
-
+//#define RTE_USING_DEVICE
 #if defined(RTE_USING_DEVICE)
 #define RT_USING_DEVICE
 #endif
 
+// <<< end of configuration section >>>
+
+
+#define PKG_USING_STEMWIN
+#define PKG_STEMWIN_MEM_SIZE 32
+//#define PKG_USING_STEMWIN_LATEST_VERSION
+//#define PKG_STEMWIN_VER_NUM 0x99999
 // <<< end of configuration section >>>
 
 #endif

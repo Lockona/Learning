@@ -1,1 +1,1 @@
-.\objects\context_rvds.o: rtthread_nano\3.0.3\libcpu\arm\cortex-m4\context_rvds.S
+.\objects\context_rvds.o: rt-thread\libcpu\arm\cortex-m4\context_rvds.S

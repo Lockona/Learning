@@ -156,6 +156,8 @@ void LCD_SetParam(void);
 void SPIv_WriteData(u8 Data);
 u8 SPI_WriteByte(SPI_TypeDef *SPIx, u8 Byte);
 
+int drv_lcd_hw_init(void);
+
 //�����Ȼ�����ٶȲ����죬����ʹ������ĺ궨��,����ٶ�.
 //ע��Ҫȥ��lcd.c��void LCD_WR_DATA(u16 data)��������Ŷ
 /*

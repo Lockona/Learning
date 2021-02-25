@@ -33,9 +33,9 @@
 ".\objects\context_rvds.o"
 ".\objects\guiconf.o"
 ".\objects\guidrv_template.o"
-".\objects\lcdconf_flexcolor.o"
-".\STemWin\Lib\STemWin_CM4_OS_wc16_ot_ARGB.a"
-".\objects\gui_x_rtthread.o"
+".\objects\lcdconf_flexcolor_template.o"
+".\objects\gui_x_os.o"
+".\STemWin\src\STemWin_CM4_OS_wc16_ot.lib"
 ".\objects\guifont_create.o"
 ".\objects\screenshot.o"
 ".\objects\text.o"
@@ -43,7 +43,7 @@
 ".\objects\diskio.o"
 ".\objects\ff.o"
 ".\objects\cc936.o"
---library_type=microlib --strict --scatter ".\Objects\test.sct"
+--strict --scatter ".\Objects\test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\test.map" -o .\Objects\test.axf

@@ -47,7 +47,7 @@ static uint32_t _SysTick_Config(rt_uint32_t ticks)
 }
 
 #if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
-#define RT_HEAP_SIZE 1024
+#define RT_HEAP_SIZE 1024*4
 static uint32_t rt_heap[RT_HEAP_SIZE];	// heap default size: 4K(1024 * 4)
 RT_WEAK void *rt_heap_begin_get(void)
 {
@@ -74,6 +74,9 @@ void rt_hw_board_init()
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_CRC, ENABLE);
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
 	WM_SetCreateFlags(WM_CF_MEMDEV);
+	//
+	
+	
 //	result = f_mount(&fs,"0:",1);
 //	if(result != FR_OK)
 //	{

@@ -7,6 +7,7 @@
 ..\..\output\maintask.o: ..\..\STemWin\inc\LCD.h
 ..\..\output\maintask.o: ..\..\STemWin\inc\Global.h
 ..\..\output\maintask.o: ..\..\STemWin\inc\GUI_Version.h
+..\..\output\maintask.o: ..\..\STemWin_Task\MainTask.h
 ..\..\output\maintask.o: ..\..\STemWin\inc\DIALOG.h
 ..\..\output\maintask.o: ..\..\STemWin\inc\WM.h
 ..\..\output\maintask.o: ..\..\STemWin\inc\WM_GUI.h
@@ -45,4 +46,3 @@
 ..\..\output\maintask.o: ..\..\STemWin\inc\TEXT.h
 ..\..\output\maintask.o: ..\..\STemWin\inc\TREEVIEW.h
 ..\..\output\maintask.o: ..\..\STemWin\inc\KNOB.h
-..\..\output\maintask.o: ..\..\STemWin_Task\MainTask.h

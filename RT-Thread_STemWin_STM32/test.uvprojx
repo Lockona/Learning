@@ -189,7 +189,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,OS_SUPPORT</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\CMSIS\Include;.\rtthread_nano\3.0.3\components\finsh;.\rtthread_nano\3.0.3\include;.\rtthread_nano\3.0.3\include\libc;.\STemWin\inc;.\STemWin_Task;.\user;.\user\lcd;.\user\TOUCH;.\user\sdio;.\FATFS;.\Libraries\CMSIS\Device\ST\STM32F4xx\Include;.\STemWin\Config</IncludePath>
+              <IncludePath>.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\CMSIS\Include;.\STemWin_Task;.\user;.\user\lcd;.\user\TOUCH;.\user\sdio;.\FATFS;.\Libraries\CMSIS\Device\ST\STM32F4xx\Include;.\STemWin\inc\5.44;.\rt-thread\include;.\rt-thread\include\libc;.\rt-thread\components\finsh;.\rt-thread\components\drivers\include;.\rt-thread\components\drivers\include\ipc;.\rt-thread\components\drivers\include\drivers;.\rt-thread\components\drivers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -476,77 +476,77 @@
             <File>
               <FileName>clock.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\clock.c</FilePath>
+              <FilePath>.\rt-thread\src\clock.c</FilePath>
             </File>
             <File>
               <FileName>components.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\components.c</FilePath>
+              <FilePath>.\rt-thread\src\components.c</FilePath>
             </File>
             <File>
               <FileName>device.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\device.c</FilePath>
+              <FilePath>.\rt-thread\src\device.c</FilePath>
             </File>
             <File>
               <FileName>idle.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\idle.c</FilePath>
+              <FilePath>.\rt-thread\src\idle.c</FilePath>
             </File>
             <File>
               <FileName>ipc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\ipc.c</FilePath>
+              <FilePath>.\rt-thread\src\ipc.c</FilePath>
             </File>
             <File>
               <FileName>irq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\irq.c</FilePath>
+              <FilePath>.\rt-thread\src\irq.c</FilePath>
             </File>
             <File>
               <FileName>kservice.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\kservice.c</FilePath>
+              <FilePath>.\rt-thread\src\kservice.c</FilePath>
             </File>
             <File>
               <FileName>mem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\mem.c</FilePath>
+              <FilePath>.\rt-thread\src\mem.c</FilePath>
             </File>
             <File>
               <FileName>memheap.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\memheap.c</FilePath>
+              <FilePath>.\rt-thread\src\memheap.c</FilePath>
             </File>
             <File>
               <FileName>mempool.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\mempool.c</FilePath>
+              <FilePath>.\rt-thread\src\mempool.c</FilePath>
             </File>
             <File>
               <FileName>object.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\object.c</FilePath>
+              <FilePath>.\rt-thread\src\object.c</FilePath>
             </File>
             <File>
               <FileName>scheduler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\scheduler.c</FilePath>
+              <FilePath>.\rt-thread\src\scheduler.c</FilePath>
             </File>
             <File>
               <FileName>signal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\signal.c</FilePath>
+              <FilePath>.\rt-thread\src\signal.c</FilePath>
             </File>
             <File>
               <FileName>thread.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\thread.c</FilePath>
+              <FilePath>.\rt-thread\src\thread.c</FilePath>
             </File>
             <File>
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\src\timer.c</FilePath>
+              <FilePath>.\rt-thread\src\timer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -556,12 +556,12 @@
             <File>
               <FileName>cpuport.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+              <FilePath>.\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
             </File>
             <File>
               <FileName>context_rvds.S</FileName>
               <FileType>2</FileType>
-              <FilePath>.\rtthread_nano\3.0.3\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
+              <FilePath>.\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
             </File>
           </Files>
         </Group>
@@ -571,27 +571,27 @@
             <File>
               <FileName>GUIConf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STemWin\Config\GUIConf.c</FilePath>
+              <FilePath>.\STemWin\src\GUIConf.c</FilePath>
             </File>
             <File>
               <FileName>GUIDRV_Template.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STemWin\Config\GUIDRV_Template.c</FilePath>
+              <FilePath>.\STemWin\src\GUIDRV_Template.c</FilePath>
             </File>
             <File>
-              <FileName>LCDConf_FlexColor.c</FileName>
+              <FileName>LCDConf_FlexColor_Template.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STemWin\Config\LCDConf_FlexColor.c</FilePath>
+              <FilePath>.\STemWin\src\LCDConf_FlexColor_Template.c</FilePath>
             </File>
             <File>
-              <FileName>STemWin_CM4_OS_wc16_ot_ARGB.a</FileName>
+              <FileName>GUI_X_OS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STemWin\src\GUI_X_OS.c</FilePath>
+            </File>
+            <File>
+              <FileName>STemWin_CM4_OS_wc16_ot.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>.\STemWin\Lib\STemWin_CM4_OS_wc16_ot_ARGB.a</FilePath>
-            </File>
-            <File>
-              <FileName>GUI_X_RTthread.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STemWin\OS\GUI_X_RTthread.c</FilePath>
+              <FilePath>.\STemWin\src\STemWin_CM4_OS_wc16_ot.lib</FilePath>
             </File>
           </Files>
         </Group>

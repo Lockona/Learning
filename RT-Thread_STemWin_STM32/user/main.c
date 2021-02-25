@@ -16,17 +16,20 @@ int main(void)
 {
 	rt_enter_critical();
 	ScreenShotSem_Handle=rt_sem_create("ScreenShot",0,RT_IPC_FLAG_FIFO);
-	gui_thread_entry=rt_thread_create("GUI",GUI_Task,RT_NULL,1024,4,500);
+	gui_thread_entry=rt_thread_create("GUI",GUI_Task,RT_NULL,1024*2,2,200);
 	if(RT_NULL!=gui_thread_entry)
 		rt_thread_startup(gui_thread_entry);
 	else
 		return -1;
-	touch_thread_entry=rt_thread_create("touch",Touch_Task,RT_NULL,512,3,20);
+	touch_thread_entry=rt_thread_create("touch",Touch_Task,RT_NULL,256,3,20);
 	if(RT_NULL!=touch_thread_entry)
 		rt_thread_startup(touch_thread_entry);
 	else
 		return -1;
 	rt_exit_critical();
+	while(1){
+		rt_thread_delay(500);
+	}
 }
 
 
@@ -55,7 +58,7 @@ static void GUI_Task(void *parameter)
 
 
   GUI_Init();
-//  WM_MULTIBUF_Enable(1);//配置多缓冲
+  //WM_MULTIBUF_Enable(1);//配置多缓冲
 
 	rt_sem_release(ScreenShotSem_Handle);
   while (1)
