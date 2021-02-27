@@ -53,36 +53,7 @@ Purpose     : Display controller configuration (single layer)
 
 //rt_device_t lcd_device = RT_NULL;
 
-#define XSIZE_PHYS LCD_SPI_W // To be adapted to x-screen size
-#define YSIZE_PHYS LCD_SPI_H // To be adapted to y-screen size
-
-/*********************************************************************
-*
-*       Configuration checking
-*
-**********************************************************************
-*/
-#ifndef VRAM_ADDR
-#define VRAM_ADDR 0
-#endif
-#ifndef VXSIZE_PHYS
-#define VXSIZE_PHYS XSIZE_PHYS
-#endif
-#ifndef VYSIZE_PHYS
-#define VYSIZE_PHYS YSIZE_PHYS
-#endif
-#ifndef XSIZE_PHYS
-#error Physical X size of display is not defined!
-#endif
-#ifndef YSIZE_PHYS
-#error Physical Y size of display is not defined!
-#endif
-#ifndef GUICC_565
-#error Color conversion not defined!
-#endif
-#ifndef GUIDRV_TEMPLATE
-#error No display driver defined!
-#endif
+extern _lcd_dev lcddev;
 /*********************************************************************
 *
 *       Public functions
@@ -138,8 +109,8 @@ void LCD_X_Config(void)
     //
 //    LCD_SetSizeEx(0, info.width, info.height);
 //    LCD_SetVSizeEx(0, info.width, info.height);
-	LCD_SetSizeEx(0, XSIZE_PHYS, YSIZE_PHYS);
-  LCD_SetVSizeEx(0, VXSIZE_PHYS, VYSIZE_PHYS);
+	LCD_SetSizeEx(0, lcddev.width, lcddev.height);
+  LCD_SetVSizeEx(0, lcddev.width, lcddev.height);
 
 }
 

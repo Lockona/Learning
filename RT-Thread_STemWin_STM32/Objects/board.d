@@ -8,11 +8,14 @@
 .\objects\board.o: .\Libraries\CMSIS\Include\core_cmSimd.h
 .\objects\board.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\board.o: .\user\stm32f4xx_conf.h
-.\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
+.\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h
 .\objects\board.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+.\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
+.\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+.\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
@@ -98,3 +101,5 @@
 .\objects\board.o: .\FATFS\integer.h
 .\objects\board.o: .\FATFS\ffconf.h
 .\objects\board.o: .\FATFS\diskio.h
+.\objects\board.o: user\RTC.h
+.\objects\board.o: user\ADC.h

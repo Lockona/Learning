@@ -166,7 +166,7 @@
 
 
 #define PKG_USING_STEMWIN
-#define PKG_STEMWIN_MEM_SIZE 32
+#define PKG_STEMWIN_MEM_SIZE 54
 //#define PKG_USING_STEMWIN_LATEST_VERSION
 //#define PKG_STEMWIN_VER_NUM 0x99999
 // <<< end of configuration section >>>

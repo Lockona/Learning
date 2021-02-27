@@ -8,11 +8,14 @@
 .\objects\stm32f4xx_spi.o: .\Libraries\CMSIS\Include\core_cmSimd.h
 .\objects\stm32f4xx_spi.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\stm32f4xx_spi.o: .\user\stm32f4xx_conf.h
-.\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
+.\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h
 .\objects\stm32f4xx_spi.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+.\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 .\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 .\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
+.\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h
 .\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+.\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h
 .\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 .\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 .\objects\stm32f4xx_spi.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h

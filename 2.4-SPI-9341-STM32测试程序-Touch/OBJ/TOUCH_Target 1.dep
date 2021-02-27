@@ -1,6 +1,6 @@
 Dependencies for Project 'TOUCH', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.c)(0x601CEDC1)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x601E0235)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\delay\delay.h)(0x601AD6B9)
 I (..\CMSIS\Include\stm32f4xx.h)(0x601AC019)
 I (..\CMSIS\Include\core_cm4.h)(0x5EE2F153)
@@ -22,13 +22,13 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5EE2F153)
 I (..\SYSTEM\sys\sys.h)(0x601AD633)
-I (..\HARDWARE\LCD\lcd.h)(0x601D013D)
+I (..\HARDWARE\LCD\lcd.h)(0x60386EA5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
-I (..\HARDWARE\TOUCH\touch.h)(0x601D011F)
+I (..\HARDWARE\TOUCH\touch.h)(0x60386F19)
 I (gui.h)(0x530EBB08)
-I (test.h)(0x530EBB08)
-F (.\test.c)(0x601CF7C8)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
-I (..\HARDWARE\LCD\lcd.h)(0x601D013D)
+I (test.h)(0x601E0247)
+F (.\test.c)(0x60386E7E)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
+I (..\HARDWARE\LCD\lcd.h)(0x60386EA5)
 I (..\CMSIS\Include\stm32f4xx.h)(0x601AC019)
 I (..\CMSIS\Include\core_cm4.h)(0x5EE2F153)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
@@ -51,11 +51,11 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5EE2F153)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
 I (..\SYSTEM\delay\delay.h)(0x601AD6B9)
 I (gui.h)(0x530EBB08)
-I (test.h)(0x530EBB08)
-I (..\HARDWARE\TOUCH\touch.h)(0x601D011F)
+I (test.h)(0x601E0247)
+I (..\HARDWARE\TOUCH\touch.h)(0x60386F19)
 I (pic.h)(0x530EBB08)
 F (.\GUI.c)(0x5A30C5F3)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\gui.o --omf_browse ..\obj\gui.crf --depend ..\obj\gui.d)
-I (..\HARDWARE\LCD\lcd.h)(0x601D013D)
+I (..\HARDWARE\LCD\lcd.h)(0x60386EA5)
 I (..\CMSIS\Include\stm32f4xx.h)(0x601AC019)
 I (..\CMSIS\Include\core_cm4.h)(0x5EE2F153)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
@@ -101,8 +101,8 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5EE2F153)
-F (..\HARDWARE\LCD\lcd.c)(0x601CEA0F)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\lcd.o --omf_browse ..\obj\lcd.crf --depend ..\obj\lcd.d)
-I (..\HARDWARE\LCD\lcd.h)(0x601D013D)
+F (..\HARDWARE\LCD\lcd.c)(0x601E026B)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\lcd.o --omf_browse ..\obj\lcd.crf --depend ..\obj\lcd.d)
+I (..\HARDWARE\LCD\lcd.h)(0x60386EA5)
 I (..\CMSIS\Include\stm32f4xx.h)(0x601AC019)
 I (..\CMSIS\Include\core_cm4.h)(0x5EE2F153)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
@@ -124,8 +124,8 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5EE2F153)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
 I (..\SYSTEM\delay\delay.h)(0x601AD6B9)
-F (..\HARDWARE\TOUCH\touch.c)(0x601DF6CB)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\touch.o --omf_browse ..\obj\touch.crf --depend ..\obj\touch.d)
-I (..\HARDWARE\TOUCH\touch.h)(0x601D011F)
+F (..\HARDWARE\TOUCH\touch.c)(0x60387031)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork -I ..\USER -I ..\HARDWARE\TOUCH -I ..\CMSIS\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\HARDWARE\LCD -I ..\HARDWARE\FLASH-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ..\obj\touch.o --omf_browse ..\obj\touch.crf --depend ..\obj\touch.d)
+I (..\HARDWARE\TOUCH\touch.h)(0x60386F19)
 I (..\CMSIS\Include\stm32f4xx.h)(0x601AC019)
 I (..\CMSIS\Include\core_cm4.h)(0x5EE2F153)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E2EB2)
@@ -145,7 +145,7 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x5EE2F153)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x5EE2F153)
-I (..\HARDWARE\LCD\lcd.h)(0x601D013D)
+I (..\HARDWARE\LCD\lcd.h)(0x60386EA5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E2EB2)
 I (..\SYSTEM\delay\delay.h)(0x601AD6B9)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E2EB2)

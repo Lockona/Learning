@@ -8,11 +8,14 @@
 .\objects\touch.o: .\Libraries\CMSIS\Include\core_cmSimd.h
 .\objects\touch.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\touch.o: .\user\stm32f4xx_conf.h
-.\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
+.\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h
 .\objects\touch.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+.\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 .\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 .\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
+.\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h
 .\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+.\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h
 .\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 .\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 .\objects\touch.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h

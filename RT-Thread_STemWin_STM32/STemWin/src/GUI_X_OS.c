@@ -195,7 +195,7 @@ void CheckInit(void)
 
 void GUI_X_Init(void)
 {
-    KeySem = rt_sem_create("KeySem", 1, RT_IPC_FLAG_FIFO);
+    KeySem = rt_sem_create("KeySem", 0, RT_IPC_FLAG_FIFO);
 }
 
 /*

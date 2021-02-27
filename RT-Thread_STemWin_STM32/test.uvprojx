@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,OS_SUPPORT</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\CMSIS\Include;.\STemWin_Task;.\user;.\user\lcd;.\user\TOUCH;.\user\sdio;.\FATFS;.\Libraries\CMSIS\Device\ST\STM32F4xx\Include;.\STemWin\inc\5.44;.\rt-thread\include;.\rt-thread\include\libc;.\rt-thread\components\finsh;.\rt-thread\components\drivers\include;.\rt-thread\components\drivers\include\ipc;.\rt-thread\components\drivers\include\drivers;.\rt-thread\components\drivers</IncludePath>
+              <IncludePath>.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\CMSIS\Include;.\STemWin_Task;.\user;.\user\lcd;.\user\TOUCH;.\user\sdio;.\FATFS;.\Libraries\CMSIS\Device\ST\STM32F4xx\Include;.\STemWin\inc\5.44;.\rt-thread\include;.\rt-thread\include\libc;.\rt-thread\components\finsh;.\rt-thread\components\drivers\include;.\rt-thread\components\drivers\include\ipc;.\rt-thread\components\drivers\include\drivers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -408,6 +408,16 @@
               <FileType>1</FileType>
               <FilePath>.\user\sdio\bsp_sdio_sd.c</FilePath>
             </File>
+            <File>
+              <FileName>RTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\RTC.c</FilePath>
+            </File>
+            <File>
+              <FileName>ADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\ADC.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -467,6 +477,21 @@
               <FileName>stm32f4xx_dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -598,21 +623,6 @@
         <Group>
           <GroupName>STemWin\MainTask</GroupName>
           <Files>
-            <File>
-              <FileName>GUIFont_Create.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STemWin_Task\GUIFont_Create.c</FilePath>
-            </File>
-            <File>
-              <FileName>ScreenShot.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STemWin_Task\ScreenShot.c</FilePath>
-            </File>
-            <File>
-              <FileName>text.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STemWin_Task\text.c</FilePath>
-            </File>
             <File>
               <FileName>MainTask.c</FileName>
               <FileType>1</FileType>

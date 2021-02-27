@@ -10,6 +10,8 @@
 #include "DIALOG.h"
 #include "MainTask.h"
 #include "ScreenShot.h"
+#include "RTC.h"
+#include "ADC.h"
 
 void rt_hw_board_init(void);
 void SysTick_Handler(void);

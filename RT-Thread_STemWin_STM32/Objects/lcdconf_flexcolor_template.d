@@ -36,11 +36,14 @@
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\CMSIS\Include\core_cmSimd.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\lcdconf_flexcolor_template.o: .\user\stm32f4xx_conf.h
-.\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
+.\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+.\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h
+.\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h
+.\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h

@@ -209,12 +209,12 @@ void English_Font_test(void)
 //******************************************************************
 void Chinese_Font_test(void)
 {	
-	DrawTestPage("����5:������ʾ����");
-	Show_Str(10,30,BLUE,YELLOW,"16X16:ȫ�����Ӽ������޹�˾��ӭ��",16,0);
-	Show_Str(10,50,BLUE,YELLOW,"16X16:Welcomeȫ������",16,1);
-	Show_Str(10,70,BLUE,YELLOW,"24X24:���������Ĳ���",24,1);
-	Show_Str(10,100,BLUE,YELLOW,"32X32:�������",32,1);
-	delay_ms(1200);
+//	DrawTestPage("����5:������ʾ����");
+//	Show_Str(10,30,BLUE,YELLOW,"16X16:ȫ�����Ӽ������޹�˾��ӭ��",16,0);
+//	Show_Str(10,50,BLUE,YELLOW,"16X16:Welcomeȫ������",16,1);
+//	Show_Str(10,70,BLUE,YELLOW,"24X24:���������Ĳ���",24,1);
+//	Show_Str(10,100,BLUE,YELLOW,"32X32:�������",32,1);
+	delay_ms(120);
 }
 
 //******************************************************************

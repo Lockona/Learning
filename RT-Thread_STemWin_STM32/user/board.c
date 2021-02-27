@@ -31,23 +31,23 @@ extern void SystemCoreClockUpdate(void);
 // core clock.
 extern uint32_t SystemCoreClock;
 
-static uint32_t _SysTick_Config(rt_uint32_t ticks)
-{
-    if ((ticks - 1) > 0xFFFFFF)
-    {
-        return 1;
-    }
-    
-    _SYSTICK_LOAD = ticks - 1; 
-    _SYSTICK_PRI = 0xFF;
-    _SYSTICK_VAL  = 0;
-    _SYSTICK_CTRL = 0x07;  
-    
-    return 0;
-}
+//static uint32_t _SysTick_Config(rt_uint32_t ticks)
+//{
+//    if ((ticks - 1) > 0xFFFFFF)
+//    {
+//        return 1;
+//    }
+//    
+//    _SYSTICK_LOAD = ticks - 1; 
+//    _SYSTICK_PRI = 0xFF;
+//    _SYSTICK_VAL  = 0;
+//    _SYSTICK_CTRL = 0x07;  
+//    
+//    return 0;
+//}
 
 #if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
-#define RT_HEAP_SIZE 1024*4
+#define RT_HEAP_SIZE 1024*2
 static uint32_t rt_heap[RT_HEAP_SIZE];	// heap default size: 4K(1024 * 4)
 RT_WEAK void *rt_heap_begin_get(void)
 {
@@ -74,9 +74,15 @@ void rt_hw_board_init()
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_CRC, ENABLE);
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
 	WM_SetCreateFlags(WM_CF_MEMDEV);
-	//
-	
-	
+	if (RTC_ReadBackupRegister(RTC_BKP_DRX) != RTC_BKP_DATA) {
+		RTC_Config();
+		RTC_Time_Set();
+	}else{
+		RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+		PWR_BackupAccessCmd(ENABLE);
+		RTC_WaitForSynchro();
+	}
+	ADC_Config();
 //	result = f_mount(&fs,"0:",1);
 //	if(result != FR_OK)
 //	{

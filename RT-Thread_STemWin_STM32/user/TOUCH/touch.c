@@ -60,16 +60,16 @@ _m_tp_dev tp_dev =
 		0,
 		0,
 
-		0.065789476,
-		0.0912646651,
-		0xFFEE,
-		0xFFDD,
+		-0.0889171138,
+		0.0643500611,
+		0x015E,
+		0xFFF5,
 
-		0,
+		0x01,
 };
 //Ĭ��Ϊtouchtype=0������.
-u8 CMD_RDX = 0XD0;
-u8 CMD_RDY = 0X90;
+u8 CMD_RDX = 0X90;
+u8 CMD_RDY = 0XD0;
 
 void delay_us(int count)
 {

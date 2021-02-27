@@ -253,7 +253,7 @@ static void _FillRect(GUI_DEVICE *pDevice, int x0, int y0, int x1, int y1)
 //                }
 //            }
 //        }
-			LCD_Fill(x0, y0, x1, y1, LCD_COLORINDEX);
+			LCD_Fill(x0, y0, x1, y1, PixelIndex);
     }
 }
 

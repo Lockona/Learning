@@ -66,12 +66,12 @@ extern _m_tp_dev tp_dev; //������������touch.c����
 //#define TDIN PCout(12)  //PC3  MOSI
 //#define TCLK PCout(10)  //PC0  SCLK
 //#define TCS  PCout(4) //PC13 CS
-#define Touch_Port GPIOC																		   //����TFT���ݶ˿�
-#define PEN (Touch_Port->IDR & (1 << 2))														   //PC2  INT
-#define DOUT (Touch_Port->IDR & (1 << 11))														   //PC11  MISO
-#define TDIN(x) Touch_Port->ODR = x ? Touch_Port->ODR | (1 << 12) : Touch_Port->ODR & (~(1 << 12)) //PC12  MOSI
-#define TCLK(x) Touch_Port->ODR = x ? Touch_Port->ODR | (1 << 10) : Touch_Port->ODR & (~(1 << 10)) //PC10  SCLK
-#define TCS(x) Touch_Port->ODR = x ? Touch_Port->ODR | (1 << 4) : Touch_Port->ODR & (~(1 << 4))	   //PC4 CS    //PC3 MOSI--->>TFT --SDA/DIN
+#define Touch_Port   	  	GPIOE		//����TFT���ݶ˿�
+#define PEN  (Touch_Port->IDR &(1<<7))   //PC2  INT
+#define DOUT (Touch_Port->IDR &(1<<11))   //PC11  MISO
+#define TDIN(x) Touch_Port->ODR = x ? Touch_Port->ODR |(1<<10):Touch_Port->ODR &(~(1<<10)) //PC12  MOSI
+#define TCLK(x) Touch_Port->ODR = x ? Touch_Port->ODR |(1<<9):Touch_Port->ODR &(~(1<<9)) //PC10  SCLK
+#define TCS(x) Touch_Port->ODR = x ? Touch_Port->ODR |(1<<8):Touch_Port->ODR &(~(1<<8)) //PC4 CS    //PC3 MOSI--->>TFT --SDA/DIN    
 
 void TP_Write_Byte(u8 num);						   //�����оƬд��һ������
 u16 TP_Read_AD(u8 CMD);							   //��ȡADת��ֵ
