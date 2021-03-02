@@ -589,7 +589,7 @@ void WM__SetToolTipCallback(void(* cbToolTip)(GUI_PID_STATE * pState, WM_HWIN));
   int  WM_CreateTimer    (WM_HWIN hWin, int UserID, int Period, int Mode); /* not to be documented (may change in future version) */
   void WM_DeleteTimer    (WM_HWIN hWin, int UserId); /* not to be documented (may change in future version) */
 #else
-  WM_HMEM WM_CreateTimer (WM_HWIN hWin, int UserID, int Period, int Mode); /* not to be documented (may change in future version) */
+//  WM_HMEM WM_CreateTimer (WM_HWIN hWin, int UserID, int Period, int Mode); /* not to be documented (may change in future version) */
   void    WM_DeleteTimer (WM_HMEM hTimer); /* not to be documented (may change in future version) */
   void    WM_RestartTimer(WM_HMEM hTimer, int Period);
 #endif

@@ -197,34 +197,7 @@ u8 TP_Read_XY2(u16 *x, u16 *y)
 	else
 		return 0;
 }
-//////////////////////////////////////////////////////////////////////////////////
-//��LCD�����йصĺ���
-//��һ��������
-//����У׼�õ�
-//x,y:����
-//color:��ɫ
-void TP_Drow_Touch_Point(u16 x, u16 y, u16 color)
-{
-	POINT_COLOR = color;
-	//	LCD_DrawLine(x-12,y,x+13,y);//����
-	//	LCD_DrawLine(x,y-12,x,y+13);//����
-	LCD_DrawPoint(x + 1, y + 1, POINT_COLOR);
-	LCD_DrawPoint(x - 1, y + 1, POINT_COLOR);
-	LCD_DrawPoint(x + 1, y - 1, POINT_COLOR);
-	LCD_DrawPoint(x - 1, y - 1, POINT_COLOR);
-	//gui_circle(x,y,POINT_COLOR,6,0);//������Ȧ
-}
-//��һ�����(2*2�ĵ�)
-//x,y:����
-//color:��ɫ
-void TP_Draw_Big_Point(u16 x, u16 y, u16 color)
-{
-	POINT_COLOR = color;
-	LCD_DrawPoint(x, y, POINT_COLOR); //���ĵ�
-	LCD_DrawPoint(x + 1, y, POINT_COLOR);
-	LCD_DrawPoint(x, y + 1, POINT_COLOR);
-	LCD_DrawPoint(x + 1, y + 1, POINT_COLOR);
-}
+
 
 #include "GUI.h"
 void GUI_TOUCH_Scan(void)

@@ -55,7 +55,7 @@ int main(void)
 static void adc_Task(void *parameter)
 {
 	rt_uint32_t recved;
-	ADC_Stop();
+//	ADC_Stop();
 	while(1)
 	{
 		rt_event_recv(adc_startEvent_Handle,ADC_START_EVENT,
@@ -94,12 +94,12 @@ static void Touch_Task(void *parameter)
 //  xSemaphoreTake(ScreenShotSem_Handle, /* ??????????? */
 //                 portMAX_DELAY);       /* ??????? */
 	rt_sem_take(ScreenShotSem_Handle,RT_WAITING_FOREVER);
-  while (1)
-  {
-    //GTP_TouchProcess();
-    GUI_TOUCH_Scan();
-    rt_thread_delay(20);
-  }
+//  while (1)
+//  {
+//    //GTP_TouchProcess();
+//    GUI_TOUCH_Scan();
+//    rt_thread_delay(20);
+//  }
 }
 
 /**

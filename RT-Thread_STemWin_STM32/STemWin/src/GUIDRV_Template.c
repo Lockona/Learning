@@ -153,7 +153,7 @@ static void _SetPixelIndex(GUI_DEVICE *pDevice, int x, int y, unsigned long Pixe
     GUI_USE_PARA(PixelIndex);
     {
         //rt_graphix_ops(lcd_device)->set_pixel((const char *)&PixelIndex, x, y);
-			 LCD_DrawPoint(x, y, PixelIndex);
+		LCD_Fast_DrawPoint(x, y, PixelIndex);
     }
 #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
 #undef xPhys
@@ -190,7 +190,7 @@ static unsigned long _GetPixelIndex(GUI_DEVICE *pDevice, int x, int y)
     GUI_USE_PARA(y);
     {
         //rt_graphix_ops(lcd_device)->get_pixel((char *)&PixelIndex, x, y);
-				 PixelIndex = 0;
+		PixelIndex=LCD_ReadPoint(x,y);
     }
 #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
 #undef xPhys

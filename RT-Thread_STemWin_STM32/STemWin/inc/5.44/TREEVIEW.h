@@ -193,7 +193,7 @@ int                  TREEVIEW_SetIndent      (TREEVIEW_Handle hObj, int Indent);
 void                 TREEVIEW_SetLineColor   (TREEVIEW_Handle hObj, int Index, GUI_COLOR Color);
 void                 TREEVIEW_SetOwnerDraw   (TREEVIEW_Handle hObj, WIDGET_DRAW_ITEM_FUNC * pfDrawItem);
 void                 TREEVIEW_SetSel         (TREEVIEW_Handle hObj, TREEVIEW_ITEM_Handle hItem);
-void                 TREEVIEW_SetSelMode     (TREEVIEW_Handle hObj, int Mode);
+//void                 TREEVIEW_SetSelMode     (TREEVIEW_Handle hObj, int Mode);
 void                 TREEVIEW_SetTextColor   (TREEVIEW_Handle hObj, int Index, GUI_COLOR Color);
 int                  TREEVIEW_SetTextIndent  (TREEVIEW_Handle hObj, int TextIndent);
 int                  TREEVIEW_SetUserData    (TREEVIEW_Handle hObj, const void * pSrc, int NumBytes);

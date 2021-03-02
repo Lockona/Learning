@@ -29,6 +29,7 @@
 .\objects\lcdconf_flexcolor_template.o: .\rt-thread\include\rtdbg.h
 .\objects\lcdconf_flexcolor_template.o: .\STemWin\inc\5.44\GUIDRV_FlexColor.h
 .\objects\lcdconf_flexcolor_template.o: .\user\lcd\lcd_driver.h
+.\objects\lcdconf_flexcolor_template.o: .\user\sys.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\CMSIS\Include\core_cm4.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\CMSIS\Include\core_cmInstr.h
@@ -54,5 +55,4 @@
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\lcdconf_flexcolor_template.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
-.\objects\lcdconf_flexcolor_template.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\lcdconf_flexcolor_template.o: .\user\TOUCH\touch.h

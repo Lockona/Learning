@@ -46,7 +46,7 @@
 .\objects\main.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\main.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\objects\main.o: .\user\lcd\lcd_driver.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: .\user\sys.h
 .\objects\main.o: .\user\TOUCH\touch.h
 .\objects\main.o: .\STemWin\inc\5.44\GUI.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

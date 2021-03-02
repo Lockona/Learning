@@ -264,7 +264,7 @@ void MainTask(void)
 //        strftime(str, 12, "%H:%M", tcolock);
 //        TEXT_SetText(text_Item_1, str);
 		
-        if (clicked)
+      //  if (clicked)
         {
             //temp = rand() % 150;
 			rt_enter_critical();

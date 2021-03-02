@@ -27,7 +27,7 @@
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\board.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\objects\board.o: .\user\lcd\lcd_driver.h
-.\objects\board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\board.o: .\user\sys.h
 .\objects\board.o: .\user\TOUCH\touch.h
 .\objects\board.o: .\rt-thread\include\rthw.h
 .\objects\board.o: .\rt-thread\include\rtthread.h

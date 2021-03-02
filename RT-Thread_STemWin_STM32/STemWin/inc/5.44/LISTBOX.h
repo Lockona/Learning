@@ -173,7 +173,7 @@ void             LISTBOX_SetFont         (LISTBOX_Handle hObj, const GUI_FONT * 
 void             LISTBOX_SetItemDisabled (LISTBOX_Handle hObj, unsigned Index, int OnOff);
 void             LISTBOX_SetItemSel      (LISTBOX_Handle hObj, unsigned Index, int OnOff);
 void             LISTBOX_SetItemSpacing  (LISTBOX_Handle hObj, unsigned Value);
-void             LISTBOX_SetMulti        (LISTBOX_Handle hObj, int Mode);
+//void             LISTBOX_SetMulti        (LISTBOX_Handle hObj, int Mode);
 void             LISTBOX_SetOwner        (LISTBOX_Handle hObj, WM_HWIN hOwner);
 void             LISTBOX_SetOwnerDraw    (LISTBOX_Handle hObj, WIDGET_DRAW_ITEM_FUNC * pfDrawItem);
 void             LISTBOX_SetScrollStepH  (LISTBOX_Handle hObj, int Value);

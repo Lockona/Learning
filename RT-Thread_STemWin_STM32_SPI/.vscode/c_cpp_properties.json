@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/",
+                    "${workspaceFolder}/Libraries/CMSIS/Device/ST/STM32F4xx/Include",
+                    "${workspaceFolder}/Libraries/CMSIS/Include",
+                    "${workspaceFolder}/Libraries/STM32F4xx_StdPeriph_Driver/inc",
+                    "${workspaceFolder}/user",
+                    "${workspaceFolder}/rt-thread/include",
+                    "${workspaceFolder}/rt-thread/include/libc",
+                    "${workspaceFolder}/rt-thread/components/finsh"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "${workspaceFolder}/",
+                "${workspaceFolder}/Libraries/CMSIS/Device/ST/STM32F4xx/Include",
+                "${workspaceFolder}/Libraries/CMSIS/Include",
+                "${workspaceFolder}/Libraries/STM32F4xx_StdPeriph_Driver/inc",
+                "${workspaceFolder}/user",
+                "${workspaceFolder}/rt-thread/include",
+                "${workspaceFolder}/rt-thread/include/libc",
+                "${workspaceFolder}/rt-thread/components/finsh"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__CC_ARM",
+                "USE_STDPERIPH_DRIVER",
+                "STM32F40_41xxx",
+                "OS_SUPPORT"
+            ],
+            "compilerPath": "C:\\Program Files\\LLVM\\bin\\clang.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

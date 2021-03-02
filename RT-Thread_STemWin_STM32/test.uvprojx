@@ -10,6 +10,7 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pArmCC>5060960::V5.06 update 7 (build 960)::.\ARMCC</pArmCC>
       <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
@@ -339,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,OS_SUPPORT</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\CMSIS\Include;.\STemWin_Task;.\user;.\user\lcd;.\user\TOUCH;.\user\sdio;.\FATFS;.\Libraries\CMSIS\Device\ST\STM32F4xx\Include;.\STemWin\inc\5.44;.\rt-thread\include;.\rt-thread\include\libc;.\rt-thread\components\finsh;.\rt-thread\components\drivers\include;.\rt-thread\components\drivers\include\ipc;.\rt-thread\components\drivers\include\drivers</IncludePath>
+              <IncludePath>.\Libraries\CMSIS\Device\ST\STM32F4xx\Include;.\Libraries\CMSIS\Include;.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\rt-thread\include;.\rt-thread\components\finsh;.\rt-thread\libcpu;.\STemWin\inc\5.44;.\STemWin_Task;.\user;.\user\lcd;.\user\TOUCH;.\FATFS;.\user\sdio</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -381,8 +382,13 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>user</GroupName>
+          <GroupName>USER</GroupName>
           <Files>
+            <File>
+              <FileName>ADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\ADC.c</FilePath>
+            </File>
             <File>
               <FileName>board.c</FileName>
               <FileType>1</FileType>
@@ -394,29 +400,19 @@
               <FilePath>.\user\main.c</FilePath>
             </File>
             <File>
-              <FileName>lcd_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\lcd\lcd_driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>touch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\TOUCH\touch.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_sdio_sd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\sdio\bsp_sdio_sd.c</FilePath>
-            </File>
-            <File>
               <FileName>RTC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\user\RTC.c</FilePath>
             </File>
             <File>
-              <FileName>ADC.c</FileName>
+              <FileName>lcd_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\user\ADC.c</FilePath>
+              <FilePath>.\user\lcd\lcd_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_sdio_sd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\sdio\bsp_sdio_sd.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -444,29 +440,9 @@
               <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\misc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_flash.c</FileName>
+              <FileName>stm32f4xx_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_sdio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_crc.c</FileName>
@@ -479,9 +455,24 @@
               <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_adc.c</FileName>
+              <FileName>stm32f4xx_fsmc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_adc.c</FilePath>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_fsmc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_rtc.c</FileName>
@@ -489,9 +480,29 @@
               <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rtc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_pwr.c</FileName>
+              <FileName>stm32f4xx_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_pwr.c</FilePath>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_sdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_sdio.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>rtthread\port</GroupName>
+          <Files>
+            <File>
+              <FileName>cpuport.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+            </File>
+            <File>
+              <FileName>context_rvds.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
             </File>
           </Files>
         </Group>
@@ -576,23 +587,13 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>rtthread\port</GroupName>
-          <Files>
-            <File>
-              <FileName>cpuport.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
-            </File>
-            <File>
-              <FileName>context_rvds.S</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>STemWin</GroupName>
           <Files>
+            <File>
+              <FileName>GUI_X_OS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STemWin\src\GUI_X_OS.c</FilePath>
+            </File>
             <File>
               <FileName>GUIConf.c</FileName>
               <FileType>1</FileType>
@@ -609,11 +610,6 @@
               <FilePath>.\STemWin\src\LCDConf_FlexColor_Template.c</FilePath>
             </File>
             <File>
-              <FileName>GUI_X_OS.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\STemWin\src\GUI_X_OS.c</FilePath>
-            </File>
-            <File>
               <FileName>STemWin_CM4_OS_wc16_ot.lib</FileName>
               <FileType>4</FileType>
               <FilePath>.\STemWin\src\STemWin_CM4_OS_wc16_ot.lib</FilePath>
@@ -621,7 +617,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>STemWin\MainTask</GroupName>
+          <GroupName>STemWibn_Task</GroupName>
           <Files>
             <File>
               <FileName>MainTask.c</FileName>
@@ -631,7 +627,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>FatFs</GroupName>
+          <GroupName>FatFS</GroupName>
           <Files>
             <File>
               <FileName>diskio.c</FileName>

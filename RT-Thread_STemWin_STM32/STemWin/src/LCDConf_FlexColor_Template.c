@@ -145,7 +145,7 @@ int LCD_X_DisplayDriver(unsigned LayerIndex, unsigned Cmd, void *pData)
     {
     case LCD_X_INITCONTROLLER:
     {		
-			LCD_Init();
+			//LCD_Init();
         //
         // Called during the initialization process in order to set up the
         // display controller and put it into operation. If the display

@@ -28,7 +28,7 @@
 .\objects\adc.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\objects\adc.o: user\board.h
 .\objects\adc.o: .\user\lcd\lcd_driver.h
-.\objects\adc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\adc.o: .\user\sys.h
 .\objects\adc.o: .\user\TOUCH\touch.h
 .\objects\adc.o: .\rt-thread\include\rthw.h
 .\objects\adc.o: .\rt-thread\include\rtthread.h
