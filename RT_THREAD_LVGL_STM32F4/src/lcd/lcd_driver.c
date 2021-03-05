@@ -1,10 +1,8 @@
-#include "main.h"
+#include "board.h"
 
 #include "lcd_driver.h"
 
 #include "font.h"
-
-#include "fsmc.h"
 
 //////////////////////////////////////////////////////////////////////////////////
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
@@ -94,8 +92,8 @@ void Delay_us(int m)
 }
 void Delay_ms(int m)
 {
-	int timeout=m+HAL_GetTick();
-	while(HAL_GetTick()<timeout);
+	int timeout=m+rt_tick_get();
+	while(rt_tick_get()<timeout);
 }
 //写寄存器函数
 //regval:寄存器值
@@ -2758,9 +2756,6 @@ void LCD_Init(void)
 	}
 	LCD_Display_Dir(1); //默认为竖屏
 	LCD_LED(1);		//点亮背光
-	LCD_Clear(0xffff);
-	LCD_SetCursor(0,0);	//设置光标位置
-	LCD_WriteRAM_Prepare(); //开始写入GRAM
 	
 }
 

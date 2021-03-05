@@ -76,8 +76,8 @@ void lv_port_disp_init(void)
 
     /* Example for 1) */
     static lv_disp_buf_t draw_buf_dsc_1;
-    static lv_color_t draw_buf_1[LV_HOR_RES_MAX * 21];                          /*A buffer for 20 rows*/
-    lv_disp_buf_init(&draw_buf_dsc_1, draw_buf_1, NULL, LV_HOR_RES_MAX * 20);   /*Initialize the display buffer*/
+    static lv_color_t draw_buf_1[LV_HOR_RES_MAX * 31];                          /*A buffer for 20 rows*/
+    lv_disp_buf_init(&draw_buf_dsc_1, draw_buf_1, NULL, LV_HOR_RES_MAX *30);   /*Initialize the display buffer*/
 	//在STMF407VE上实验时，设定的buffer大小一样时，会出现一点点花屏
 //    /* Example for 2) */
 //    static lv_disp_buf_t draw_buf_dsc_2;

@@ -19,16 +19,10 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "adc.h"
-#include "rtc.h"
-#include "gpio.h"
-#include "fsmc.h"
-
+#include "board.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "lcd_driver.h"
-#include "lv_port_disp.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,14 +47,20 @@
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+rt_thread_t lv_gui_task=RT_NULL;
+rt_timer_t lvgl_time=RT_NULL;
+
 void lv_ex_get_started_1(void);
+static void lvgl_tick(void *parameter);
+static void lvgl_task(void *parameter);
 /* USER CODE END 0 */
 
 /**
@@ -71,103 +71,73 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+	rt_enter_critical();
+	lv_gui_task=rt_thread_create("lv_gui",lvgl_task,RT_NULL,1024*4,4,10);
+	if(RT_NULL!=lv_gui_task)
+		rt_thread_startup(lv_gui_task);
+	else
+		return -1;
+	lvgl_time=rt_timer_create("lv_tick",lvgl_tick,RT_NULL,10,RT_TIMER_FLAG_PERIODIC);
+	if(RT_NULL!=lvgl_time)
+		rt_timer_start(lvgl_time);
+	else
+		return -1;
+	rt_exit_critical();
   /* USER CODE END 1 */
   
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+
 
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
-  SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
 	
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
 
-  //MX_FSMC_Init();
-//  MX_RTC_Init();
-//  MX_ADC1_Init();
 
- // MX__Init();
+
   /* USER CODE BEGIN 2 */
-  lv_init();
-  lv_port_disp_init();
-	lv_ex_get_started_1();
+  
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+	
     /* USER CODE END WHILE */
-	lv_task_handler();
+		
     /* USER CODE BEGIN 3 */
-  }
+  
   /* USER CODE END 3 */
 }
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
-void SystemClock_Config(void)
-{
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
-
-  /** Configure the main internal regulator output voltage 
-  */
-  __HAL_RCC_PWR_CLK_ENABLE();
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-  /** Initializes the CPU, AHB and APB busses clocks 
-  */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 4;
-  RCC_OscInitStruct.PLL.PLLN = 168;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Initializes the CPU, AHB and APB busses clocks 
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
-
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_RTC;
-  PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
 
 /* USER CODE BEGIN 4 */
 lv_obj_t* label2;
-
+static void lvgl_task(void *parameter)
+{
+	lv_init();
+	lv_port_disp_init();
+	lv_ex_get_started_1();
+	while(1)
+	{
+		rt_thread_delay(10);
+		lv_task_handler();
+	}
+}
+static void lvgl_tick(void *parameter)
+{
+		lv_tick_inc(10);
+}
 static void btn_event_cb(lv_obj_t * btn, lv_event_t event)
 {
     if(event == LV_EVENT_CLICKED) {
