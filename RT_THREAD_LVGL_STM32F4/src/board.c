@@ -47,7 +47,7 @@ static uint32_t _SysTick_Config(rt_uint32_t ticks)
 }
 
 #if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
-#define RT_HEAP_SIZE 1024*4
+#define RT_HEAP_SIZE 1024
 static uint32_t rt_heap[RT_HEAP_SIZE];	// heap default size: 4K(1024 * 4)
 RT_WEAK void *rt_heap_begin_get(void)
 {
@@ -84,8 +84,20 @@ void rt_hw_board_init()
     SystemClock_Config();
 		HAL_SYSTICK_Config(HAL_RCC_GetSysClockFreq() / RT_TICK_PER_SECOND);
 	  MX_GPIO_Init();
-//		MX_RTC_Init();
-//		MX_ADC1_Init();
+		MX_RTC_Init();
+		if (HAL_RTCEx_BKUPRead(&hrtc,RTC_BKP_DRX) != RTC_BKP_DATA)
+		{				
+			/* 设置时间和日期 */
+			rtc_time_set();
+		}
+		else
+		{
+			/* PWR_CR:DBF置1，使能RTC、RTC备份寄存器和备份SRAM的访问 */
+			HAL_PWR_EnableBkUpAccess();
+			/* 等待 RTC APB 寄存器同步 */
+			HAL_RTC_WaitForSynchro(&hrtc);
+		}
+		MX_ADC1_Init();
 		
     /* Call components board initial (use INIT_BOARD_EXPORT()) */
 #ifdef RT_USING_COMPONENTS_INIT

@@ -202,7 +202,7 @@ I (.\FATFS\ffconf.h)(0x5F0025CB)
 I (.\FATFS\diskio.h)(0x5F0025CB)
 I (user\RTC.h)(0x6038E45D)
 I (user\ADC.h)(0x603A1D58)
-F (.\user\main.c)(0x603E2148)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I .\Libraries\CMSIS\Include -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\rt-thread\include -I .\rt-thread\components\finsh -I .\rt-thread\libcpu -I .\STemWin\inc\5.44 -I .\STemWin_Task -I .\user -I .\user\lcd -I .\user\TOUCH -I .\FATFS -I .\user\sdio-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\user\main.c)(0x6041B6BB)(-c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I .\Libraries\CMSIS\Include -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\rt-thread\include -I .\rt-thread\components\finsh -I .\rt-thread\libcpu -I .\STemWin\inc\5.44 -I .\STemWin_Task -I .\user -I .\user\lcd -I .\user\TOUCH -I .\FATFS -I .\user\sdio-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DOS_SUPPORT-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\rt-thread\include\rtthread.h)(0x5A9A33B8)
 I (.\user\rtconfig.h)(0x603A2441)
 I (.\rt-thread\include\rtdebug.h)(0x5A9A33B8)

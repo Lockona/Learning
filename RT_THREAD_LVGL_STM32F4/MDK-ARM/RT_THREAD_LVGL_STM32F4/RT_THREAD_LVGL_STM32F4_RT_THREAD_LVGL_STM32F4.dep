@@ -57,7 +57,7 @@ I (..\rt-thread\include\rtservice.h)(0x5A991478)
 I (..\rt-thread\include\rtm.h)(0x5A991478)
 I (../Inc/main.h)(0x60410220)
 I (../Inc/adc.h)(0x6041021E)
-I (../Inc/rtc.h)(0x6041021F)
+I (../Inc/rtc.h)(0x6041AE4A)
 I (../Inc/gpio.h)(0x6041021D)
 I (../Inc/fsmc.h)(0x6041021E)
 I (..\lvgl\src\lv_driver\lv_port_disp.h)(0x604179D7)
@@ -151,7 +151,7 @@ I (..\lvgl\src\../src/lv_draw/lv_img_cache.h)(0x602FC4E8)
 I (..\lvgl\src\../src/lv_api_map.h)(0x602FC4E8)
 I (..\lvgl\src\../src/../lvgl.h)(0x602FC4E8)
 I (..\src\lcd\font.h)(0x60176721)
-F (../Src/main.c)(0x6041973F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\main.o --omf_browse rt_thread_lvgl_stm32f4\main.crf --depend rt_thread_lvgl_stm32f4\main.d)
+F (../Src/main.c)(0x6042347F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\main.o --omf_browse rt_thread_lvgl_stm32f4\main.crf --depend rt_thread_lvgl_stm32f4\main.d)
 I (../Src/board.h)(0x6041849E)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x600705C8)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x600705C7)
@@ -207,7 +207,7 @@ I (..\rt-thread\include\rtservice.h)(0x5A991478)
 I (..\rt-thread\include\rtm.h)(0x5A991478)
 I (../Inc/main.h)(0x60410220)
 I (../Inc/adc.h)(0x6041021E)
-I (../Inc/rtc.h)(0x6041021F)
+I (../Inc/rtc.h)(0x6041AE4A)
 I (../Inc/gpio.h)(0x6041021D)
 I (../Inc/fsmc.h)(0x6041021E)
 I (..\lvgl\src\lv_driver\lv_port_disp.h)(0x604179D7)
@@ -336,7 +336,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h)(0x600705C8)
-F (../Src/adc.c)(0x6041021E)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\adc.o --omf_browse rt_thread_lvgl_stm32f4\adc.crf --depend rt_thread_lvgl_stm32f4\adc.d)
+F (../Src/adc.c)(0x6042343B)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\adc.o --omf_browse rt_thread_lvgl_stm32f4\adc.crf --depend rt_thread_lvgl_stm32f4\adc.d)
 I (../Inc/adc.h)(0x6041021E)
 I (../Inc/main.h)(0x60410220)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x600705C8)
@@ -372,6 +372,119 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h)(0x600705C8)
+I (../Src/board.h)(0x6041849E)
+I (..\src\lcd\lcd_driver.h)(0x603FA44A)
+I (..\rt-thread\include\rthw.h)(0x5A991478)
+I (..\rt-thread\include\rtthread.h)(0x5A9A33B8)
+I (..\src\rtconfig.h)(0x603A2441)
+I (..\rt-thread\include\rtdebug.h)(0x5A9A33B8)
+I (..\rt-thread\include\rtdef.h)(0x5A9A3414)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E2EB2)
+I (..\rt-thread\include\rtlibc.h)(0x5A991478)
+I (..\rt-thread\include\libc/libc_stat.h)(0x5A991478)
+I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x5E8E2EB2)
+I (..\rt-thread\include\libc/libc_errno.h)(0x5A991478)
+I (..\rt-thread\include\libc/libc_fcntl.h)(0x5A9A33B8)
+I (..\rt-thread\include\libc/libc_ioctl.h)(0x5A991478)
+I (..\rt-thread\include\libc/libc_dirent.h)(0x5A991478)
+I (..\rt-thread\include\libc/libc_signal.h)(0x5A9A33B8)
+I (C:\Keil_v5\ARM\ARMCC\include\signal.h)(0x5E8E2EB2)
+I (..\rt-thread\include\libc/libc_fdset.h)(0x5A991478)
+I (..\rt-thread\include\rtservice.h)(0x5A991478)
+I (..\rt-thread\include\rtm.h)(0x5A991478)
+I (../Inc/rtc.h)(0x6041AE4A)
+I (../Inc/gpio.h)(0x6041021D)
+I (../Inc/fsmc.h)(0x6041021E)
+I (..\lvgl\src\lv_driver\lv_port_disp.h)(0x604179D7)
+I (..\lvgl\src\lvgl.h)(0x602FC4E8)
+I (..\lvgl\src\../lvgl.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_misc/lv_log.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_misc/../lv_conf_internal.h)(0x604171C4)
+I (..\lvgl\src\../src/lv_misc/../lv_conf_kconfig.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_misc/../lv_conf.h)(0x6041983B)
+I (..\lvgl\src\../src/lv_misc/lv_task.h)(0x602FC4E8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E2EB2)
+I (..\lvgl\src\../src/lv_misc/lv_mem.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_misc/lv_types.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_misc/lv_ll.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_misc/lv_math.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_misc/lv_async.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_hal/lv_hal.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_hal/lv_hal_disp.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_hal/../lv_misc/lv_color.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_hal/../lv_misc/lv_area.h)(0x602FC4E8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E2EB2)
+I (..\lvgl\src\../src/lv_hal/lv_hal_indev.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_hal/lv_hal_tick.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/lv_obj.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/lv_style.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_font/lv_font.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_font/lv_symbol_def.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_misc/lv_anim.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_misc/lv_debug.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_draw_blend.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_draw_mask.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_draw_rect.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_draw_label.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/../lv_misc/lv_bidi.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/../lv_misc/lv_txt.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/../lv_misc/lv_printf.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_draw_line.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_draw_img.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_img_decoder.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/lv_img_buf.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/../lv_draw/../lv_misc/lv_fs.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/lv_obj_style_dec.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/lv_group.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/lv_indev.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/lv_refr.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_core/lv_disp.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_themes/lv_theme.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_themes/lv_theme_empty.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_themes/lv_theme_template.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_themes/lv_theme_material.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_themes/lv_theme_mono.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_font/lv_font_loader.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_font/lv_font_fmt_txt.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_btn.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_cont.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_imgbtn.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_img.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_label.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/../lv_draw/lv_draw.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/../lv_draw/lv_draw_triangle.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/../lv_draw/lv_draw_arc.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_line.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_page.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_list.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_chart.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_table.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_checkbox.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_cpicker.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_bar.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_slider.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_led.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_btnmatrix.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_keyboard.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_dropdown.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_roller.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_textarea.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_canvas.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_win.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_tabview.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_tileview.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_msgbox.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_objmask.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_gauge.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_linemeter.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_switch.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_arc.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_spinner.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_calendar.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_widgets/lv_spinbox.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_draw/lv_img_cache.h)(0x602FC4E8)
+I (..\lvgl\src\../src/lv_api_map.h)(0x602FC4E8)
+I (..\lvgl\src\../src/../lvgl.h)(0x602FC4E8)
 F (../Src/fsmc.c)(0x604103E7)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\fsmc.o --omf_browse rt_thread_lvgl_stm32f4\fsmc.crf --depend rt_thread_lvgl_stm32f4\fsmc.d)
 I (../Inc/fsmc.h)(0x6041021E)
 I (../Inc/main.h)(0x60410220)
@@ -408,8 +521,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h)(0x600705C8)
-F (../Src/rtc.c)(0x6041021F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\rtc.o --omf_browse rt_thread_lvgl_stm32f4\rtc.crf --depend rt_thread_lvgl_stm32f4\rtc.d)
-I (../Inc/rtc.h)(0x6041021F)
+F (../Src/rtc.c)(0x6041B8FC)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\rtc.o --omf_browse rt_thread_lvgl_stm32f4\rtc.crf --depend rt_thread_lvgl_stm32f4\rtc.d)
+I (../Inc/rtc.h)(0x6041AE4A)
 I (../Inc/main.h)(0x60410220)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x600705C8)
 I (../Inc/stm32f4xx_hal_conf.h)(0x60410220)
@@ -514,7 +627,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h)(0x600705C8)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h)(0x600705C8)
-F (..\src\board.c)(0x6041973C)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\board.o --omf_browse rt_thread_lvgl_stm32f4\board.crf --depend rt_thread_lvgl_stm32f4\board.d)
+F (..\src\board.c)(0x60422041)(--c99 -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\src\lcd -I ..\lvgl\src -I ..\lvgl -I ..\lvgl\src\lv_driver -I ..\src\lcd -I ..\src\delay -I ..\rt-thread\include -I ..\rt-thread\include\libc -I ..\rt-thread\components\finsh -I ..\src-I.\RTE\_RT_THREAD_LVGL_STM32F4-IC:\Users\Kero\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Kero\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o rt_thread_lvgl_stm32f4\board.o --omf_browse rt_thread_lvgl_stm32f4\board.crf --depend rt_thread_lvgl_stm32f4\board.d)
 I (..\src\board.h)(0x6041849E)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x600705C8)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x600705C7)
@@ -570,7 +683,7 @@ I (..\rt-thread\include\rtservice.h)(0x5A991478)
 I (..\rt-thread\include\rtm.h)(0x5A991478)
 I (../Inc/main.h)(0x60410220)
 I (../Inc/adc.h)(0x6041021E)
-I (../Inc/rtc.h)(0x6041021F)
+I (../Inc/rtc.h)(0x6041AE4A)
 I (../Inc/gpio.h)(0x6041021D)
 I (../Inc/fsmc.h)(0x6041021E)
 I (..\lvgl\src\lv_driver\lv_port_disp.h)(0x604179D7)

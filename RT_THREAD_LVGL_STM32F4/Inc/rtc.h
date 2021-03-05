@@ -32,14 +32,30 @@
 
 extern RTC_HandleTypeDef hrtc;
 
-/* USER CODE BEGIN Private defines */
 
+/* USER CODE BEGIN Private defines */
+#define RTC_CLOCK_SOURCE_LSE      
+//#define RTC_CLOCK_SOURCE_LSI  
+
+// 异步分频因子
+#define ASYNCHPREDIV         0X7F
+// 同步分频因子
+#define SYNCHPREDIV          0XFF
+// 时间宏定义
+#define RTC_H12_AMorPM			  RTC_HOURFORMAT12_AM 
+// 时间格式宏定义
+#define RTC_Format_BINorBCD  RTC_FORMAT_BIN
+
+// 备份域寄存器宏定义
+#define RTC_BKP_DRX          RTC_BKP_DR0
+// 写入到备份寄存器的数据宏定义
+#define RTC_BKP_DATA         0X32F2 
 /* USER CODE END Private defines */
 
 void MX_RTC_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void rtc_time_set(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

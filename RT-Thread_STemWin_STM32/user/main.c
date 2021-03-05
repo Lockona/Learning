@@ -78,13 +78,13 @@ static void time_get_Task(void *parameter)
 	while(1)
 	{
 		RTC_GetTime(RTC_Format_BIN, &RTC_TimeStructure);
-		if(rtc_temp!=RTC_TimeStructure.RTC_Minutes)
+		if(rtc_temp!=RTC_TimeStructure.RTC_Seconds)
 		{
-			rtc_temp=RTC_TimeStructure.RTC_Minutes;	
-			rt_sprintf(str,"%02d:%02d",RTC_TimeStructure.RTC_Hours,RTC_TimeStructure.RTC_Minutes);
+			rtc_temp=RTC_TimeStructure.RTC_Seconds;	
+			rt_sprintf(str,"%02d:%02d",RTC_TimeStructure.RTC_Hours,RTC_TimeStructure.RTC_Seconds);
 			rt_mq_send(time_mq_Handle,str,rt_strlen(str));
 		}
-		rt_thread_delay(1000);
+		rt_thread_delay(100);
 	}
 }
 
