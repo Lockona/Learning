@@ -3,7 +3,7 @@
 <title>Static Call Graph - [RT_THREAD_LVGL_STM32F4\RT_THREAD_LVGL_STM32F4.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image RT_THREAD_LVGL_STM32F4\RT_THREAD_LVGL_STM32F4.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Mar 05 21:39:15 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Mar 05 22:19:49 2021
 <BR><P>
 <H3>Maximum Stack Usage =       1752 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -6575,7 +6575,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[2ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ex_get_started_1
 </UL>
 
-<P><STRONG><a name="[9c]"></a>lvgl_task</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, main.o(i.lvgl_task))
+<P><STRONG><a name="[9c]"></a>lvgl_task</STRONG> (Thumb, 114 bytes, Stack size 24 bytes, main.o(i.lvgl_task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 936<LI>Call Chain = lvgl_task &rArr; lv_ex_get_started_1 &rArr; lv_label_create &rArr; lv_label_set_text &rArr; lv_label_refr_text &rArr; lv_obj_set_height &rArr; lv_obj_set_size &rArr; lv_obj_realign &rArr; lv_obj_align_mid &rArr; obj_align_mid_core &rArr; lv_obj_set_y &rArr; lv_obj_set_pos &rArr; lv_obj_invalidate &rArr; lv_obj_invalidate_area &rArr; lv_obj_area_is_visible &rArr; lv_obj_get_disp &rArr; lv_obj_get_screen &rArr; lv_obj_get_parent &rArr; lv_debug_log_error &rArr; _lv_memcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_delay

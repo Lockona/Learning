@@ -179,7 +179,7 @@ static void lvgl_task(void *parameter)
 		}
 		if(RT_EOK==rt_mb_recv(adc_mb_handle,&adc_value,0))
 		{
-			lv_chart_set_next(chart,ser,(lv_coord_t)((double)(adc_value*33/4096)));
+				lv_chart_set_next(chart,ser,(lv_coord_t)((double)(adc_value*66/4096)));
 		}
 		lv_task_handler();
 		rt_thread_delay(10);

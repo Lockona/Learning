@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=SDIO_D3 Pin=SD_CARD-1
+Removed Pin From Net: NetName=SDIO_CMD Pin=SD_CARD-2
+Removed Pin From Net: NetName=GND Pin=SD_CARD-3
+Removed Pin From Net: NetName=SDIO_D2 Pin=SD_CARD-9
+Change Component DesignItemId : Designator=SD_CARD Old DesignItemId=sd card New DesignItemId=Component_1
+Change Component Comment : Designator=SD_CARD Old Comment=sd card New Comment=Component_1
+Change Component Library : Designator=SD_CARD Old Library=Explorer STM32F407·â×°¿â.IntLib New Library=TF_SD.SchLib
+Added Component: Designator=R43(0603P)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=5V Pin=K1-2
+Added Pin To Net: NetName=SDIO_SCK Pin=R43-1
+Added Pin To Net: NetName=3V3 Pin=R43-2
+Added Pin To Net: NetName=SDIO_D2 Pin=SD_CARD-1
+Added Pin To Net: NetName=SDIO_D3 Pin=SD_CARD-2
+Added Pin To Net: NetName=SDIO_CMD Pin=SD_CARD-3
+Added Pin To Net: NetName=GND Pin=SD_CARD-9
+Added Member To Class: ClassName=STMF4VE Member=Component R43 10K
+Added Room: Name=STMF4VE

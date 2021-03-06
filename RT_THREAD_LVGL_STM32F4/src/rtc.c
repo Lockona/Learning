@@ -133,9 +133,9 @@ void rtc_time_set(void)
   RTC_TimeTypeDef  RTC_TimeStructure;
 	// 初始化时间
 	RTC_TimeStructure.TimeFormat = RTC_H12_AMorPM;
-	RTC_TimeStructure.Hours = 11;        
-	RTC_TimeStructure.Minutes = 30;      
-	RTC_TimeStructure.Seconds = 10;      
+	RTC_TimeStructure.Hours = 22;        
+	RTC_TimeStructure.Minutes = 19;      
+	RTC_TimeStructure.Seconds = 30;      
   HAL_RTC_SetTime(&hrtc,&RTC_TimeStructure, RTC_FORMAT_BIN);
     // 初始化日期	
 	RTC_DateStructure.WeekDay = 5;       
