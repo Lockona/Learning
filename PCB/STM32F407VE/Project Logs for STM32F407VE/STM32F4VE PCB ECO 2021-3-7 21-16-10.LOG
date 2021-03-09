@@ -1,0 +1,6 @@
+Added Component: Designator=R44(0603P)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=5V Pin=R44-1
+Added Pin To Net: NetName=5V Pin=R44-2
+Added Member To Class: ClassName=STMF4VE Member=Component R44 0R
+Added Room: Name=STMF4VE

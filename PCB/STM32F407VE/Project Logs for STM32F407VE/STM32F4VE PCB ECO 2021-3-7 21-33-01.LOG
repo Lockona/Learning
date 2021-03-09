@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=5V Pin=C23-1
+Removed Pin From Net: NetName=5V Pin=R44-1
+Removed Pin From Net: NetName=5V Pin=R44-2
+Removed Pin From Net: NetName=5V Pin=U3-16
+Removed Member From Class: ClassName=STMF4VE Member=R44
+Added Pin To Net: NetName=5VE Pin=C23-1
+Added Pin To Net: NetName=5VE Pin=U3-16
+Added Net: Name=5VE
+Added Room: Name=STMF4VE

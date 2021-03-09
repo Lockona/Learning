@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=  NewDesignator=C20
+Change Component Designator: OldDesignator= NewDesignator=P2
+Added Member To Class: ClassName=STMF4VE Member=Component C20 220uF
+Added Member To Class: ClassName=STMF4VE Member=Component P2 Header 10X2
+Added Room: Name=STMF4VE

@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=TFTLCD Old Footprint=TFT_LCD New Footprint=db2*17-4.3
+Added Member To Class: ClassName=STMF4VE Member=Component TFTLCD TFT_LCD
+Added Room: Name=STMF4VE
