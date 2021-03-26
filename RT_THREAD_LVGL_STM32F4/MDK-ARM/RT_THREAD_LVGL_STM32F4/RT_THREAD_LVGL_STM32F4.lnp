@@ -9,6 +9,7 @@
 "rt_thread_lvgl_stm32f4\stm32f4xx_hal_msp.o"
 "rt_thread_lvgl_stm32f4\core_delay.o"
 "rt_thread_lvgl_stm32f4\board.o"
+"rt_thread_lvgl_stm32f4\touch.o"
 "rt_thread_lvgl_stm32f4\stm32f4xx_hal_adc.o"
 "rt_thread_lvgl_stm32f4\stm32f4xx_hal_adc_ex.o"
 "rt_thread_lvgl_stm32f4\stm32f4xx_ll_fsmc.o"

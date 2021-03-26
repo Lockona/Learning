@@ -84,20 +84,20 @@ void rt_hw_board_init()
     SystemClock_Config();
 		HAL_SYSTICK_Config(HAL_RCC_GetSysClockFreq() / RT_TICK_PER_SECOND);
 	  MX_GPIO_Init();
-		MX_RTC_Init();
-		if (HAL_RTCEx_BKUPRead(&hrtc,RTC_BKP_DRX) != RTC_BKP_DATA)
-		{				
-			/* 设置时间和日期 */
-			rtc_time_set();
-		}
-		else
-		{
-			/* PWR_CR:DBF置1，使能RTC、RTC备份寄存器和备份SRAM的访问 */
-			HAL_PWR_EnableBkUpAccess();
-			/* 等待 RTC APB 寄存器同步 */
-			HAL_RTC_WaitForSynchro(&hrtc);
-		}
-		MX_ADC1_Init();
+		//MX_RTC_Init();
+//		if (HAL_RTCEx_BKUPRead(&hrtc,RTC_BKP_DRX) != RTC_BKP_DATA)
+//		{				
+//			/* 设置时间和日期 */
+//			rtc_time_set();
+//		}
+//		else
+//		{
+//			/* PWR_CR:DBF置1，使能RTC、RTC备份寄存器和备份SRAM的访问 */
+//			HAL_PWR_EnableBkUpAccess();
+//			/* 等待 RTC APB 寄存器同步 */
+//			HAL_RTC_WaitForSynchro(&hrtc);
+//		}
+//		MX_ADC1_Init();
 		
     /* Call components board initial (use INIT_BOARD_EXPORT()) */
 #ifdef RT_USING_COMPONENTS_INIT

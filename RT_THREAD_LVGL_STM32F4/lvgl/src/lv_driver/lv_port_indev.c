@@ -10,7 +10,7 @@
  *      INCLUDES
  *********************/
 #include "lv_port_indev.h"
-
+#include "touch.h"
 /*********************
  *      DEFINES
  *********************/
@@ -181,6 +181,7 @@ void lv_port_indev_init(void)
 static void touchpad_init(void)
 {
     /*Your code comes here*/
+		TP_Init();
 }
 
 /* Will be called by the library to read the touchpad */
@@ -188,9 +189,9 @@ static bool touchpad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 {
     static lv_coord_t last_x = 0;
     static lv_coord_t last_y = 0;
-
+		TP_Scan(0);
     /*Save the pressed coordinates and the state*/
-    if(touchpad_is_pressed()) {
+    if(tp_dev.sta&0x80) {
         touchpad_get_xy(&last_x, &last_y);
         data->state = LV_INDEV_STATE_PR;
     } else {
@@ -218,8 +219,8 @@ static void touchpad_get_xy(lv_coord_t * x, lv_coord_t * y)
 {
     /*Your code comes here*/
 
-    (*x) = 0;
-    (*y) = 0;
+    (*x) = (lv_coord_t)tp_dev.x[0];
+    (*y) = (lv_coord_t)tp_dev.y[0];
 }
 
 /*------------------

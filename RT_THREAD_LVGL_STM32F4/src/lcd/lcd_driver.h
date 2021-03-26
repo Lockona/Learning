@@ -1,5 +1,5 @@
-#ifndef __LCD_H
-#define __LCD_H		
+#ifndef __LCD_DRIVER_H_
+#define __LCD_DRIVER_H_	
 
 
 //////////////////////////////////////////////////////////////////////////////////	 
@@ -99,7 +99,7 @@ extern uint16_t  BACK_COLOR; //背景颜色.默认为白色
 
 //////////////////////////////////////////////////////////////////////////////////	 
 //-----------------LCD端口定义---------------- 
-#define	LCD_LED(x) x?(GPIOB->ODR&=~(1<<1)):(GPIOB->ODR|=1<<1)  		//LCD背光    		 PB15 	    
+#define	LCD_LED(x) x?(GPIOA->ODR&=~(1<<12)):(GPIOA->ODR|=1<<12)  		//LCD背光    		 PB15 	    
 //LCD地址结构体
 typedef struct
 {
@@ -108,7 +108,7 @@ typedef struct
 } LCD_TypeDef;
 //使用NOR/SRAM的 Bank1.sector4,地址位HADDR[27,26]=11 A6作为数据命令区分线 
 //注意设置时STM32内部会右移一位对其! 111 1110=0X7E			    
-#define LCD_BASE        ((uint32_t)(0x60000000 | 0x00007FFFE))
+#define LCD_BASE        ((uint32_t)(0x60000000 | 0x0001FFFE))
 #define LCD             ((LCD_TypeDef *) LCD_BASE)
 //////////////////////////////////////////////////////////////////////////////////
 	 

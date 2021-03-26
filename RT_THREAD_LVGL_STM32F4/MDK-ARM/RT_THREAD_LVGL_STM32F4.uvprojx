@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\src\lcd;..\lvgl\src;..\lvgl;..\lvgl\src\lv_driver;..\src\lcd;..\src\delay;..\rt-thread\include;..\rt-thread\include\libc;..\rt-thread\components\finsh;..\src</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\src\lcd;..\lvgl\src;..\lvgl;..\lvgl\src\lv_driver;..\src\lcd;..\src\delay;..\rt-thread\include;..\rt-thread\include\libc;..\rt-thread\components\finsh;..\src;..\src\TOUCH</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -437,6 +437,11 @@
               <FileName>board.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\board.c</FilePath>
+            </File>
+            <File>
+              <FileName>touch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\TOUCH\touch.c</FilePath>
             </File>
           </Files>
         </Group>

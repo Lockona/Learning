@@ -4,6 +4,7 @@
 #include "stm32f4xx.h" 
 #include "lcd_driver.h"
 //#include "touch.h"
+#include "lv_port_indev.h"
 #include <rthw.h>
 #include <rtthread.h>
 #include "main.h"

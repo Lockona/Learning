@@ -81,6 +81,8 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+//	LCD_Init();
+//	LCD_Fill(0,0,100,100,0xf0f0);
 	rt_enter_critical();
 	time_mq=rt_mq_create("time_mq",12,1,RT_IPC_FLAG_FIFO);
 	adc_mb_handle=rt_mb_create("adc_value",1,RT_IPC_FLAG_FIFO);
@@ -90,11 +92,11 @@ int main(void)
 	else
 		return -1;
 	
-	rtc_task=rt_thread_create("rtc",rtc_show_task,RT_NULL,512,5,50);
-	if(RT_NULL!=rtc_task)
-		rt_thread_startup(rtc_task);
-	else
-		return -1;
+//	rtc_task=rt_thread_create("rtc",rtc_show_task,RT_NULL,512,5,50);
+//	if(RT_NULL!=rtc_task)
+//		rt_thread_startup(rtc_task);
+//	else
+//		return -1;
 	lvgl_time=rt_timer_create("lv_tick",lvgl_tick,RT_NULL,LV_DISP_DEF_REFR_PERIOD,RT_TIMER_FLAG_PERIODIC);
 	if(RT_NULL!=lvgl_time)
 		rt_timer_start(lvgl_time);
@@ -167,6 +169,7 @@ static void lvgl_task(void *parameter)
 	rt_uint32_t adc_value;
 	lv_init();
 	lv_port_disp_init();
+	lv_port_indev_init();
 	lv_ex_get_started_1();
 	while(1)
 	{
@@ -182,7 +185,7 @@ static void lvgl_task(void *parameter)
 				lv_chart_set_next(chart,ser,(lv_coord_t)((double)(adc_value*66/4096)));
 		}
 		lv_task_handler();
-		rt_thread_delay(10);
+		rt_thread_delay(5);
 		
 	}
 }
